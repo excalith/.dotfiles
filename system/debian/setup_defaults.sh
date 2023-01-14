@@ -9,17 +9,21 @@ echo "$(tput setaf 10)└──────────────────�
 cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "../../scripts/utils/utils.sh"
 
-# Set Desktop Visuals
+
+#==================================
+# General UI / UX
+#==================================
 print_title "Desktop Environment Settings"
 execute "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'" "Set dark mode"
 execute "gsettings set org.gnome.desktop.background picture-uri file:////$HOME/.dotfiles/assets/wallpaper/ventura.jpg" "Set wallpaper"
 execute "dconf write /org/gtk/settings/file-chooser/sort-directories-first true" "Show directories first"
 execute "gsettings set org.gnome.desktop.interface clock-show-weekday true" "Show weekday in clock"
+#execute "gsettings set org.gnome.nautilus.preferences always-use-location-entry true" "Show path as string"
 
-# Show Location Entry On File Browser
-# gsettings set org.gnome.nautilus.preferences always-use-location-entry true
 
-# Set Dock Style
+#==================================
+# Dock
+#==================================
 print_title "Dock Settings"
 execute "gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'" "Set dock click action"
 execute "gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false" "Set dock height"
@@ -40,6 +44,9 @@ gsettings set org.gnome.shell.keybindings switch-to-application-8 []
 gsettings set org.gnome.shell.keybindings switch-to-application-9 []
 
 
+#==================================
+# Key Bindings
+#==================================
 print_title "Key Binding Settings"
 print_success "Setting Up Key Bindings"
 # Toggle Overview
