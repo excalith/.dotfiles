@@ -1,15 +1,19 @@
 #!/bin/bash
 
-echo "$(tput setaf 10)┌─────────────────────────────────┐$(tput sgr0)"
-echo "$(tput setaf 10)│        Installing Fonts         │$(tput sgr0)"
-echo "$(tput setaf 10)└─────────────────────────────────┘$(tput sgr0)"
-
 #==================================
 # Source utilities
 #==================================
 cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "../../scripts/utils/utils.sh" \
-    && . "../../scripts/utils/utils_debian.sh"
+    && . "../../scripts/utils/utils_ubuntu.sh"
+
+
+#==================================
+# Print Section Title
+#==================================
+print_section "Installing Fonts"
+
+
 
 declare -a fonts=(
     FiraCode

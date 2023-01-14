@@ -1,15 +1,17 @@
 #!/bin/sh
 
-echo "$(tput setaf 10)┌─────────────────────────────────┐$(tput sgr0)"
-echo "$(tput setaf 10)│       Installing Packages       │$(tput sgr0)"
-echo "$(tput setaf 10)└─────────────────────────────────┘$(tput sgr0)"
-
 #==================================
 # Source utilities
 #==================================
 cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "../../scripts/utils/utils.sh" \
     && . "../../scripts/utils/utils_macos.sh"
+
+
+#==================================
+# Print Section Title
+#==================================
+print_section "Installing Packages"
 
 
 #==================================

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #==================================
 # Settings
 #==================================
@@ -14,10 +15,9 @@ declare DOTFILES_ORIGIN="git@github.com:$GITHUB_REPOSITORY.git"
 declare DOTFILES_TARBALL_URL="https://github.com/$GITHUB_REPOSITORY/tarball/main"
 declare DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/src/os/utils.sh"
 
-# ----------------------------------------------------------------------
-# | Helper Functions                                                   |
-# ----------------------------------------------------------------------
-
+#==================================
+# Helper Functions
+#==================================
 download() {
     local url="$1"
     local output="$2"
@@ -115,23 +115,26 @@ verify_os() {
     return 1
 }
 
-# ----------------------------------------------------------------------
-# | Main                                                               |
-# ----------------------------------------------------------------------
-
+#==================================
+# Main Install Starter
+#==================================
 main() {
 
     # Ensure that the following actions are made relative to this file's path.
     cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
 
+
     # Load utils
     . "utils/utils.sh" || exit 1
+
 
     # Verify OS and OS version
     verify_os || exit 1
 
+
     # Ask user for sudo
     ask_for_sudo
+
 
     # Check if this script was run directly (./<path>/setup.sh),
     # and if not, it most likely means that the dotfiles were not
@@ -139,13 +142,9 @@ main() {
     printf "%s" "${BASH_SOURCE[0]}" | grep "setup.sh" &> /dev/null \
         || download_dotfiles
 
+
     # Start installation
-    local os_name="$(get_os)"
-    if [ "$os_name" == "macos" ]; then
-        cd "../system/maos"
-    elif [ "$os_name" == "ubuntu" ]; then
-        cd "../system/debian"
-    fi
+    cd "../system/$(get_os)"
     . "install.sh"
     
 

@@ -1,15 +1,16 @@
 #!/bin/sh
 
-echo "$(tput setaf 10)┌─────────────────────────────────┐$(tput sgr0)"
-echo "$(tput setaf 10)│        Applying Defaults        │$(tput sgr0)"
-echo "$(tput setaf 10)└─────────────────────────────────┘$(tput sgr0)"
-
-
 #==================================
 # Source utilities
 #==================================
 cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "../../utils.sh"
+
+
+#==================================
+# Print Section Title
+#==================================
+print_section "Applying MacOS Defaults"
 
 
 #==================================
@@ -27,6 +28,7 @@ while true; do
     sleep 60
     kill -0 "$$" || exit
 done 2>/dev/null &
+
 
 #==================================
 # Dock

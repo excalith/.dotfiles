@@ -1,9 +1,10 @@
 #!/bin/bash
 
-echo "$(tput setaf 10)┌─────────────────────────────────┐$(tput sgr0)"
-echo "$(tput setaf 10)│   Running MacOS Dotfile Setup   │$(tput sgr0)"
-echo "$(tput setaf 10)└─────────────────────────────────┘$(tput sgr0)"
-echo
+#==================================
+# Print Section Title
+#==================================
+print_section "Running MacOS Dotfile Setup"
+
 
 cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "../../scripts/utils/utils.sh" \

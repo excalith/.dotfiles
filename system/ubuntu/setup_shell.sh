@@ -1,15 +1,18 @@
 #!/bin/sh
 
-echo "$(tput setaf 10)┌─────────────────────────────────┐$(tput sgr0)"
-echo "$(tput setaf 10)│     Installing Fish Shell       │$(tput sgr0)"
-echo "$(tput setaf 10)└─────────────────────────────────┘$(tput sgr0)"
-
 #==================================
 # Source utilities
 #==================================
 cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "../../scripts/utils/utils.sh" \
-    && . "../../scripts/utils/utils_debian.sh"
+    && . "../../scripts/utils/utils_ubuntu.sh"
+
+
+#==================================
+# Print Section Title
+#==================================
+print_section "Installing Fish Shell"
+
 
 #==================================
 # Install Fish

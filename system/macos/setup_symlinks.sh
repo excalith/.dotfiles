@@ -1,16 +1,16 @@
 #!/bin/sh
 
-echo "$(tput setaf 10)┌─────────────────────────────────┐$(tput sgr0)"
-echo "$(tput setaf 10)│        Creating Symlinks        │$(tput sgr0)"
-echo "$(tput setaf 10)└─────────────────────────────────┘$(tput sgr0)"
-
 #==================================
 # Source utilities
 #==================================
 cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "../../scripts/utils/utils.sh"
 
-print_title "Creating Symlinks"
+
+#==================================
+# Print Section Title
+#==================================
+print_section "Creating Symlinks"
 
 
 #==================================
