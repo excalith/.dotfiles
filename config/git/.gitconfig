@@ -1,0 +1,140 @@
+[init]
+	defaultBranch = main
+[core]
+	editor = code --wait --new-window
+    whitespace = -trailing-space # Don't consider trailing space change as a cause for merge conflicts
+    excludesFile = ~/.gitignore_global
+    pager = delta
+	autocrlf = input
+[branch]
+	autosetuprebase = always #avoid having messy “Merge branch 'main' into …” commits by rebasing every time you pull.
+[status]
+    submoduleSummary = true # Display submodule rev change summaries in status
+    showUntrackedFiles = all # Recursively traverse untracked directories to display all contents
+[fetch]
+    recurseSubmodules = on-demand # Auto-fetch submodule changes (sadly, won't auto-update)
+[pull]
+    # This is GREAT… when you know what you're doing and are careful
+    # not to pull --no-rebase over a local line containing a true merge.
+    # rebase = true
+    # This option, which does away with the one gotcha of
+    # auto-rebasing on pulls, is only available from 1.8.5 onwards.
+    # rebase = preserve
+    # WARNING! This option, which is the latest variation, is only
+    # available from 2.18 onwards.
+    rebase = merges
+[push]
+    default = upstream # Default push should only push the current branch to its push target, regardless of its remote name
+    followTags = true # When pushing, also push tags whose commit-ishs are now reachable upstream
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[diff]
+    mnemonicPrefix = true # Use better, descriptive initials (c, i, w) instead of a/b.
+    renames = true # Show renames/moves as such
+    wordRegex = .  # When using --word-diff, assume --word-diff-regex=.
+    submodule = log # Display submodule-related information (commit listings)
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+# [rebase]
+    # Rebase advanced usage.
+    # Automagically reorder and prefix your commands while doing an interactive
+    # rebase. This has to be used with `--fixup` and/or `--squash` options for
+    # `git commit`.
+    # autoSquash = true
+    # Automatically stash current WD and stage when running rebase
+    # then you won't have to manually `git stash push` and `git stash pop`
+    # after and before your rebase.
+    # autosquash = true
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[tag]
+    sort = version:refname # Sort tags as version numbers whenever applicable, so 1.10.2 is AFTER 1.2.0.
+[versionsort]
+    prereleaseSuffix = -pre
+    prereleaseSuffix = .pre
+    prereleaseSuffix = -beta
+    prereleaseSuffix = .beta
+    prereleaseSuffix = -rc
+    prereleaseSuffix = .rc
+[alias]   
+    ## Status
+    st = !zsh ~/.dotfiles/Generic/custom/gitst/gitst.zsh
+    stt = diff --stat
+    ls = log --date=format:'%d-%m-%Y %H:%M:%S' --pretty=format:'%C(bold blue) %h %C(reset red)%ad %C(Yellow)%an %x09%C(Reset)%s%C(auto)%d%C(reset)' --all
+    lt = log --all --graph --decorate=short --date=format:'%d-%m-%Y %H:%M:%S' --color --format=format:'%C(bold blue)%h%C(reset)   %x09%C(red)%ad %C(yellow)%an %C(white)%s %C(auto)%d%C(reset)'
+    last = log --date=format:'%d-%m-%Y %H:%M:%S' --pretty=format:'%C(bold blue) %h %C(reset red)%ad %C(Yellow)%an %n %C(Reset)%s%C(auto)%d%C(reset)%n' -1 HEAD --stat
+    f = fetch
+    ## Switch
+    sw = switch
+    swb = switch -
+    br = switch -c
+    ## Checkout
+    co = checkout
+    ## Add
+    a = add
+    aa = add .
+    ai = add -i
+    ## Commit
+    cm = commit -m
+    ca = commit -am
+    cp = cherry-pick
+    ## Diff
+    d = diff
+    dt = difftool
+    ## Merge
+    m = merge
+    ms = merge --squash 
+    ## Rebase
+    rb = rebase
+    rbi = rebase -i $(git merge-base HEAD @{u})
+    ## Push
+    pu = push
+    please = push --force-with-lease
+    ## Stash
+    save = stash save
+    pop = stash pop
+    snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}" >/dev/null 2>&1
+    ## Undo
+    unstage = reset HEAD --
+    undo = reset HEAD~1 --mixed
+    ## Reset
+    rh = reset --hard
+    cl = clean -f
+    ## Utilities
+    aliases = !git config --get-regexp '^alias\\.' | bat -n -l sh
+    configlist = !git config --global -l | bat -n -l sh
+    author = !git shortlog -sn --no-merges | bat -n -l yaml
+    gc = gc --prune=now --aggressive
+    se = !git rev-list --all | xargs git grep -F
+    ## Panic
+    panic = !tar cvf ../git_panic.tar 
+[delta]
+    features = side-by-side line-numbers decorations full unobtrusive-line-numbers
+    zero-style = dim syntax
+    inspect-raw-lines = true
+    colorMoved = default
+[delta "decorations"]
+    hunk-header-decoration-style = yellow ul
+[delta "line-numbers"]
+    line-numbers-left-style = yellow
+    line-numbers-right-style = yellow
+[credential]
+	helper = osxkeychain
+[gui]
+	fontui = -family \".SF NS\" -size 13 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"FiraCode Nerd Font\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+[cola]
+	spellcheck = false
+	fontdiff = FiraCode Nerd Font Mono,13,-1,5,50,0,0,0,0,0
+	theme = flat-dark-blue
+	icontheme = dark
+[include]
+    path = ~/.gitconfig.local

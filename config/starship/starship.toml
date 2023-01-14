@@ -1,0 +1,130 @@
+format = """
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$fill\
+$aws\
+$c\
+$docker_context\
+$golang\
+$java\
+$lua\
+$package\
+$nodejs\
+$python\
+$ruby\
+$rust\
+$cmd_duration $jobs $time\
+$line_break\
+$shell"""
+
+[fill]
+symbol = " "
+
+[shell]
+disabled = false
+format = "${sudo}${indicator} "
+bash_indicator = "[$_](purple)"
+fish_indicator = "[➼](purple)"
+zsh_indicator = "[z](purple)"
+powershell_indicator = "[>_](purple)"
+unknown_indicator = "[?](purple)"
+
+[sudo]
+style = 'bold green'
+symbol = 's '
+disabled = false
+
+[directory]
+style = "bold green"
+home_symbol = '~'
+read_only = " "
+read_only_style = "bold red"
+truncation_length = 4
+truncation_symbol = '…/'
+truncate_to_repo = true
+
+[hostname]
+ssh_only = true
+format = '(bold blue)[$hostname](bold red): '
+trim_at = '.companyname.com'
+disabled = false
+
+[memory_usage]
+symbol = " "
+
+[jobs]
+symbol = ""
+style = "bold red"
+number_threshold = 1
+format = "[$symbol]($style)"
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "yellow"
+
+[time]
+disabled = false
+style = "bold white"
+format = "[$time]($style)"
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "bold bright-purple"
+
+[git_status]
+format = '[\[ ](bold purple)$all_status$ahead_behind[ \]](bold purple)'
+up_to_date = '[✓](bold green)'
+staged     = '[+](bold green)'
+modified   = '[!](bold yellow)'
+renamed    = '[~](bold yellow)'
+deleted    = '[✘](bold yellow)'
+stashed    = '[\$](bold bright-purple)'
+untracked  = '[?](bold bold bright-purple)'
+conflicted = '[=](bold red)'
+ahead = ' [⇡${count}](bold green)'
+behind = ' [⇣${count}](bold red)'
+diverged = ' [](bold red) ([⇡${ahead_count}](bold green) [⇣${behind_count}](bold red))'
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+cherry_pick = '[🍒 PICKING](bold red)'
+
+[aws]
+symbol = "  "
+
+[c]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[java]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[nodejs]
+symbol = " "
+format = "via [$symbol($version )]($style)"
+
+[package]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
