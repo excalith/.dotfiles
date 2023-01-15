@@ -25,12 +25,10 @@ mkdir -p ~/.config/fish/functions
 symlink  ~/.dotfiles/config/fish/*.fish ~/.config/fish
 symlink  ~/.dotfiles/config/fish/theme/*.fish ~/.config/fish/theme
 
-
-
 # bash config
 print_title "Bash configuration"
 symlink ~/.dotfiles/config/bash ~/.config
-bash --rcfile ~/.config/bash/bashrc
+# bash --rcfile ~/.config/bash/bashrc
 
 # zsh config
 print_title "Zsh configuration"
@@ -50,16 +48,19 @@ symlink ~/.dotfiles/config/git/ignore_global ~/.config/git
 
 # neofetch config
 print_title "Neofetch configuration"
+mkdir -p ~/.config/neofetch
 symlink ~/.dotfiles/config/neofetch/config.conf ~/.config/neofetch/config.conf
 
 # midnight commander theme
 print_title "Midnight Commander configuration"
+mkdir -p ~/.config/mc
 mkdir -p ~/.local/share/mc/skins
-symlink ~/.dotfiles/config/mc/Arasaka.ini ~/.local/share/mc/skins/Arasaka.ini
 symlink ~/.dotfiles/config/mc/ini ~/.config/mc/ini
+symlink ~/.dotfiles/config/mc/Arasaka.ini ~/.local/share/mc/skins/Arasaka.ini
 
 # htop config
 print_title "htop configuration"
+mkdir -p ~/.config/htop
 symlink ~/.dotfiles/config/htop/htoprc ~/.config/htop/htoprc
 
 # alacritty config
