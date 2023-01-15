@@ -1,4 +1,4 @@
-function ping_pretty 'Pretty pings to target url (defaults to 1.1.1.1)'
+function ping_pretty --description 'Pretty pings to target url (defaults to 1.1.1.1)'
     echo ""
 
     if count $argv = 0 >/dev/null

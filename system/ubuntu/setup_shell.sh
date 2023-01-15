@@ -28,10 +28,10 @@ print_result $? "Starship" "true"
 
 
 #==================================
-# Install fisher
+# Install Fisher
 #==================================
 fish <<'END_FISH'
-    curl -sL https://git.io/fisher | source 
+    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher >/dev/null 2>&1
 END_FISH
 print_result $? "Fisher" "true"
 
@@ -40,7 +40,6 @@ print_result $? "Fisher" "true"
 # Install fish packages
 #==================================
 print_title "Installing Fish Packages"
-fisher_install "Fisher" "jorgebucaran/fisher"
 fisher_install "FZF" "PatrickF1/fzf.fish"
 fisher_install "Puffer Fish" "nickeb96/puffer-fish"
 fisher_install "Done" "franciscolourenco/done"
