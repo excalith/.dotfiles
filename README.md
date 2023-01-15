@@ -15,8 +15,12 @@ bash -c "$(wget --no-cache -qO - https://raw.githubusercontent.com/excalith/.dot
 
 - **Add 1Password CLI integration:** A CLI integration would be great for syncinc secrets such as ssh and gitconfig https://developer.1password.com/docs/cli/get-started/#install
 
-- **Install 1Password from source:** Sandboxing prevents 1Password CLI integration. Installing from source should fix this
+- **Install 1Password from source:** On Ubuntu, sandboxing prevents 1Password CLI integration. Installing from source should fix this
 https://support.1password.com/install-linux/
+
+- **Add MacOS like key bindings:** On Ubuntu, I need to reconfigure the bindings to act like MacOS
+
+- **Need a WM:** On Ubuntu, I need a Wayland-compatible WM to act like yabai
 
 - **When everything works as intended:** Add a beautiful README to become a show-off
 
