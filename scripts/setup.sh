@@ -16,6 +16,40 @@ declare DOTFILES_TARBALL_URL="https://github.com/$GITHUB_REPOSITORY/tarball/main
 declare DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/src/os/utils.sh"
 
 #==================================
+# OS Check
+#==================================
+get_os() {
+    local os=""
+    local kernelName=""
+    kernelName="$(uname -s)"
+
+    if [ "$kernelName" == "Darwin" ]; then
+        os="macos"
+    elif [ "$kernelName" == "Linux" ] && \
+         [ -e "/etc/os-release" ]; then
+        os="$(. /etc/os-release; printf "%s" "$ID")"
+    else
+        os="$kernelName"
+    fi
+
+    printf "%s" "$os"
+}
+
+get_os_version() {
+    local os=""
+    local version=""
+    os="$(get_os)"
+
+    if [ "$os" == "macos" ]; then
+        version="$(sw_vers -productVersion)"
+    elif [ -e "/etc/os-release" ]; then
+        version="$(. /etc/os-release; printf "%s" "$VERSION_ID")"
+    fi
+
+    printf "%s" "$version"
+}
+
+#==================================
 # Helper Functions
 #==================================
 download() {
@@ -126,10 +160,8 @@ main() {
     # Verify OS and OS version
     verify_os || exit 1
 
-
     # Ask user for sudo
     ask_for_sudo
-
 
     # Check if this script was run directly (./<path>/setup.sh),
     # and if not, it most likely means that the dotfiles were not
@@ -137,14 +169,9 @@ main() {
     printf "%s" "${BASH_SOURCE[0]}" | grep "setup.sh" &> /dev/null \
         || download_dotfiles
 
-
-    # Load utils
-    . "utils/utils.sh" || exit 1
-
     # Start installation
     cd "../system/$(get_os)"
     . "install.sh"
-    
 
     # Link to original repository
     if [ "$(git config --get remote.origin.url)" != "$DOTFILES_ORIGIN" ]; then
