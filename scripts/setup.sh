@@ -123,11 +123,6 @@ main() {
     # Ensure that the following actions are made relative to this file's path.
     cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
 
-
-    # Load utils
-    . "utils/utils.sh" || exit 1
-
-
     # Verify OS and OS version
     verify_os || exit 1
 
@@ -142,6 +137,9 @@ main() {
     printf "%s" "${BASH_SOURCE[0]}" | grep "setup.sh" &> /dev/null \
         || download_dotfiles
 
+
+    # Load utils
+    . "utils/utils.sh" || exit 1
 
     # Start installation
     cd "../system/$(get_os)"
