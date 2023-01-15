@@ -37,15 +37,3 @@ set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.
 
 # Grep colors
 setenv GREP_OPTIONS "--color=auto"
-
-# Set Homebrew
-switch (uname)
-    case Linux
-			eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-    case Darwin
-            echo ""
-end
-
-# Setup GitHub Hub
-eval $(hub alias -s)
-

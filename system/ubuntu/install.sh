@@ -3,18 +3,14 @@
 #==================================
 # Source utilities
 #==================================
-cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && . "../../scripts/utils/utils.sh" \
-    && . "../../scripts/utils/utils_ubuntu.sh"
+. "$HOME/.dotfiles/scripts/utils/utils.sh"
+. "$HOME/.dotfiles/scripts/utils/utils_ubuntu.sh"
 
 
 #==================================
 # Print Section Title
 #==================================
 print_section "Running Linux Dotfile Setup"
-
-
-cd "../../system/ubuntu"
 
 # setup symlinks
 . ~/.dotfiles/system/ubuntu/setup_symlinks.sh
@@ -25,8 +21,8 @@ cd "../../system/ubuntu"
 # setup fonts
 . ~/.dotfiles/system/ubuntu/setup_fonts.sh
 
-# setup shell
-. ~/.dotfiles/system/ubuntu/setup_shell.sh
-
 # setup defaults
 . ~/.dotfiles/system/ubuntu/setup_defaults.sh
+
+# setup shell
+. ~/.dotfiles/system/ubuntu/setup_shell.sh

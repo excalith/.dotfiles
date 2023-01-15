@@ -117,3 +117,15 @@ yarn_install() {
 			"$PACKAGE_READABLE_NAME"
 	fi
 }
+
+
+#==================================
+# FISHER
+#==================================
+fisher_install() {
+    declare -r PACKAGE="$2"
+    declare -r PACKAGE_READABLE_NAME="$1"
+
+    fish -c "fisher install $PACKAGE" &> /dev/null
+    print_result $? "$PACKAGE_READABLE_NAME" "true"
+}

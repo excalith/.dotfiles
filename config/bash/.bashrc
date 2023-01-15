@@ -23,12 +23,6 @@ export BAT_PAGER="less -RF"
 # Setup FASD
 eval "$(fasd --init auto)"
 
-# Setup The Fuck
-eval $(thefuck --alias)
-
-# Setup GitHub Hub
-eval "$(hub alias -s)"
-
 # Setup FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 96% --reverse --border rounded --preview "bat --style=numbers --color=always --line-range :500 {}"'

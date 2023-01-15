@@ -5,6 +5,7 @@
 #==================================
 cd "$(dirname "${BASH_SOURCE[0]}")" && . "utils.sh"
 
+
 #==================================
 # APT
 #==================================
@@ -68,6 +69,7 @@ apt_ppa_installed() {
     grep -q "^deb .*$1" /etc/apt/sources.list /etc/apt/sources.list.d/*  &> /dev/null
 }
 
+
 #==================================
 # SNAP
 #==================================
@@ -86,6 +88,7 @@ snap_installed() {
     snap list --all | grep -i $1 &> /dev/null
 }
 
+
 #==================================
 # FLATPAK
 #==================================
@@ -102,4 +105,16 @@ flatpak_install() {
 
 flatpak_installed() {
     flatpak list --columns=name,application | grep -i $1 &> /dev/null
+}
+
+
+#==================================
+# FISHER
+#==================================
+fisher_install() {
+    declare -r PACKAGE="$2"
+    declare -r PACKAGE_READABLE_NAME="$1"
+
+    fish -c "fisher install $PACKAGE" &> /dev/null
+    print_result $? "$PACKAGE_READABLE_NAME" "true"
 }

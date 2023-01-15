@@ -3,9 +3,8 @@
 #==================================
 # Source utilities
 #==================================
-cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && . "../../scripts/utils/utils.sh" \
-    && . "../../scripts/utils/utils_ubuntu.sh"
+. "$HOME/.dotfiles/scripts/utils/utils.sh"
+. "$HOME/.dotfiles/scripts/utils/utils_ubuntu.sh"
 
 
 #==================================
@@ -80,11 +79,11 @@ apt_install "apt-transport-https" "apt-transport-https"
 apt_install "software-properties-common" "software-properties-common"
 apt_install "libgconf-2-4" "libgconf-2-4"
 
+apt_install "tmux" "tmux"
 apt_install "less" "less"
 apt_install "exa" "exa"
 apt_install "bat" "bat"
 apt_install "tre-command" "tre-command"
-apt_install "fd" "fd"
 apt_install "fzf" "fzf"
 apt_install "ripgrep" "ripgrep"
 
@@ -93,7 +92,6 @@ apt_install "httpie" "httpie"
 apt_install "prettyping" "prettyping"
 
 apt_install "tldr" "tldr"
-apt_install "thefuck" "thefuck"
 apt_install "neofetch" "neofetch"
 
 apt_install "midnight-commander" "mc"

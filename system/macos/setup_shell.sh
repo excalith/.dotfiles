@@ -26,11 +26,11 @@ brew_install "Fisher" "fisher"
 # Install fish packages
 #==================================
 print_title "Installing Fish Packages"
-execute "fisher install jorgebucaran/fisher" "fisher"
-execute "fisher install PatrickF1/fzf.fish" "fzf"
-execute "fisher install nickeb96/puffer-fish" "puffer-fish"
-execute "fisher install franciscolourenco/done" "done"
-execute "fisher install danhper/fish-ssh-agent" "fish-ssh-agent"
+fisher_install "Fisher" "jorgebucaran/fisher"
+fisher_install "FZF" "PatrickF1/fzf.fish"
+fisher_install "Puffer Fish" "nickeb96/puffer-fish"
+fisher_install "Done" "franciscolourenco/done"
+fisher_install "Fish SSH Agent" "danhper/fish-ssh-agent"
 
 
 #==================================

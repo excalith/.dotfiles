@@ -22,8 +22,8 @@ cd "../../system/macos"
 # setup packages
 . ~/.dotfiles/system/macos/setup_packages.sh
 
-# setup shell
-. ~/.dotfiles/system/macos/setup_shell.sh
-
 # setup defaults
 . ~/.dotfiles/system/macos/setup_defaults.sh
+
+# setup shell
+. ~/.dotfiles/system/macos/setup_shell.sh
