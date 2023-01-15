@@ -16,95 +16,6 @@ declare DOTFILES_TARBALL_URL="https://github.com/$GITHUB_REPOSITORY/tarball/main
 declare DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/src/os/utils.sh"
 
 #==================================
-# OS Check
-#==================================
-get_os() {
-    local os=""
-    local kernelName=""
-    kernelName="$(uname -s)"
-
-    if [ "$kernelName" == "Darwin" ]; then
-        os="macos"
-    elif [ "$kernelName" == "Linux" ] && \
-         [ -e "/etc/os-release" ]; then
-        os="$(. /etc/os-release; printf "%s" "$ID")"
-    else
-        os="$kernelName"
-    fi
-
-    printf "%s" "$os"
-}
-
-get_os_version() {
-    local os=""
-    local version=""
-    os="$(get_os)"
-
-    if [ "$os" == "macos" ]; then
-        version="$(sw_vers -productVersion)"
-    elif [ -e "/etc/os-release" ]; then
-        version="$(. /etc/os-release; printf "%s" "$VERSION_ID")"
-    fi
-
-    printf "%s" "$version"
-}
-
-is_supported_version() {
-    # shellcheck disable=SC2206
-    declare -a v1=(${1//./ })
-    # shellcheck disable=SC2206
-    declare -a v2=(${2//./ })
-    local i=""
-
-    # Fill empty positions in v1 with zeros.
-    for (( i=${#v1[@]}; i<${#v2[@]}; i++ )); do
-        v1[i]=0
-    done
-
-    for (( i=0; i<${#v1[@]}; i++ )); do
-        # Fill empty positions in v2 with zeros.
-        if [[ -z ${v2[i]} ]]; then
-            v2[i]=0
-        fi
-
-        if (( 10#${v1[i]} < 10#${v2[i]} )); then
-            return 1
-        elif (( 10#${v1[i]} > 10#${v2[i]} )); then
-            return 0
-        fi
-    done
-}
-
-verify_os() {
-    local os_name="$(get_os)"
-    local os_version="$(get_os_version)"
-
-    # Check if the OS is `macOS` and supported
-    if [ "$os_name" == "macos" ]; then
-        if is_supported_version "$os_version" "$MINIMUM_MACOS_VERSION"; then
-            return 0
-        else
-            printf "Sorry, this script is intended only for macOS %s+" "$MINIMUM_MACOS_VERSION"
-        fi
-
-    # Check if the OS is `Ubuntu` and supported
-    elif [ "$os_name" == "ubuntu" ]; then
-
-        if is_supported_version "$os_version" "$MINIMUM_UBUNTU_VERSION"; then
-            return 0
-        else
-            printf "Sorry, this script is intended only for Ubuntu %s+" "$MINIMUM_UBUNTU_VERSION"
-        fi
-    
-    # Exit if not supported OS
-    else
-        printf "Sorry, OS $os_name is not supported. This script is intended only for macOS and Ubuntu!"
-    fi
-
-    return 1
-}
-
-#==================================
 # Helper Functions
 #==================================
 download() {
@@ -175,6 +86,34 @@ extract() {
     return 1
 }
 
+verify_os() {
+    local os_name="$(get_os)"
+    local os_version="$(get_os_version)"
+
+    # Check if the OS is `macOS` and supported
+    if [ "$os_name" == "macos" ]; then
+        if is_supported_version "$os_version" "$MINIMUM_MACOS_VERSION"; then
+            return 0
+        else
+            printf "Sorry, this script is intended only for macOS %s+" "$MINIMUM_MACOS_VERSION"
+        fi
+
+    # Check if the OS is `Ubuntu` and supported
+    elif [ "$os_name" == "ubuntu" ]; then
+
+        if is_supported_version "$os_version" "$MINIMUM_UBUNTU_VERSION"; then
+            return 0
+        else
+            printf "Sorry, this script is intended only for Ubuntu %s+" "$MINIMUM_UBUNTU_VERSION"
+        fi
+    
+    # Exit if not supported OS
+    else
+        printf "Sorry, OS $os_name is not supported. This script is intended only for macOS and Ubuntu!"
+    fi
+
+    return 1
+}
 #==================================
 # Main Install Starter
 #==================================
@@ -182,6 +121,14 @@ main() {
 
     # Ensure that the following actions are made relative to this file's path.
     cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
+
+    # Load utils
+    if [ -x "utils.sh" ]; then
+        . "utils.sh" || exit 1
+    else
+        download_utils || exit 1
+    fi
+
 
     # Verify OS and OS version
     verify_os || exit 1
