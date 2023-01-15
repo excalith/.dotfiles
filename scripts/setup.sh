@@ -49,6 +49,35 @@ get_os_version() {
     printf "%s" "$version"
 }
 
+verify_os() {
+    local os_name="$(get_os)"
+    local os_version="$(get_os_version)"
+
+    # Check if the OS is `macOS` and supported
+    if [ "$os_name" == "macos" ]; then
+        if is_supported_version "$os_version" "$MINIMUM_MACOS_VERSION"; then
+            return 0
+        else
+            printf "Sorry, this script is intended only for macOS %s+" "$MINIMUM_MACOS_VERSION"
+        fi
+
+    # Check if the OS is `Ubuntu` and supported
+    elif [ "$os_name" == "ubuntu" ]; then
+
+        if is_supported_version "$os_version" "$MINIMUM_UBUNTU_VERSION"; then
+            return 0
+        else
+            printf "Sorry, this script is intended only for Ubuntu %s+" "$MINIMUM_UBUNTU_VERSION"
+        fi
+    
+    # Exit if not supported OS
+    else
+        printf "Sorry, OS $os_name is not supported. This script is intended only for macOS and Ubuntu!"
+    fi
+
+    return 1
+}
+
 #==================================
 # Helper Functions
 #==================================
@@ -115,35 +144,6 @@ extract() {
             --directory "$outputDir"
 
         return $?
-    fi
-
-    return 1
-}
-
-verify_os() {
-    local os_name="$(get_os)"
-    local os_version="$(get_os_version)"
-
-    # Check if the OS is `macOS` and supported
-    if [ "$os_name" == "macos" ]; then
-        if is_supported_version "$os_version" "$MINIMUM_MACOS_VERSION"; then
-            return 0
-        else
-            printf "Sorry, this script is intended only for macOS %s+" "$MINIMUM_MACOS_VERSION"
-        fi
-
-    # Check if the OS is `Ubuntu` and supported
-    elif [ "$os_name" == "ubuntu" ]; then
-
-        if is_supported_version "$os_version" "$MINIMUM_UBUNTU_VERSION"; then
-            return 0
-        else
-            printf "Sorry, this script is intended only for Ubuntu %s+" "$MINIMUM_UBUNTU_VERSION"
-        fi
-    
-    # Exit if not supported OS
-    else
-        printf "Sorry, this script is intended only for macOS and Ubuntu!"
     fi
 
     return 1
