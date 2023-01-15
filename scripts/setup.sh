@@ -49,6 +49,32 @@ get_os_version() {
     printf "%s" "$version"
 }
 
+is_supported_version() {
+    # shellcheck disable=SC2206
+    declare -a v1=(${1//./ })
+    # shellcheck disable=SC2206
+    declare -a v2=(${2//./ })
+    local i=""
+
+    # Fill empty positions in v1 with zeros.
+    for (( i=${#v1[@]}; i<${#v2[@]}; i++ )); do
+        v1[i]=0
+    done
+
+    for (( i=0; i<${#v1[@]}; i++ )); do
+        # Fill empty positions in v2 with zeros.
+        if [[ -z ${v2[i]} ]]; then
+            v2[i]=0
+        fi
+
+        if (( 10#${v1[i]} < 10#${v2[i]} )); then
+            return 1
+        elif (( 10#${v1[i]} > 10#${v2[i]} )); then
+            return 0
+        fi
+    done
+}
+
 verify_os() {
     local os_name="$(get_os)"
     local os_version="$(get_os_version)"
