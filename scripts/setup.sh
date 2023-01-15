@@ -156,8 +156,7 @@ main() {
         || download_dotfiles
 
     # Start installation
-    cd "../system/$(get_os)"
-    . "install.sh"
+    . "~/.dotfiles/system/$(get_os)/install.sh"
 
     # Link to original repository
     if [ "$(git config --get remote.origin.url)" != "$DOTFILES_ORIGIN" ]; then
