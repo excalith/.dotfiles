@@ -22,31 +22,34 @@ mkdir -p ~/.config
 print_title "Fish configuration"
 mkdir -p ~/.config/fish/theme
 mkdir -p ~/.config/fish/functions
-symlink  ~/.dotfiles/config/fish/*.fish ~/.config/fish/
-symlink  ~/.dotfiles/config/fish/functions/*.fish ~/.config/fish/functions/
-symlink  ~/.dotfiles/config/fish/theme/*.fish ~/.config/fish/theme/
+symlink ~/.dotfiles/config/fish/config.fish ~/.config/fish/config.fish
+symlink ~/.dotfiles/config/fish/export.fish ~/.config/fish/export.fish
+symlink ~/.dotfiles/config/fish/aliases.fish ~/.config/fish/aliases.fish
+symlink ~/.dotfiles/config/fish/bindings.fish ~/.config/fish/bindings.fish
+symlink ~/.dotfiles/config/fish/functions.fish ~/.config/fish/functions.fish
+symlink ~/.dotfiles/config/fish/theme/excalith.fish ~/.config/fish/theme/excalith.fish
 
 # bash config
 print_title "Bash configuration"
 mkdir -p ~/.config/bash
-symlink ~/.dotfiles/config/bash/.bashrc ~/.config/bash
+symlink ~/.dotfiles/config/bash/.bashrc ~/.config/bash/.bashrc
 # bash --rcfile ~/.config/bash/bashrc
 
 # zsh config
 print_title "Zsh configuration"
-ln -sf ~/.dotfiles/config/zsh/.zshrc ~/
-ln -sf ~/.dotfiles/config/zsh/.zprofile ~/
+ln -sf ~/.dotfiles/config/zsh/.zshrc ~/.zshrc
+ln -sf ~/.dotfiles/config/zsh/.zprofile ~/.zprofile
 
 # starship config
 print_title "Starship configuration"
-symlink ~/.dotfiles/config/starship/starship.toml ~/.config
+symlink ~/.dotfiles/config/starship/starship.toml ~/.config/starship.toml
 
 # git config
 print_title "Git configuration"
 mkdir -p ~/.config/git
-symlink ~/.dotfiles/config/git/config ~/.config/git
-symlink ~/.dotfiles/config/git/config.local ~/.config/git
-symlink ~/.dotfiles/config/git/ignore_global ~/.config/git
+symlink ~/.dotfiles/config/git/config ~/.config/git/config
+symlink ~/.dotfiles/config/git/config.local ~/.config/git/config.local
+symlink ~/.dotfiles/config/git/ignore_global ~/.config/git/ignore_global
 
 # neofetch config
 print_title "Neofetch configuration"

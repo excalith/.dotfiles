@@ -99,27 +99,26 @@ extract() {
 }
 
 verify_os() {
-    print_title "Verifying OS"
     local os_name="$(get_os)"
     local os_version="$(get_os_version)"
 
     # Check if the OS is `macOS` and supported
     if [ "$os_name" == "macos" ]; then
         if is_supported_version "$os_version" "$MINIMUM_MACOS_VERSION"; then
-            print_success "$os_version $MINIMUM_MACOS_VERSION is supported"
+            print_success "$os_name $os_version is supported"
             return 0
         else
-            print_error "Minimum Ubuntu version $MINIMUM_MACOS_VERSION is required"
+            print_error "Minimum MacOS $MINIMUM_MACOS_VERSION is required"
         fi
 
     # Check if the OS is `Ubuntu` and supported
     elif [ "$os_name" == "ubuntu" ]; then
 
         if is_supported_version "$os_version" "$MINIMUM_UBUNTU_VERSION"; then
-            print_success "$os_version $MINIMUM_MACOS_VERSION is supported"
+            print_success "$os_name $os_version is supported"
             return 0
         else
-            print_error "Minimum Ubuntu version $MINIMUM_UBUNTU_VERSION is required"
+            print_error "Minimum Ubuntu $MINIMUM_UBUNTU_VERSION is required"
         fi
     
     # Exit if not supported OS
@@ -147,11 +146,13 @@ main() {
 
     print_section "Excalith Dotfiles Setup"
 
-    # Verify OS and OS version
-    verify_os || exit 1
-
     # Ask user for sudo
+    print_title "Sudo Access"
     ask_for_sudo
+
+    # Verify OS and OS version
+    print_title "Verifying OS"
+    verify_os || exit 1
 
     # Check if this script was run directly (./<path>/setup.sh),
     # and if not, it most likely means that the dotfiles were not
