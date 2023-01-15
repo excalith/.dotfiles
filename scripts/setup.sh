@@ -4,7 +4,7 @@
 # Settings
 #==================================
 declare dotfilesDirectory="$HOME/.dotfiles"
-declare MINIMUM_MACOS_VERSION="10.10"
+declare MINIMUM_MACOS_VERSION="12.0"
 declare MINIMUM_UBUNTU_VERSION="20.04"
 
 #==================================
