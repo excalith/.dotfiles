@@ -10,7 +10,7 @@ declare MINIMUM_UBUNTU_VERSION="20.04"
 #==================================
 # Variables
 #==================================
-declare GITHUB_REPOSITORY="excalith/.dotfiles"
+declare GITHUB_REPOSITORY="excalith/.dotfiles-new"
 declare DOTFILES_ORIGIN="git@github.com:$GITHUB_REPOSITORY.git"
 declare DOTFILES_TARBALL_URL="https://github.com/$GITHUB_REPOSITORY/tarball/main"
 declare DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/src/os/utils.sh"
