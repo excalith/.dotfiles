@@ -1,5 +1,5 @@
 [Midnight-Commander]
-verbose=true
+verbose=false
 shell_patterns=true
 auto_save_setup=true
 preallocate_space=false
@@ -88,7 +88,7 @@ shadows=true
 
 [Layout]
 output_lines=0
-left_panel_size=81
+left_panel_size=88
 top_panel_size=0
 message_visible=false
 keybar_visible=true
@@ -115,6 +115,8 @@ clipboard_paste=
 base_color=
 xterm-256color=
 color_terminals=
+
+screen-256color=
 
 [Panels]
 show_mini_info=true

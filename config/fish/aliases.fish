@@ -13,23 +13,25 @@ alias fast='fast -u --single-line'
 
 # History
 alias h="history -15"    # last 10 history commands
+alias hc="history -c"    # clear history
+alias hg="history | rg " # +command
 
 # SSH Public Keys
 alias sshpubkey="pbcopy < ~/.ssh/id_ed25519.pub | echo 'SSH Public Key copied to pasteboard.'"
 
-# Show time
-alias ct="{print -z Current time is $(date)}"
-
-# Update oh-my-zsh
-alias supdate="omf update"
+# IP addresses
+alias pubip="dig +short txt ch whoami.cloudflare @1.0.0.1"
+alias locip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
 
 # Update Neovim NVChad
 alias nvupdate="nvim -c \"NvChadUpdate\""
-
-# CD into dir from anywhere
-alias j='fasd_cd -d'
 
 # Custom Folders
 alias dotfiles="cd ~/.dotfiles"
 alias projects="cd ~/Projects"
 alias config ="cd ~/.config"
+
+# Custom Functions
+alias srefresh=". ~/.config/fish/config.fish"
+alias dh="sh ~/.dotfiles/Generic/custom/help/help.zsh '$1'"
+alias gi="sh ~/.dotfiles/Generic/custom/gitignore/gi.zsh"

@@ -62,7 +62,9 @@ number_threshold = 1
 format = "[$symbol]($style)"
 
 [cmd_duration]
-format = "[$duration]($style)"
+min_time = 5_000
+show_milliseconds = false
+format = "took [$duration]($style)"
 style = "yellow"
 
 [time]

@@ -11,46 +11,69 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 # Print Section Title
 #==================================
 print_section "Creating Symlinks"
+mkdir -p ~/.config
 
 
 #==================================
 # Symlink
 #==================================
-print_title "Symlink config files"
 
 # fish config
-mkdir -p ~/.config/fish
-symlink ~/.dotfiles/config/fish/config.fish ~/.config/fish/config.fish
-symlink ~/.dotfiles/config/fish/aliases.fish ~/.config/fish/aliases.fish
-symlink ~/.dotfiles/config/fish/export.fish ~/.config/fish/export.fish
+print_title "Fish configuration"
+mkdir -p ~/.config/fish/theme
+mkdir -p ~/.config/fish/functions
+symlink  ~/.dotfiles/config/fish/*.fish ~/.config/fish
+symlink  ~/.dotfiles/config/fish/theme/*.fish ~/.config/fish/theme
+
+
+
+# bash config
+print_title "Bash configuration"
+symlink ~/.dotfiles/config/bash ~/.config
+bash --rcfile ~/.config/bash/bashrc
+
+# zsh config
+print_title "Zsh configuration"
+ln -sf ~/.dotfiles/config/zsh/.zshrc ~
+ln -sf ~/.dotfiles/config/zsh/.zprofile ~
 
 # starship config
-symlink ~/.dotfiles/config/starship ~/.config/starship
+print_title "Starship configuration"
+symlink ~/.dotfiles/config/starship/starship.toml ~/.config
 
-# .gitconfig
-symlink ~/.dotfiles/Generic/git/.gitconfig ~
-
-# global .gitignore
-symlink ~/.dotfiles/Generic/git/.gitignore_global ~
+# git config
+print_title "Git configuration"
+mkdir -p ~/.config/git
+symlink ~/.dotfiles/config/git/config ~/.config/git
+symlink ~/.dotfiles/config/git/config.local ~/.config/git
+symlink ~/.dotfiles/config/git/ignore_global ~/.config/git
 
 # neofetch config
-symlink ~/.dotfiles/Generic/neofetch/config.conf ~/.config/neofetch/config.conf
+print_title "Neofetch configuration"
+symlink ~/.dotfiles/config/neofetch/config.conf ~/.config/neofetch/config.conf
 
 # midnight commander theme
-symlink ~/.dotfiles/Generic/mc/arasaka.ini ~/.local/share/mc/skins/arasaka.ini
-symlink ~/.dotfiles/Generic/mc/ini ~/.config/mc/ini
+print_title "Midnight Commander configuration"
+mkdir -p ~/.local/share/mc/skins
+symlink ~/.dotfiles/config/mc/Arasaka.ini ~/.local/share/mc/skins/Arasaka.ini
+symlink ~/.dotfiles/config/mc/ini ~/.config/mc/ini
 
 # htop config
-symlink ~/.dotfiles/Generic/htop/htoprc ~/.config/htop/htoprc
+print_title "htop configuration"
+symlink ~/.dotfiles/config/htop/htoprc ~/.config/htop/htoprc
 
 # alacritty config
-symlink ~/.dotfiles/Generic/alacritty ~/.config/alacritty
+print_title "Alacritty configuration"
+symlink ~/.dotfiles/config/alacritty ~/.config/alacritty
 
 # yabai config
-symlink ~/.dotfiles/Generic/yabai/.yabairc ~/.yabairc
+print_title "Yabai configuration"
+symlink ~/.dotfiles/config/yabai/.yabairc ~/.config/yabairc
 
 # skhd config
-symlink ~/.dotfiles/Generic/skhd/.skhdrc ~/.skhdrc
+print_title "SKHD configuration"
+symlink ~/.dotfiles/config/skhd/.skhdrc ~/.config/skhdrc
 
 # tmux config
-symlink ~/.dotfiles/Generic/tmux/.tmux.conf ~/.tmux.conf
+print_title "TMUX configuration"
+symlink ~/.dotfiles/config/tmux/.tmux.conf ~/.tmux.conf

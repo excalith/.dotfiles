@@ -1,0 +1,5 @@
+[user]
+    name = [USERNAME]
+    email = [EMAIL]
+[github]
+    user = [USERNAME]

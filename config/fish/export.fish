@@ -21,8 +21,16 @@ set -gx HOMEBREW_CURL_PATH "/usr/bin/curl"
 # Export GPG TTY
 set -gx GPG_TTY $(tty)
 
+# Enable mouse scroll for less
+set -gx LESS -R
+set -gx LESS '--mouse --wheel-lines=3'
+set -gx COLUMNS 80
+
+# Setup Bat
+set -gx BAT_PAGER "less -RF"
+
 # Editor
-set -gx EDITOR "vim"
+set -gx EDITOR "nvim"
 
 # FZF
 set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
@@ -31,4 +39,13 @@ set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.
 setenv GREP_OPTIONS "--color=auto"
 
 # Set Homebrew
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+switch (uname)
+    case Linux
+			eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    case Darwin
+            echo ""
+end
+
+# Setup GitHub Hub
+eval $(hub alias -s)
+

@@ -16,6 +16,9 @@ print_section "Running Linux Dotfile Setup"
 
 cd "../../system/ubuntu"
 
+# setup symlinks
+. ~/.dotfiles/system/ubuntu/setup_symlinks.sh
+
 # setup packages
 . ~/.dotfiles/system/ubuntu/setup_packages.sh
 
@@ -24,9 +27,6 @@ cd "../../system/ubuntu"
 
 # setup shell
 . ~/.dotfiles/system/ubuntu/setup_shell.sh
-
-# setup symlinks
-. ~/.dotfiles/system/ubuntu/setup_symlinks.sh
 
 # setup defaults
 . ~/.dotfiles/system/ubuntu/setup_defaults.sh

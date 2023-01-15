@@ -13,6 +13,9 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 cd "../../system/macos"
 
+# setup symlinks
+. ~/.dotfiles/system/macos/setup_symlinks.sh
+
 # setup xcode
 . ~/.dotfiles/system/macos/setup_xcode.sh
 
@@ -21,9 +24,6 @@ cd "../../system/macos"
 
 # setup shell
 . ~/.dotfiles/system/macos/setup_shell.sh
-
-# setup symlinks
-. ~/.dotfiles/system/macos/setup_symlinks.sh
 
 # setup defaults
 . ~/.dotfiles/system/macos/setup_defaults.sh

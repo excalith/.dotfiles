@@ -26,6 +26,7 @@ brew_install "Fisher" "fisher"
 # Install fish packages
 #==================================
 print_title "Installing Fish Packages"
+execute "fisher install jorgebucaran/fisher" "fisher"
 execute "fisher install PatrickF1/fzf.fish" "fzf"
 execute "fisher install nickeb96/puffer-fish" "puffer-fish"
 execute "fisher install franciscolourenco/done" "done"

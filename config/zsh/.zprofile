@@ -70,12 +70,12 @@ function code() {
 
 # Adds .gitignore files
 function gi() {
-    sh ~/.dotfiles/Generic/custom/gitignore/gi.zsh
+    sh ~/.dotfiles/bin/gitignore/gi.zsh
 }
 
 # Custom key binding help
 function help() {
-    sh ~/.dotfiles/Generic/custom/help/help.zsh "$1"
+    sh ~/.dotfiles/bin/help/help.zsh "$1"
 }
 
 # Custom Pretty Ping

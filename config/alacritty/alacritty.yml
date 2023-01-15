@@ -20,7 +20,7 @@ window:
   # - none: neither borders nor title bar
   # - transparent: title bar, transparent background and title bar buttons
   # - buttonless: title bar, transparent background, but no title bar buttons
-  decorations: full
+  decorations: transparent
 
   # Startup Mode (changes require restart)
   #   - Windowed
@@ -29,7 +29,7 @@ window:
   startup_mode: Windowed
 
   # Window opacity
-  opacity: 0.6
+  opacity: 1.0
   
 scrolling:
   # maximum number of lines in the scrollback buffer. Specifying '0' will
@@ -59,7 +59,7 @@ font:
     style: "Light Italic"
 
   # Point size of the font
-  size: 12.0
+  size: 14.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -127,10 +127,6 @@ key_bindings:
   - { key: S, mods: Command, chars: "\x01\x77" } # Select Tab
   - { key: D, mods: Command, chars: "\x01\x71" } # Select Screen
   - { key: W, mods: Command, chars: "\x01\x78" } # Close Screen
-  - { key: F12, chars: "\x01\x7a" } # Focus
-
-  - { key: J, mods: Command, chars: "\x01\x6b" } # Split Vertical
-  - { key: K, mods: Command, chars: "\x01\x6a" } # Split Horizontal
 
   - { key: Key1, mods: Command, chars: "\x01\x31" } # Switch To Tab 1
   - { key: Key2, mods: Command, chars: "\x01\x32" } # Switch To Tab 2
@@ -142,15 +138,17 @@ key_bindings:
   - { key: Key8, mods: Command, chars: "\x01\x38" } # Switch To Tab 8
   - { key: Key9, mods: Command, chars: "\x01\x39" } # Switch To Tab 9
 
-  - { key: Left, mods: Command, chars: "\x1bb" } # Jump To Line Beggining
-  - { key: Right, mods: Command, chars: "\x1bf" } # Jump To Line End
-  - { key: Up, chars: "\x1b[5~" } # Previous Command
-  - { key: Down, chars: "\x1b[6~" } # Next Command
+  - { key: J, mods: Command, chars: "\x01\x6b" } # Split Vertical
+  - { key: K, mods: Command, chars: "\x01\x6a" } # Split Horizontal
+
   - { key: Back, mods: Command, chars: "\x15" } # Delete Line
 
-  - { key: R, mods: Command, chars: "\x01\x6f" } # Reload .tmux.conf
-  - { key: R, mods: Command|Shift, chars: "\x01\x6e" } # Kill tmux server
-
+  - { key: Plus,           mods: Control,                         action: IncreaseFontSize }
+  - { key: NumpadAdd,      mods: Control,                         action: IncreaseFontSize }
+  - { key: Minus,          mods: Control,                         action: DecreaseFontSize }
+  - { key: NumpadSubtract, mods: Control,                         action: DecreaseFontSize }
+  - { key: Key0,           mods: Control,                         action: ResetFontSize    }
+  
 mouse:
   # Click settings
   #

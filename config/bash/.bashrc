@@ -20,9 +20,6 @@ export COLUMNS=80
 # Setup Bat
 export BAT_PAGER="less -RF"
 
-# Plugins
-plugins=(git macos arasaka z sudo dirhistory history)
-
 # Setup FASD
 eval "$(fasd --init auto)"
 
@@ -37,5 +34,4 @@ eval "$(hub alias -s)"
 export FZF_DEFAULT_OPTS='--height 96% --reverse --border rounded --preview "bat --style=numbers --color=always --line-range :500 {}"'
 
 # Source starship
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-eval "$(starship init zsh)"
+eval "$(starship init bash)"

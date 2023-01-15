@@ -11,33 +11,67 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 # Print Section Title
 #==================================
 print_section "Creating Symlinks"
+mkdir -p ~/.config
 
 
-print_title "Creating Symlinks"
+#==================================
+# Symlink
+#==================================
 
 # fish config
-mkdir -p ~/.config/fish
-symlink ~/.dotfiles/config/fish/config.fish ~/.config/fish/config.fish
-symlink ~/.dotfiles/config/fish/aliases.fish ~/.config/fish/aliases.fish
-symlink ~/.dotfiles/config/fish/export.fish ~/.config/fish/export.fish
+print_title "Fish configuration"
+symlink ~/.dotfiles/config/fish ~/.config
+
+# bash config
+print_title "Bash configuration"
+symlink ~/.dotfiles/config/bash ~/.config
+bash --rcfile ~/.config/bash/bashrc
+
+# zsh config
+print_title "Zsh configuration"
+ln -sf ~/.dotfiles/config/zsh/.zshrc ~
+ln -sf ~/.dotfiles/config/zsh/.zprofile ~
 
 # starship config
-symlink ~/.dotfiles/config/starship ~/.config/starship
+print_title "Starship configuration"
+symlink ~/.dotfiles/config/starship/starship.toml ~/.config
 
-# .gitconfig
-symlink ~/.dotfiles/config/git/.gitconfig ~
-
-# global .gitignore
-symlink ~/.dotfiles/config/git/.gitignore_global ~
+# git config
+print_title "Git configuration"
+mkdir -p ~/.config/git
+symlink ~/.dotfiles/config/git/config ~/.config/git
+symlink ~/.dotfiles/config/git/config.local ~/.config/git
+symlink ~/.dotfiles/config/git/ignore_global ~/.config/git
 
 # neofetch config
-symlink ~/.dotfiles/config/neofetch ~/.config/neofetch
+print_title "Neofetch configuration"
+symlink ~/.dotfiles/config/neofetch/config.conf ~/.config/neofetch/config.conf
 
 # midnight commander theme
-symlink ~/.dotfiles/config/mc ~/.config/mc
+print_title "Midnight Commander configuration"
+mkdir -p ~/.local/share/mc/skins
+symlink ~/.dotfiles/config/mc/Arasaka.ini ~/.local/share/mc/skins/Arasaka.ini
+symlink ~/.dotfiles/config/mc/ini ~/.config/mc/ini
 
 # htop config
-symlink ~/.dotfiles/config/htop ~/.config/htop
+print_title "htop configuration"
+symlink ~/.dotfiles/config/htop/htoprc ~/.config/htop/htoprc
+
+# alacritty config
+print_title "Alacritty configuration"
+symlink ~/.dotfiles/config/alacritty ~/.config/alacritty
+
+# yabai config
+print_title "Yabai configuration"
+symlink ~/.dotfiles/config/yabai/.yabairc ~/.config/yabairc
+
+# skhd config
+print_title "SKHD configuration"
+symlink ~/.dotfiles/config/skhd/.skhdrc ~/.config/skhdrc
+
+# tmux config
+print_title "TMUX configuration"
+symlink ~/.dotfiles/config/tmux/.tmux.conf ~/.tmux.conf
 
 # bat binary fix
 mkdir -p ~/.local/bin
