@@ -22,11 +22,16 @@ mkdir -p ~/.config
 print_title "Fish configuration"
 mkdir -p ~/.config/fish/theme
 mkdir -p ~/.config/fish/functions
+
 symlink ~/.dotfiles/config/fish/config.fish ~/.config/fish/config.fish
 symlink ~/.dotfiles/config/fish/export.fish ~/.config/fish/export.fish
 symlink ~/.dotfiles/config/fish/aliases.fish ~/.config/fish/aliases.fish
 symlink ~/.dotfiles/config/fish/bindings.fish ~/.config/fish/bindings.fish
-symlink ~/.dotfiles/config/fish/functions.fish ~/.config/fish/functions.fish
+
+symlink ~/.dotfiles/config/fish/functions/fcd.fish ~/.config/fish/functions/fcd.fish
+symlink ~/.dotfiles/config/fish/functions/mkcd.fish ~/.config/fish/functions/mkcd.fish
+symlink ~/.dotfiles/config/fish/functions/ping_pretty.fish ~/.config/fish/functions/ping_pretty.fish
+
 symlink ~/.dotfiles/config/fish/theme/excalith.fish ~/.config/fish/theme/excalith.fish
 
 # bash config
