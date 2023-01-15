@@ -145,6 +145,7 @@ main() {
         download_utils || exit 1
     fi
 
+    print_section "Excalith Dotfiles Setup"
 
     # Verify OS and OS version
     verify_os || exit 1

@@ -156,7 +156,7 @@ print_section() {
 }
 
 print_title() {
-    print_in_color "\n • $1\n\n" 5
+    print_in_color "\n • $1\n" 5
 }
 
 print_success() {
