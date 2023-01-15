@@ -32,8 +32,8 @@ symlink ~/.dotfiles/config/bash ~/.config
 
 # zsh config
 print_title "Zsh configuration"
-ln -sf ~/.dotfiles/config/zsh/.zshrc ~
-ln -sf ~/.dotfiles/config/zsh/.zprofile ~
+ln -sf ~/.dotfiles/config/zsh/.zshrc ~/
+ln -sf ~/.dotfiles/config/zsh/.zprofile ~/
 
 # starship config
 print_title "Starship configuration"
