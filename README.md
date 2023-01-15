@@ -22,6 +22,8 @@ https://support.1password.com/install-linux/
 
 - **Need a WM:** On Ubuntu, I need a Wayland-compatible WM to act like yabai
 
+- **Shellcheck:** Needs a shellcheck and other possible features to prevent breaking stuff. [Cătălin’s dotfiles](https://github.com/alrra/dotfiles) already includes such implementations. Need to peek into them
+  
 - **When everything works as intended:** Add a beautiful README to become a show-off
 
 
