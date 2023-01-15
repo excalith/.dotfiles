@@ -13,7 +13,7 @@ declare MINIMUM_UBUNTU_VERSION="20.04"
 declare GITHUB_REPOSITORY="excalith/.dotfiles-new"
 declare DOTFILES_ORIGIN="git@github.com:$GITHUB_REPOSITORY.git"
 declare DOTFILES_TARBALL_URL="https://github.com/$GITHUB_REPOSITORY/tarball/main"
-declare DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/src/os/utils.sh"
+declare DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/scripts/utils/utils.sh"
 
 #==================================
 # Helper Functions
@@ -66,6 +66,19 @@ download_dotfiles() {
 
     rm -rf "$tmpFile"
     print_result $? "Remove archive"
+}
+
+download_utils() {
+    local tmpFile=""
+
+    tmpFile="$(mktemp /tmp/XXXXX)"
+    download "$DOTFILES_UTILS_URL" "$tmpFile" \
+        && . "$tmpFile" \
+        && rm -rf "$tmpFile" \
+        && return 0
+
+   return 1
+
 }
 
 extract() {
