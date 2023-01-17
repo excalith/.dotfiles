@@ -38,7 +38,7 @@ symlink ~/.dotfiles/config/fish/theme/excalith.fish ~/.config/fish/theme/excalit
 print_title "Bash configuration"
 mkdir -p ~/.config/bash
 symlink ~/.dotfiles/config/bash/.bashrc ~/.config/bash/.bashrc
-# bash --rcfile ~/.config/bash/bashrc
+bash --rcfile ~/.config/bash/bashrc
 
 # zsh config
 print_title "Zsh configuration"
@@ -79,4 +79,4 @@ symlink ~/.dotfiles/config/alacritty ~/.config/alacritty
 
 # tmux config
 print_title "TMUX configuration"
-symlink ~/.dotfiles/config/tmux/.tmux.conf ~/.tmux.conf
+symlink ~/.dotfiles/config/tmux/tmux.conf ~/.config/tmux/tmux.conf

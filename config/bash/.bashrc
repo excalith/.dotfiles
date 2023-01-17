@@ -23,9 +23,74 @@ export BAT_PAGER="less -RF"
 # Setup FASD
 eval "$(fasd --init auto)"
 
-# Setup FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 96% --reverse --border rounded --preview "bat --style=numbers --color=always --line-range :500 {}"'
 
 # Source starship
 eval "$(starship init bash)"
+
+
+# Aliases
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias .2='cd ../../'
+alias .3='cd ../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+alias c="clear"
+
+alias exa='command exa --group-directories-first -laFh --grid --git --icons'
+alias cat=bat
+alias man=batman
+alias vim='nvim .'
+alias lg=lazygit
+alias matrix='cmatrix -aBf'
+alias ping=ping_pretty
+alias fast='fast -u --single-line'
+
+alias h="history -15"    # last 10 history commands
+alias hc="history -c"    # clear history
+alias hg="history | rg " # +command
+
+# IP addresses
+alias pubip="dig +short txt ch whoami.cloudflare @1.0.0.1"
+alias locip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
+
+
+# Functions
+# Makes directory and cd's into it
+function mkcd() {
+    mkdir -p "$@" && cd "$_"
+}
+export -f mkcd
+
+# Install VSCode command line command
+function code() {
+    VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $*
+}
+export -f code
+
+# Adds .gitignore files
+function gi() {
+    sh ~/.dotfiles/bin/gitignore/gi.zsh
+}
+export -f gi
+
+# Custom key binding help
+function help() {
+    sh ~/.dotfiles/bin/help/help.zsh "$1"
+}
+export -f help
+
+# Custom Pretty Ping
+function ping_pretty() {
+
+    if [ $# -eq 0 ]; then
+        prettyping --nolegend 1.1.1.1
+    else
+        prettyping --nolegend "$@"
+    fi
+}
+export -f ping_pretty

@@ -116,6 +116,7 @@ snap_install "1Password" "1password"
 # Install Flatpak Packages
 #==================================
 print_title "Install Flatpak Packages"
+flatpak_install "Extension Manager" "com.mattjakeman.ExtensionManager"
 flatpak_install "Firefox" "org.mozilla.firefox"
 flatpak_install "GitKraken" "com.axosoft.GitKraken"
 flatpak_install "Insomnia" "rest.insomnia.Insomnia"

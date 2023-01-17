@@ -74,7 +74,8 @@ symlink ~/.dotfiles/config/alacritty ~/.config/alacritty
 
 # tmux config
 print_title "TMUX configuration"
-symlink ~/.dotfiles/config/tmux/.tmux.conf ~/.tmux.conf
+mkdir -p ~/.config/tmux
+symlink ~/.dotfiles/config/tmux/tmux.conf ~/.config/tmux/tmux.conf
 
 # yabai config
 print_title "Yabai configuration"

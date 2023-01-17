@@ -234,10 +234,15 @@ alt_send_esc: false
 #     - --command=tmux
 # vim: nospell
 shell:
-  program: /usr/local/bin/tmux
+  # program: /usr/local/bin/tmux
+  # args:
+  #   - new-session
+  #   - -A
+  #   - -D
+  #   - -s
+    # - main
+  program: /usr/local/bin/fish
   args:
-    - new-session
-    - -A
-    - -D
-    - -s
-    - main
+    - -l
+    - -c
+    - "tmux attach || tmux"

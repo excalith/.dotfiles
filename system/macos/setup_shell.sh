@@ -37,7 +37,10 @@ fisher_install "Fish SSH Agent" "danhper/fish-ssh-agent"
 # Change Default Shell
 #==================================
 print_title "Changing Default Shell"
-execute "sudo echo /usr/local/bin/fish >> /etc/shells" "Adding fish to shells"
-execute "chsh -s /usr/local/bin/fish" "Changing default shell into fish"
+
+execute "sudo sh -c 'echo $(which fish) >> /etc/shells'" "Adding fish to shells"
+execıte "chsh -s $(which fish)" "Changing default shell into fish"
+# execute "sudo echo /usr/local/bin/fish >> /etc/shells" "Adding fish to shells"
+# execute "chsh -s /usr/local/bin/fish" "Changing default shell into fish"
 execute "fish_update_completions >/dev/null 2>&1" "Updating fish completions"
 
