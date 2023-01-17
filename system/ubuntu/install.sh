@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC1091
 
 #==================================
 # Source utilities
@@ -13,16 +14,17 @@
 print_section "Running Linux Dotfile Setup"
 
 # setup symlinks
-. ~/.dotfiles/system/ubuntu/setup_symlinks.sh
+# . ~/.dotfiles/system/ubuntu/setup_symlinks.sh
+. "$HOME/.dotfiles/system/ubuntu/setup_symlinks.sh"
 
 # setup packages
-. ~/.dotfiles/system/ubuntu/setup_packages.sh
+. "$HOME/.dotfiles/system/ubuntu/setup_packages.sh"
 
 # setup fonts
-. ~/.dotfiles/system/ubuntu/setup_fonts.sh
+. "$HOME/.dotfiles/system/ubuntu/setup_fonts.sh"
 
 # setup defaults
-. ~/.dotfiles/system/ubuntu/setup_defaults.sh
+. "$HOME/.dotfiles/system/ubuntu/setup_defaults.sh"
 
 # setup shell
-. ~/.dotfiles/system/ubuntu/setup_shell.sh
+. "$HOME/.dotfiles/system/ubuntu/setup_shell.sh"

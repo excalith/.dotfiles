@@ -74,8 +74,8 @@ function gi() {
 }
 
 # Custom key binding help
-function help() {
-    sh ~/.dotfiles/bin/help/help.zsh "$1"
+function dh() {
+    sh ~/.dotfiles/bin/help/help.sh "$1"
 }
 
 # Custom Pretty Ping
@@ -135,8 +135,9 @@ alias supdate="omz update"
 alias nvupdate="nvim -c \"NvChadUpdate\""
 
 # Reload zsh sessions
-function srefresh() {
-    omz reload
+function sreload() {
+    source ~/.zprofile
+    source ~/.zshrc
 }
 
 # CD into dotfiles
@@ -170,27 +171,3 @@ function print_colors() {
     echo -e "|035| \033[35mMagenta \033[m  |045| \033[45mMagenta \033[m  |095| \033[95mLight magenta \033[m  |105| \033[105mLight magenta \033[m"
     echo -e "|036| \033[36mCyan \033[m     |046| \033[46mCyan \033[m     |096| \033[96mLight cyan \033[m     |106| \033[106mLight cyan \033[m"
 }
-
-
-# Custom Folders
-alias pr="cd ~/Projects"
-alias rk="cd ~/Projects/Retroket"
-
-
-# Switches Desktop Space
-switchdesktop() {
-    typeset -A desktophash
-    desktophash[0]=29
-    desktophash[1]=18
-    desktophash[2]=19
-    desktophash[3]=20
-    desktophash[4]=21
-    desktophash[5]=23
-    desktophash[6]=22
-    desktophash[7]=26
-    desktophash[8]=28
-    desktophash[9]=25
-    desktopkey=${desktophash[$1]}
-    osascript -e "tell application \"System Events\" to key code $desktopkey using control down"
-}
-alias switchdesktop=switchdesktop

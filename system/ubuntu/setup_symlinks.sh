@@ -75,7 +75,12 @@ symlink ~/.dotfiles/config/htop/htoprc ~/.config/htop/htoprc
 
 # alacritty config
 print_title "Alacritty configuration"
-symlink ~/.dotfiles/config/alacritty ~/.config/alacritty
+local kernelName="$(uname -s)"
+if [ "$kernelName" == "Darwin" ]; then
+	symlink ~/.dotfiles/config/alacritty/alacritty_macos.yml ~/.config/alacritty/alacritty.yml
+elif [ "$kernelName" == "Linux" ] && \
+	symlink ~/.dotfiles/config/alacritty/alacritty_macos.yml ~/.config/alacritty/alacritty.yml
+fi
 
 # tmux config
 print_title "TMUX configuration"

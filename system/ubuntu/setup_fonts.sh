@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC1091
 
 #==================================
 # Source utilities
@@ -11,8 +12,6 @@
 # Print Section Title
 #==================================
 print_section "Installing Fonts"
-
-
 
 declare -a fonts=(
     FiraCode

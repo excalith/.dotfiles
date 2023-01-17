@@ -1,4 +1,5 @@
 #!/bin/sh
+# shellcheck disable=SC1091
 
 #==================================
 # Source utilities
@@ -52,8 +53,8 @@ fisher_install "Fish SSH Agent" "danhper/fish-ssh-agent"
 print_title "Changing Default Shell"
 
 sudo sed -i '/auth       required   pam_shells.so/ s//auth       sufficient   pam_shells.so/g' /etc/pam.d/chsh >/dev/null 2>&1
-echo $(which fish) | sudo tee -a /etc/shells >/dev/null 2>&1
-sudo chsh -s $(which fish) >/dev/null 2>&1
+which fish | sudo tee -a /etc/shells >/dev/null 2>&1
+sudo chsh -s "$(which fish)" >/dev/null 2>&1
 sudo sed -i '/auth       sufficient   pam_shells.so/ s//auth       required   pam_shells.so/g' /etc/pam.d/chsh >/dev/null 2>&1
 
 fish <<'END_FISH'

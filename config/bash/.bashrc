@@ -79,10 +79,10 @@ function gi() {
 export -f gi
 
 # Custom key binding help
-function help() {
-    sh ~/.dotfiles/bin/help/help.zsh "$1"
+function dh() {
+    sh ~/.dotfiles/bin/help/help.sh "$1"
 }
-export -f help
+export -f dh
 
 # Custom Pretty Ping
 function ping_pretty() {
@@ -94,3 +94,9 @@ function ping_pretty() {
     fi
 }
 export -f ping_pretty
+
+# Refresh shell config
+function sreload() {
+	source ~/.config/bash/.bashrc
+}
+export -f sreload

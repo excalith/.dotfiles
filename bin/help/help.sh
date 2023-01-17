@@ -7,7 +7,7 @@ if [ "$1" = "" ]; then
     echo "$(tput setaf 236)│ $(tput setaf 220)Argument                  $(tput setaf 236)│ $(tput setaf 220)Description                     $(tput setaf 236)│"
     echo "$(tput setaf 236)├───────────────────────────┼─────────────────────────────────┤"
     echo "$(tput setaf 236)│ $(tput setaf 15)-a                        $(tput setaf 236)│ $(tput setaf 15)Alacritty                       $(tput setaf 236)│"
-    echo "$(tput setaf 236)│ $(tput setaf 15)-v                        $(tput setaf 236)│ $(tput setaf 15)Vim                             $(tput setaf 236)│"
+    echo "$(tput setaf 236)│ $(tput setaf 15)-v                        $(tput setaf 236)│ $(tput setaf 15)NeoVim                          $(tput setaf 236)│"
     echo "$(tput setaf 236)│ $(tput setaf 15)-y                        $(tput setaf 236)│ $(tput setaf 15)Yabai/SKHD                      $(tput setaf 236)│"
     echo "$(tput setaf 236)└────────────────────────┴────────────────────────────────────┘"
 elif [ "$1" = "-a" ]; then

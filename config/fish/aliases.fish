@@ -32,6 +32,6 @@ alias projects="cd ~/Projects"
 alias config ="cd ~/.config"
 
 # Custom Functions
-alias srefresh=". ~/.config/fish/config.fish"
-alias dh="sh ~/.dotfiles/Generic/custom/help/help.zsh '$1'"
+alias sreload=". ~/.config/fish/config.fish"
+alias dh="sh ~/.dotfiles/bin/help/help.sh '$1'"
 alias gi="sh ~/.dotfiles/Generic/custom/gitignore/gi.zsh"
