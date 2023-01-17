@@ -1,19 +1,19 @@
 #!/bin/bash
 
 #==================================
-# Settings
-#==================================
-declare dotfilesDirectory="$HOME/.dotfiles"
-declare MINIMUM_MACOS_VERSION="12.0"
-declare MINIMUM_UBUNTU_VERSION="20.04"
-
-#==================================
 # Variables
 #==================================
 declare GITHUB_REPOSITORY="excalith/.dotfiles-new"
 declare DOTFILES_ORIGIN="git@github.com:$GITHUB_REPOSITORY.git"
 declare DOTFILES_TARBALL_URL="https://github.com/$GITHUB_REPOSITORY/tarball/main"
 declare DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/scripts/utils/utils.sh"
+
+#==================================
+# Settings
+#==================================
+declare DOTFILES_DIR="$HOME/.dotfiles"
+declare MINIMUM_MACOS_VERSION="12.0"
+declare MINIMUM_UBUNTU_VERSION="20.04"
 
 #==================================
 # Helper Functions
@@ -55,12 +55,12 @@ download_dotfiles() {
     download "$DOTFILES_TARBALL_URL" "$tmpFile"
     print_result $? "Download archive" "true"
 
-    mkdir -p "$dotfilesDirectory"
-    print_result $? "Create '$dotfilesDirectory'" "true"
+    mkdir -p "$DOTFILES_DIR"
+    print_result $? "Create '$DOTFILES_DIR'" "true"
 
 
     # Extract archive in the `dotfiles` directory.
-    extract "$tmpFile" "$dotfilesDirectory"
+    extract "$tmpFile" "$DOTFILES_DIR"
     print_result $? "Extract archive" "true"
 
     rm -rf "$tmpFile"
