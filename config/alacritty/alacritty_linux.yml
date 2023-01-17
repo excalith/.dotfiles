@@ -20,7 +20,7 @@ window:
   # - none: neither borders nor title bar
   # - transparent: title bar, transparent background and title bar buttons
   # - buttonless: title bar, transparent background, but no title bar buttons
-  decorations: transparent
+  decorations: Full
 
   # Startup Mode (changes require restart)
   #   - Windowed
@@ -234,15 +234,10 @@ alt_send_esc: false
 #     - --command=tmux
 # vim: nospell
 shell:
-  # program: /usr/local/bin/tmux
-  # args:
-  #   - new-session
-  #   - -A
-  #   - -D
-  #   - -s
-    # - main
-  program: /usr/bin/fish
+  program: /usr/local/bin/tmux
   args:
-    - -l
-    - -c
-    - "tmux attach || tmux"
+    - new-session
+    - -A
+    - -D
+    - -s
+    - main
