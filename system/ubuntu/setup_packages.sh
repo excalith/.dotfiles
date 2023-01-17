@@ -135,14 +135,19 @@ flatpak_install "Steam" "com.valvesoftware.Steam"
 
 
 #==================================
-# Custom Packages
+# Install From Source
 #==================================
-print_title "Install Custom Packages"
+print_title "Install Packages From Source"
 
+# LazyGit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v*([^"]+)".*/\1/')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" 2>&1 /dev/null
 sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 print_success "lazygit"
 
 
-
+# NvChad
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+rm -rf ~/.cache/nvim
+execute "git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1" "NvChad"

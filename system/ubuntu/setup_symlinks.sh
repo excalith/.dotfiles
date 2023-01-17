@@ -75,4 +75,4 @@ symlink ~/.dotfiles/config/tmux/tmux.conf ~/.config/tmux/tmux.conf
 
 # bat configuration
 print_title "bat binary"
-ln -s /usr/bin/batcat ~/.local/bin/bat
+symlink /usr/bin/batcat ~/.local/bin/bat

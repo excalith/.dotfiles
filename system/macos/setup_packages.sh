@@ -161,3 +161,15 @@ brew_start_service "skhd" "skhd"
 #==================================
 print_title "Installing Yarn Packages"
 yarn_install "Serve" "serve"
+
+
+#==================================
+# Install From Source
+#==================================
+print_title "Install Packages From Source"
+
+# NvChad
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+rm -rf ~/.cache/nvim
+execute "git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1" "NvChad"
