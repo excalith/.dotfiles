@@ -61,6 +61,13 @@ fish <<'END_FISH'
     fish_update_completions >/dev/null 2>&1
 END_FISH
 
+# TODO:
+#warning: An error occurred while redirecting file '/home/excalith/.ssh/environment'
+#warning: Path '/home/excalith/.ssh' does not exist
+#chmod: cannot access '/home/excalith/.ssh/environment': No such file or directory
+#source: Error encountered while sourcing file '/home/excalith/.ssh/environment':
+#source: No such file or directory
+
 print_result $? "Change fish as default shell" "true"
 
 

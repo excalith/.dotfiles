@@ -8,7 +8,7 @@ alias man=batman
 alias vim=nvim .
 alias lg=lazygit
 alias matrix='cmatrix -aBf'
-alias ping=ping_pretty
+alias ping=pingpretty
 alias fast='fast -u --single-line'
 
 # History
