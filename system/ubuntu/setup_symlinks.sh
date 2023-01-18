@@ -26,7 +26,7 @@ symlink ~/.dotfiles/config/fish/bindings.fish ~/.config/fish/bindings.fish
 
 symlink ~/.dotfiles/config/fish/functions/fcd.fish ~/.config/fish/functions/fcd.fish
 symlink ~/.dotfiles/config/fish/functions/mkcd.fish ~/.config/fish/functions/mkcd.fish
-symlink ~/.dotfiles/config/fish/functions/ping_pretty.fish ~/.config/fish/functions/ping_pretty.fish
+symlink ~/.dotfiles/config/fish/functions/ping_pretty.fish ~/.config/fish/functions/pingpretty.fish
 
 symlink ~/.dotfiles/config/fish/theme/excalith.fish ~/.config/fish/theme/excalith.fish
 touch ~/.config/fish/local.fish
@@ -70,7 +70,7 @@ symlink ~/.dotfiles/config/htop/htoprc ~/.config/htop/htoprc
 
 # alacritty config
 print_title "Alacritty configuration"
-symlink ~/.dotfiles/config/alacritty/alacritty_linux.yml ~/.config/alacritty/alacritty.yml
+symlink ~/.dotfiles/config/alacritty/alacrittyLinux.yml ~/.config/alacritty/alacritty.yml
 
 # tmux config
 print_title "tmux configuration"

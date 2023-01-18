@@ -10,7 +10,7 @@ set fish_color_valid_path
 
 funcsave fcd >/dev/null
 funcsave mkcd >/dev/null
-funcsave ping_pretty >/dev/null
+funcsave pingpretty >/dev/null
 
 if status is-interactive
 and not set -q TMUX
