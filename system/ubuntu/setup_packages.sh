@@ -140,6 +140,13 @@ print_title "Install Flatpak Packages"
 print_title "Install Packages From Source"
 
 # LazyGit
+# TODO:
+#  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#                                 Dload  Upload   Total   Spent    Left  Speed
+#  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+#  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+#100 5445k  100 5445k    0     0  1759k      0  0:00:03  0:00:03 --:--:-- 3096k
+#curl: (3) URL using bad/illegal format or missing URL
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v*([^"]+)".*/\1/')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" 2>&1 /dev/null
 sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
