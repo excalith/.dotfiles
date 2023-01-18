@@ -19,6 +19,7 @@ print_section "Creating Symlinks"
 
 # fish config
 print_title "Fish configuration"
+touch ~/.config/fish/local.fish
 symlink ~/.dotfiles/config/fish/config.fish ~/.config/fish/config.fish
 symlink ~/.dotfiles/config/fish/export.fish ~/.config/fish/export.fish
 symlink ~/.dotfiles/config/fish/aliases.fish ~/.config/fish/aliases.fish
@@ -32,6 +33,7 @@ symlink ~/.dotfiles/config/fish/theme/excalith.fish ~/.config/fish/theme/excalit
 
 # bash config
 print_title "Bash configuration"
+touch ~/.config/bash/.bash.local
 symlink ~/.dotfiles/config/bash/.bashrc ~/.config/bash/.bashrc
 bash <<'END_BASH'
     --rcfile ~/.config/bash/.bashrc >/dev/null 2>&1
@@ -39,6 +41,7 @@ END_BASH
 
 # zsh config
 print_title "Zsh configuration"
+touch ~/.zsh.local
 ln -sf ~/.dotfiles/config/zsh/.zshrc ~/.zshrc
 ln -sf ~/.dotfiles/config/zsh/.zprofile ~/.zprofile
 
@@ -48,8 +51,8 @@ symlink ~/.dotfiles/config/starship/starship.toml ~/.config/starship.toml
 
 # git config
 print_title "Git configuration"
+touch ~/.dotfiles/config/git/config.local
 symlink ~/.dotfiles/config/git/config ~/.config/git/config
-symlink ~/.dotfiles/config/git/config.local ~/.config/git/config.local
 symlink ~/.dotfiles/config/git/ignore_global ~/.config/git/ignore_global
 
 # neofetch config

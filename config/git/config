@@ -137,4 +137,4 @@
 	theme = flat-dark-blue
 	icontheme = dark
 [include]
-    path = ~/.gitconfig.local
+    path = ~/.config/git/config.local

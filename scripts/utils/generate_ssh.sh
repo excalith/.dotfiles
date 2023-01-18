@@ -1,21 +1,68 @@
 #!/bin/bash
+# shellcheck disable=SC1091
 
-cd "$(dirname "${BASH_SOURCE[0]}")" && . "utils.sh"
+#==================================
+# Source utilities
+#==================================
+. "$HOME/.dotfiles/scripts/utils/utils.sh"
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+setup() {
+    # Each host should have one ssh key for identifying itself
+    # So that if something happens to that host, we can revoke that key
+    # instead of revoking all keys within that host
+    local sshKeyFileName="$HOME/.ssh/dotfiles_$(uname)"
 
-add_ssh_configs() {
+    # If there is already a file with that
+    # name, generate another, unique, file name.
+    if [ -f "$sshKeyFileName" ]; then
+        sshKeyFileName="$(mktemp -u "$HOME/.ssh/dotfiles_$(uname)_XXXXX")"
+    fi
 
-    printf "%s\n" \
-        "Host github.com" \
-        "  IdentityFile $1" \
-        "  LogLevel ERROR" >> ~/.ssh/config
-
-    print_result $? "Add SSH configs"
-
+    # Start generating
+    generate_ssh_key "$sshKeyFileName"
+    add_ssh_configs "$sshKeyFileName"
+    copy_pubkey "${sshKeyFileName}.pub"
 }
 
-copy_public_ssh_key_to_clipboard () {
+generate_ssh_key() {
+    print_title "Generate SSH Key"
+    ask "SSH Credential E-Mail: "
+    printf "\n"
+    ssh-keygen -t ed25519 -C "$(get_answer)" -f "$1"
+
+    print_result $? "Generate SSH keys (ed25519)"
+}
+
+add_ssh_configs() {
+    print_title "Add SSH Configs"
+    local os="$(uname)"
+
+    # Check if the OS is Darwin (macOS)
+    if [ "$os" == "Darwin" ]; then
+        printf "%s\n" \
+            "Host *" \
+            "  AddKeysToAgent yes" \
+            "  UseKeychain yes" \
+            "  IdentityFile $1" \
+            "  LogLevel ERROR" >> ~/.ssh/config
+
+    # Check if the OS is Linux
+    elif [ "$os" == "Linux" ]; then
+        printf "%s\n" \
+            "Host *" \
+            "  IdentityFile $1" \
+            "  LogLevel ERROR" >> ~/.ssh/config
+    
+    # Exit if not supported OS
+    else
+        print_error "Could not create SSH config for $os"
+    fi
+
+    print_result $? "Add SSH configs"
+}
+
+copy_pubkey () {
+    print_title "Public Key Management"
 
     if cmd_exists "pbcopy"; then
         pbcopy < "$1"
@@ -28,96 +75,23 @@ copy_public_ssh_key_to_clipboard () {
     else
         print_warning "Please copy the public SSH key ($1) to clipboard"
     fi
-
 }
-
-generate_ssh_keys() {
-
-    ask "Please provide an email address: " && printf "\n"
-    ssh-keygen -t rsa -b 4096 -C "$(get_answer)" -f "$1"
-
-    print_result $? "Generate SSH keys"
-
-}
-
-open_github_ssh_page() {
-
-    declare -r GITHUB_SSH_URL="https://github.com/settings/ssh"
-
-    # The order of the following checks matters
-    # as on Ubuntu there is also a utility called `open`.
-
-    if cmd_exists "xdg-open"; then
-        xdg-open "$GITHUB_SSH_URL"
-    elif cmd_exists "open"; then
-        open "$GITHUB_SSH_URL"
-    else
-        print_warning "Please add the public SSH key to GitHub ($GITHUB_SSH_URL)"
-    fi
-
-}
-
-set_github_ssh_key() {
-
-    local sshKeyFileName="$HOME/.ssh/github"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # If there is already a file with that
-    # name, generate another, unique, file name.
-
-    if [ -f "$sshKeyFileName" ]; then
-        sshKeyFileName="$(mktemp -u "$HOME/.ssh/github_XXXXX")"
-    fi
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    generate_ssh_keys "$sshKeyFileName"
-    add_ssh_configs "$sshKeyFileName"
-    copy_public_ssh_key_to_clipboard "${sshKeyFileName}.pub"
-    open_github_ssh_page
-    test_ssh_connection \
-        && rm "${sshKeyFileName}.pub"
-
-}
-
-test_ssh_connection() {
-
-    while true; do
-
-        ssh -T git@github.com &> /dev/null
-        [ $? -eq 1 ] && break
-
-        sleep 5
-
-    done
-
-}
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
+	print_section "SSH Setup"
 
-    print_in_purple "\n • Set up GitHub SSH keys\n\n"
+    ask_for_confirmation "Do you want to setup SSH?"
+    printf "\n"
 
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    if answer_is_yes; then
+        ssh -T git@github.com &> /dev/null
 
-    if ! is_git_repository; then
-        print_error "Not a Git repository"
-        exit 1
-    fi
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    ssh -T git@github.com &> /dev/null
-
-    if [ $? -ne 1 ]; then
-        set_github_ssh_key
-    fi
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    print_result $? "Set up GitHub SSH keys"
+        if [ $? -ne 1 ]; then
+            setup
+        fi
+    else	
+		print_warning "Skipped SSH setup"
+	fi
 }
 
 main

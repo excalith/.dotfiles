@@ -116,6 +116,19 @@ symlink() {
     execute "ln -sf $1 $2" "$(basename $1)    →    $2"
 }
 
+open_in_browser() {
+    # The order of the following checks matters
+    # as on Ubuntu there is also a utility called `open`.
+    if cmd_exists "xdg-open"; then
+        xdg-open "$2"
+    elif cmd_exists "open"; then
+        open "$2"
+    else
+        print_warning "Please add the public SSH key to $1 ($2)"
+    fi
+
+}
+
 #==================================
 # Print
 #==================================

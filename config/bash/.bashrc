@@ -6,6 +6,10 @@ export LC_ALL=en_US.UTF-8
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/sbin:~/.local/bin:$PATH"
 
+# Include Bash Local
+bash_dir="$(dirname "$0")"
+"$bash_dir/.bash.local"
+
 # Disable Gatekeeper for homebrew
 export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"
 
@@ -23,6 +27,7 @@ export BAT_PAGER="less -RF"
 # Setup FASD
 eval "$(fasd --init auto)"
 
+# FZF Defaults
 export FZF_DEFAULT_OPTS='--height 96% --reverse --border rounded --preview "bat --style=numbers --color=always --line-range :500 {}"'
 
 # Source starship

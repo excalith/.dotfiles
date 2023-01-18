@@ -172,9 +172,10 @@ main() {
     . ~/.dotfiles/scripts/utils/generate_git_creds.sh
 
     # Ask for SSH
+    . ~/.dotfiles/scripts/utils/generate_ssh.sh
 
     # Ask for GPG
-
+    . ~/.dotfiles/scripts/utils/generate_gpg.sh
 
     # Ask for restart
     . ~/.dotfiles/scripts/utils/restart.sh

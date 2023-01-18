@@ -6,6 +6,7 @@ set fish_color_valid_path
 . $fish_path/aliases.fish
 . $fish_path/export.fish
 . $fish_path/bindings.fish
+. $fish_path/local.fish
 
 funcsave fcd >/dev/null
 funcsave mkcd >/dev/null

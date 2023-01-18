@@ -39,3 +39,7 @@ export FZF_DEFAULT_OPTS='--height 96% --reverse --border rounded --preview "bat 
 # Source starship
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
+
+# Include ZSH Local
+bash_dir="$(dirname "$0")"
+"$bash_dir/.zsh.local"
