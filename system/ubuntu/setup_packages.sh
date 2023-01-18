@@ -61,7 +61,9 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 #==================================
 print_title "Install APT Packages"
 apt_install "Build Essential" "build-essential"
-apt_install "Gnome Tweaks" "gnome-shell-extensions gnome-tweaks"
+apt_install "Gnome Shell Extensions" "gnome-shell-extensions"
+apt_install "Gnome Shell Extension Manager" "gnome-shell-extension-manager"
+apt_install "Gnome Tweaks" "gnome-tweaks"
 
 apt_install "Alacritty" "alacritty"
 apt_install "uLauncher" "ulauncher"
@@ -117,7 +119,6 @@ snap_install "1Password" "1password"
 # Install Flatpak Packages
 #==================================
 print_title "Install Flatpak Packages"
-flatpak_install "Extension Manager" "com.mattjakeman.ExtensionManager"
 flatpak_install "Firefox" "org.mozilla.firefox"
 flatpak_install "GitKraken" "com.axosoft.GitKraken"
 flatpak_install "Insomnia" "rest.insomnia.Insomnia"
@@ -151,3 +152,19 @@ rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
 rm -rf ~/.cache/nvim
 execute "git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1" "NvChad"
+
+
+#==================================
+# Install Extensions
+#==================================
+print_title "Install Gnome Extensions"
+
+extension_install "https://extensions.gnome.org/extension/19/user-themes/"
+extension_install "https://extensions.gnome.org/extension/3193/blur-my-shell/"
+extension_install "https://extensions.gnome.org/extension/4325/hide-activities-button/"
+extension_install "https://extensions.gnome.org/extension/8/places-status-indicator/"
+extension_install "https://extensions.gnome.org/extension/7/removable-drive-menu/"
+extension_install "https://extensions.gnome.org/extension/517/caffeine/"
+extension_install "https://extensions.gnome.org/extension/277/impatience/"
+
+
