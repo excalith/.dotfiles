@@ -162,8 +162,8 @@ tar --extract \
 	--strip-components 1 \
 	--directory ~/reversal-icons
 
-cd ~/reversal-icons
-execute ". install.sh -a" "Reversal Icons"
+cd ~/reversal-icons && . install.sh -a &> /dev/null
+print_success "Reversal Icons"
 
 rm -rf ~/reversal-icons
 rm -rf ~/master.tar.gz
