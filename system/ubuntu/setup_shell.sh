@@ -54,35 +54,12 @@ print_title "Changing Default Shell"
 
 print_in_green "sed 1"
 sudo sed -i '/auth       required   pam_shells.so/ s//auth       sufficient   pam_shells.so/g' /etc/pam.d/chsh >/dev/null 2>&1
-
-echo ""
-
 print_in_green "tee fish -> shells"
 which fish | sudo tee -a /etc/shells >/dev/null 2>&1
-
-echo ""
-
 print_in_green "chsh which fish"
 sudo chsh -s "$(which fish)" >/dev/null 2>&1
-
-echo ""
-
 print_in_green "sed 2"
 sudo sed -i '/auth       sufficient   pam_shells.so/ s//auth       required   pam_shells.so/g' /etc/pam.d/chsh >/dev/null 2>&1
-
-echo ""
-
-print_in_green "fish update completions"
-fish <<'END_FISH'
-    fish_update_completions >/dev/null 2>&1
-END_FISH
-
-# TODO:
-#warning: An error occurred while redirecting file '/home/excalith/.ssh/environment'
-#warning: Path '/home/excalith/.ssh' does not exist
-#chmod: cannot access '/home/excalith/.ssh/environment': No such file or directory
-#source: Error encountered while sourcing file '/home/excalith/.ssh/environment':
-#source: No such file or directory
 
 print_result $? "Change fish as default shell" "true"
 
