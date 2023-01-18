@@ -19,10 +19,12 @@ print_section "Applying Ubuntu Defaults"
 #==================================
 print_title "Desktop Environment Settings"
 execute "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'" "Set dark mode"
+execute "gsettings set org.gnome.desktop.interface gtk-theme Yaru-dark"
+execute "gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
 execute "dconf write /org/gtk/settings/file-chooser/sort-directories-first true" "Show directories first"
 execute "gsettings set org.gnome.desktop.interface clock-show-weekday true" "Show weekday in clock"
 execute "gsettings set org.gnome.desktop.background picture-uri file:///$HOME/.dotfiles/assets/wallpaper/ventura.jpg" "Set wallpaper"
-#execute "gsettings set org.gnome.nautilus.preferences always-use-location-entry true" "Show path as string"
+execute "gsettings reset org.gnome.shell.ubuntu color-scheme"
 
 
 #==================================
