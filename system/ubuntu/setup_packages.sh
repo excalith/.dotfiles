@@ -153,6 +153,21 @@ rm -rf ~/.local/share/nvim
 rm -rf ~/.cache/nvim
 execute "git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1" "NvChad"
 
+# Reversal Icons
+wget -qO ~/reversal.tar.gz https://github.com/yeyushengfan258/Reversal-icon-theme/archive/master.tar.gz
+mkdir -p ~/reversal-icons
+tar --extract \
+	--gzip \
+	--file ~/reversal.tar.gz \
+	--strip-components 1 \
+	--directory ~/reversal-icons
+
+cd ~/reversal-icons
+execute ". install.sh -a" "Reversal Icons"
+
+rm -rf ~/reversal-icons
+rm -rf ~/master.tar.gz
+
 
 #==================================
 # Install Extensions
