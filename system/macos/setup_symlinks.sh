@@ -42,8 +42,8 @@ END_BASH
 # zsh config
 print_title "Zsh configuration"
 touch ~/.zsh.local
-ln -sf ~/.dotfiles/config/zsh/.zshrc ~/.zshrc
-ln -sf ~/.dotfiles/config/zsh/.zprofile ~/.zprofile
+symlink ~/.dotfiles/config/zsh/.zshrc ~/.zshrc
+symlink ~/.dotfiles/config/zsh/.zprofile ~/.zprofile
 
 # starship config
 print_title "Starship configuration"
