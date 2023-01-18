@@ -27,7 +27,7 @@ symlink ~/.dotfiles/config/fish/bindings.fish ~/.config/fish/bindings.fish
 
 symlink ~/.dotfiles/config/fish/functions/fcd.fish ~/.config/fish/functions/fcd.fish
 symlink ~/.dotfiles/config/fish/functions/mkcd.fish ~/.config/fish/functions/mkcd.fish
-symlink ~/.dotfiles/config/fish/functions/pingpretty.fish ~/.config/fish/functions/pingpretty.fish
+symlink ~/.dotfiles/config/fish/functions/pping.fish ~/.config/fish/functions/pping.fish
 
 symlink ~/.dotfiles/config/fish/theme/excalith.fish ~/.config/fish/theme/excalith.fish
 
