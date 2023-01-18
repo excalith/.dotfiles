@@ -52,19 +52,27 @@ fisher_install "Fish SSH Agent" "danhper/fish-ssh-agent"
 #==================================
 print_title "Changing Default Shell"
 
-print_green "sed 1"
+print_in_green "sed 1"
 sudo sed -i '/auth       required   pam_shells.so/ s//auth       sufficient   pam_shells.so/g' /etc/pam.d/chsh >/dev/null 2>&1
 
-print_green "tee fish -> shells"
+echo ""
+
+print_in_green "tee fish -> shells"
 which fish | sudo tee -a /etc/shells >/dev/null 2>&1
 
-print green "chsh which fish"
+echo ""
+
+print_in_green "chsh which fish"
 sudo chsh -s "$(which fish)" >/dev/null 2>&1
 
-print green "sed 2"
+echo ""
+
+print_in_green "sed 2"
 sudo sed -i '/auth       sufficient   pam_shells.so/ s//auth       required   pam_shells.so/g' /etc/pam.d/chsh >/dev/null 2>&1
 
-print green "fish update completions"
+echo ""
+
+print_in_green "fish update completions"
 fish <<'END_FISH'
     fish_update_completions >/dev/null 2>&1
 END_FISH
