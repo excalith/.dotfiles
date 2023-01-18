@@ -89,49 +89,49 @@ apt_install "tre-command" "tre-command"
 apt_install "fzf" "fzf"
 apt_install "ripgrep" "ripgrep"
 
-# apt_install "htop" "htop"
-# apt_install "httpie" "httpie"
-# apt_install "prettyping" "prettyping"
+apt_install "htop" "htop"
+apt_install "httpie" "httpie"
+apt_install "prettyping" "prettyping"
 
-# apt_install "tldr" "tldr"
-# apt_install "neofetch" "neofetch"
+apt_install "tldr" "tldr"
+apt_install "neofetch" "neofetch"
 
-# apt_install "midnight-commander" "mc"
-# apt_install "node" "nodejs"
-# apt_install "yarn" "yarn"
+apt_install "midnight-commander" "mc"
+apt_install "node" "nodejs"
+apt_install "yarn" "yarn"
 apt_install "gcc" "gcc"
-# apt_install "neovim" "neovim"
-# apt_install "ffmpeg" "ffmpeg"
+apt_install "neovim" "neovim"
+apt_install "ffmpeg" "ffmpeg"
 
 
 #==================================
 # Install Snap packages
 #==================================
 print_title "Install Snap Packages"
-# snap_install "GitKraken" "gitkraken"
-# snap_install "VS Code" "code"
-# snap_install "1Password" "1password"
+snap_install "GitKraken" "gitkraken"
+snap_install "VS Code" "code"
+snap_install "1Password" "1password"
 
 
 #==================================
 # Install Flatpak Packages
 #==================================
 print_title "Install Flatpak Packages"
-# flatpak_install "Extension Manager" "com.mattjakeman.ExtensionManager"
-# flatpak_install "Firefox" "org.mozilla.firefox"
-# flatpak_install "GitKraken" "com.axosoft.GitKraken"
-# flatpak_install "Insomnia" "rest.insomnia.Insomnia"
-# flatpak_install "Beekeeper Studio" "io.beekeeperstudio.Studio"
-# flatpak_install "Image Optimizer" "com.github.gijsgoudzwaard.image-optimizer"
-# flatpak_install "Mailspring" "com.getmailspring.Mailspring"
-# flatpak_install "Telegram" "org.telegram.desktop"
-# flatpak_install "Discord" "com.discordapp.Discord"
-# flatpak_install "Zoom" "us.zoom.Zoom"
-# flatpak_install "Dropbox" "com.dropbox.Client"
-# flatpak_install "Transmission" "com.transmissionbt.Transmission"
-# flatpak_install "Spotify" "com.spotify.Client"
-# flatpak_install "VLC" "org.videolan.VLC"
-# flatpak_install "Steam" "com.valvesoftware.Steam"
+flatpak_install "Extension Manager" "com.mattjakeman.ExtensionManager"
+flatpak_install "Firefox" "org.mozilla.firefox"
+flatpak_install "GitKraken" "com.axosoft.GitKraken"
+flatpak_install "Insomnia" "rest.insomnia.Insomnia"
+flatpak_install "Beekeeper Studio" "io.beekeeperstudio.Studio"
+flatpak_install "Image Optimizer" "com.github.gijsgoudzwaard.image-optimizer"
+flatpak_install "Mailspring" "com.getmailspring.Mailspring"
+flatpak_install "Telegram" "org.telegram.desktop"
+flatpak_install "Discord" "com.discordapp.Discord"
+flatpak_install "Zoom" "us.zoom.Zoom"
+flatpak_install "Dropbox" "com.dropbox.Client"
+flatpak_install "Transmission" "com.transmissionbt.Transmission"
+flatpak_install "Spotify" "com.spotify.Client"
+flatpak_install "VLC" "org.videolan.VLC"
+flatpak_install "Steam" "com.valvesoftware.Steam"
 
 
 #==================================
