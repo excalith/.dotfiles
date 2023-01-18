@@ -234,7 +234,7 @@ alt_send_esc: false
 #     - --command=tmux
 # vim: nospell
 shell:
-  program: /usr/local/bin/tmux
+  program: /usr/bin/tmux
   args:
     - new-session
     - -A
