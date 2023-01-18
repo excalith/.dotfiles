@@ -159,12 +159,9 @@ execute "git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1" "N
 #==================================
 print_title "Install Gnome Extensions"
 
-extension_install "https://extensions.gnome.org/extension/19/user-themes/"
-extension_install "https://extensions.gnome.org/extension/3193/blur-my-shell/"
-extension_install "https://extensions.gnome.org/extension/4325/hide-activities-button/"
-extension_install "https://extensions.gnome.org/extension/8/places-status-indicator/"
-extension_install "https://extensions.gnome.org/extension/7/removable-drive-menu/"
-extension_install "https://extensions.gnome.org/extension/517/caffeine/"
-extension_install "https://extensions.gnome.org/extension/277/impatience/"
-
-
+extension_install "UserThemes" "https://extensions.gnome.org/extension/19/user-themes/"
+extension_install "BlurMyShell" "https://extensions.gnome.org/extension/3193/blur-my-shell/"
+extension_install "PlacesStatusIndicator" "https://extensions.gnome.org/extension/8/places-status-indicator/"
+extension_install "RemovableDriveMenu" "https://extensions.gnome.org/extension/7/removable-drive-menu/"
+extension_install "Caffeine" "https://extensions.gnome.org/extension/517/caffeine/"
+extension_install "Impatience" "https://extensions.gnome.org/extension/277/impatience/"
