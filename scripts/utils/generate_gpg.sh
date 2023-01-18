@@ -15,7 +15,7 @@ generate_gpg_key() {
     local gpg_mail="$(get_answer)"
 
     # Generate gpg keys
-    gpg --quick-generate-key "$gpg_name <$gpg_mail>" rsa4096 cert never
+    gpg --quick-generate-key "$gpg_name ($uname) <$gpg_mail>" rsa4096 never
 }
 
 register_to_shell() {
@@ -42,6 +42,7 @@ export_gpg() {
 
     # Add GPG Sign function to commit
     printf "[commit]\n	gpgsign = true" >> ~/.config/git/config.local
+    printf "[gpg]\n	program = gpg" >> ~/.config/git/config.local
 
     # Copy GPG Key to clipboard
     if cmd_exists "pbcopy"; then
