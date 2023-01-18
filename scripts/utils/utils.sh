@@ -64,7 +64,7 @@ is_supported_version() {
 # Ask
 #==================================
 ask_for_sudo() {
-    print_question "Setup requires sudo access"
+    print_question "Setup requires sudo access "
 
     # Ask for the administrator password upfront.
     sudo -v &> /dev/null
