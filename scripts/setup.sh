@@ -168,6 +168,14 @@ main() {
         . ~/.dotfiles/scripts/utils/init_dotfile_repo.sh "$DOTFILES_ORIGIN"
     fi
 
+    # Ask for git credentials
+    . ~/.dotfiles/scripts/utils/generate_git_creds.sh
+
+    # Ask for SSH
+
+    # Ask for GPG
+
+
     # Ask for restart
     . ~/.dotfiles/scripts/utils/restart.sh
 }
