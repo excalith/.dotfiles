@@ -9,23 +9,13 @@ This code will download dotfiles and start installing process depending on your 
 bash -c "$(wget --no-cache -qO - https://raw.githubusercontent.com/excalith/.dotfiles-new/main/scripts/setup.sh)"
 ```
 
+## TO-DO
+### Ubuntu
+- MacOS-like key bindings
+- A wayland-compatible WM to act like yabai
 
-## TO-DO:
-- **Check MacOS setup on VM:** This is a re-implementation of my MacOS dotfiles. Never tested with this setup yet.
-
-- **Add 1Password CLI integration:** A CLI integration would be great for syncinc secrets such as ssh and gitconfig https://developer.1password.com/docs/cli/get-started/#install
-
-- **Install 1Password from source:** On Ubuntu, sandboxing prevents 1Password CLI integration. Installing from source should fix this
-https://support.1password.com/install-linux/
-
-- **Add MacOS like key bindings:** On Ubuntu, I need to reconfigure the bindings to act like MacOS
-
-- **Need a WM:** On Ubuntu, I need a Wayland-compatible WM to act like yabai
-
-- **Shellcheck:** Needs a shellcheck and other possible features to prevent breaking stuff. [Cătălin’s dotfiles](https://github.com/alrra/dotfiles) already includes such implementations. Need to peek into them
-  
-- **When everything works as intended:** Add a beautiful README to become a show-off
-
+### MacOS
+- Need a VM to check this setup
 
 ## Credits
 This dotfiles setup process is heavily inspired / knocked-off version of [Cătălin’s dotfiles](https://github.com/alrra/dotfiles). You should probably check it out instead if you are to fork this. I have changed the way I install packages and symlink config files.
