@@ -184,3 +184,4 @@ extension_install "Always Indicator" "https://extensions.gnome.org/extension/259
 extension_install "Removable Drive Menu" "https://extensions.gnome.org/extension/7/removable-drive-menu/"
 extension_install "Caffeine" "https://extensions.gnome.org/extension/517/caffeine/"
 extension_install "Impatience" "https://extensions.gnome.org/extension/277/impatience/"
+extension_install "User Avatar" "https://extensions.gnome.org/extension/5506/user-avatar-in-quick-settings/"
