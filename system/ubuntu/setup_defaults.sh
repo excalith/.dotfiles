@@ -20,13 +20,13 @@ print_section "Applying Ubuntu Defaults"
 print_title "Desktop Environment Settings"
 execute "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'" "Set dark mode"
 execute "gsettings set org.gnome.desktop.interface gtk-theme Yaru-dark" "Set theme Yaru Dark"
-execute "gsettings set org.gnome.desktop.interface icon-theme 'orange-red'" "Set icons Reversal Red"
+execute "gsettings set org.gnome.desktop.interface icon-theme 'Reversal-red'" "Set icons Reversal Red"
 execute "dconf write /org/gtk/settings/file-chooser/sort-directories-first true" "Show directories first"
 execute "gsettings set org.gnome.desktop.interface clock-show-weekday true" "Show weekday in clock"
 execute "gsettings set org.gnome.desktop.background picture-uri file:///$HOME/.dotfiles/assets/wallpaper/ventura.jpg" "Set wallpaper"
 execute "gsettings set org.gnome.desktop.background picture-uri-dark file:///$HOME/.dotfiles/assets/wallpaper/ventura.jpg" "Set wallpaper"
 execute "gsettings reset org.gnome.shell.ubuntu color-scheme"
-
+execute "gsettings set org.gnome.desktop.wm.preferences auto-raise 'true'"
 
 #==================================
 # Dock
@@ -152,9 +152,19 @@ print_success "Impatience"
 dconf write /org/gnome/shell/extensions/lennart-k/rounded_corners/corner-radius 12
 print_success "Rounded Corners"
 
-# uLauncher Keybinding
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Super>space'"
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'ulauncher-toggle'"
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'uLauncher Toggle'"
-
-
+# Search Light
+dconf write /org/gnome/shell/extensions/search-light/blur-background true
+dconf write /org/gnome/shell/extensions/search-light/blur-brightness 1.0
+dconf write /org/gnome/shell/extensions/search-light/blur-sigma 12.0
+dconf write /org/gnome/shell/extensions/search-light/border-color "'(1.0, 1.0, 1.0, 0.0)'"
+dconf write /org/gnome/shell/extensions/search-light/border-radius 1.85
+dconf write /org/gnome/shell/extensions/search-light/border-thickness 0
+dconf write /org/gnome/shell/extensions/search-light/entry-font-size 1
+dconf write /org/gnome/shell/extensions/search-light/font-size 1
+dconf write /org/gnome/shell/extensions/search-light/monitor-count 1
+dconf write /org/gnome/shell/extensions/search-light/popup-at-cursor-monitor true
+dconf write /org/gnome/shell/extensions/search-light/scale-height 0.75
+dconf write /org/gnome/shell/extensions/search-light/scale-width 0.07
+dconf write /org/gnome/shell/extensions/search-light/shortcut-search "['<Control>space']"
+dconf write /org/gnome/shell/extensions/search-light/show-panel-icon false
+print_success "Search Light"

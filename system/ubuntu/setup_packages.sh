@@ -29,7 +29,6 @@ apt_add_repo "Universe" "universe"
 apt_add_repo "Multiverse" "multiverse"
 apt_add_repo "Fish" "ppa:fish-shell/release-3"
 apt_add_repo "Alacritty" "ppa:aslatter/ppa"
-apt_add_repo "uLauncher" "ppa:agornostal/ulauncher"
 
 
 #==================================
@@ -66,7 +65,6 @@ apt_install "Gnome Shell Extension Manager" "gnome-shell-extension-manager"
 apt_install "Gnome Tweaks" "gnome-tweaks"
 
 apt_install "Alacritty" "alacritty"
-apt_install "uLauncher" "ulauncher"
 apt_install "Caffeine" "caffeine"
 apt_install "Notion" "notion"
 
