@@ -1,5 +1,5 @@
 #!/bin/sh
-# shellcheck disable SC1091
+# shellcheck disable=SC1091
 
 #==================================
 # Source utilities
