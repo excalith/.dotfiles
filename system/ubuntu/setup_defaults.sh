@@ -57,6 +57,9 @@ gsettings set org.gnome.shell.keybindings switch-to-application-9 []
 print_title "Key Binding Settings"
 print_success "Setting Up Key Bindings"
 
+# Remap CTRL with Super
+gsettings set org.gnome.desktop.input-sources xkb-options "['altwin:ctrl_win']"
+
 # Toggle Overview
 gsettings set org.gnome.shell.keybindings toggle-overview "['<Ctrl>Above_Tab']"
 
@@ -148,3 +151,10 @@ print_success "Impatience"
 # Rounded Corners
 dconf write /org/gnome/shell/extensions/lennart-k/rounded_corners/corner-radius 12
 print_success "Rounded Corners"
+
+# uLauncher Keybinding
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Super>space'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'ulauncher-toggle'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'uLauncher Toggle'"
+
+

@@ -21,7 +21,6 @@ bash -c "$(wget --no-cache -qO - https://raw.githubusercontent.com/excalith/.dot
 This repository is still work-in-progress, updating my old private .dotfiles setup to be more maintainable. For this reason, there are a lot of things to be done to complete it properly. 
 
 ### Ubuntu
-- MacOS-like key bindings
 - A wayland-compatible WM to act like yabai
 
 ### MacOS
