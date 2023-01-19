@@ -71,6 +71,13 @@ symlink ~/.dotfiles/config/htop/htoprc ~/.config/htop/htoprc
 print_title "Alacritty configuration"
 symlink ~/.dotfiles/config/alacritty/alacritty_macos.yml ~/.config/alacritty/alacritty.yml
 
+# kitty config
+print_title "Kitty configuration"
+symlink ~/.dotfiles/config/kitty/kitty.conf ~/.config/kitty/kitty.conf
+symlink ~/.dotfiles/config/kitty/keymapMacos.conf ~/.config/kitty/keymap.conf
+symlink ~/.dotfiles/config/kitty/openactions.conf ~/.config/kitty/openactions.conf
+symlink ~/.dotfiles/config/kitty/theme.conf ~/.config/kitty/theme.conf
+
 # tmux config
 print_title "TMUX configuration"
 symlink ~/.dotfiles/config/tmux/tmux.conf ~/.config/tmux/tmux.conf

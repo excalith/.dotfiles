@@ -120,28 +120,28 @@ bell:
 
 # Key bindings (Read key code with `xxd -psd`)
 key_bindings:
-  - { key: Q, mods: Command, action: Quit } # Quit Alacritty
-  - { key: M, mods: Command, action: Minimize } # Minimize Alacritty
+  - { key: Q, mods: Control, action: Quit } # Quit Alacritty
+  - { key: M, mods: Control, action: Minimize } # Minimize Alacritty
 
-  - { key: T, mods: Command, chars: "\x01\x63" } # Open New Tab
-  - { key: S, mods: Command, chars: "\x01\x77" } # Select Tab
-  - { key: D, mods: Command, chars: "\x01\x71" } # Select Screen
-  - { key: W, mods: Command, chars: "\x01\x78" } # Close Screen
+  - { key: T, mods: Control, chars: "\x01\x63" } # Open New Tab
+  - { key: S, mods: Control, chars: "\x01\x77" } # Select Tab
+  - { key: D, mods: Control, chars: "\x01\x71" } # Select Screen
+  - { key: W, mods: Control, chars: "\x01\x78" } # Close Screen
 
-  - { key: Key1, mods: Command, chars: "\x01\x31" } # Switch To Tab 1
-  - { key: Key2, mods: Command, chars: "\x01\x32" } # Switch To Tab 2
-  - { key: Key3, mods: Command, chars: "\x01\x33" } # Switch To Tab 3
-  - { key: Key4, mods: Command, chars: "\x01\x34" } # Switch To Tab 4
-  - { key: Key5, mods: Command, chars: "\x01\x35" } # Switch To Tab 5
-  - { key: Key6, mods: Command, chars: "\x01\x36" } # Switch To Tab 6
-  - { key: Key7, mods: Command, chars: "\x01\x37" } # Switch To Tab 7
-  - { key: Key8, mods: Command, chars: "\x01\x38" } # Switch To Tab 8
-  - { key: Key9, mods: Command, chars: "\x01\x39" } # Switch To Tab 9
+  - { key: Key1, mods: Control, chars: "\x01\x31" } # Switch To Tab 1
+  - { key: Key2, mods: Control, chars: "\x01\x32" } # Switch To Tab 2
+  - { key: Key3, mods: Control, chars: "\x01\x33" } # Switch To Tab 3
+  - { key: Key4, mods: Control, chars: "\x01\x34" } # Switch To Tab 4
+  - { key: Key5, mods: Control, chars: "\x01\x35" } # Switch To Tab 5
+  - { key: Key6, mods: Control, chars: "\x01\x36" } # Switch To Tab 6
+  - { key: Key7, mods: Control, chars: "\x01\x37" } # Switch To Tab 7
+  - { key: Key8, mods: Control, chars: "\x01\x38" } # Switch To Tab 8
+  - { key: Key9, mods: Control, chars: "\x01\x39" } # Switch To Tab 9
 
-  - { key: J, mods: Command, chars: "\x01\x6b" } # Split Vertical
-  - { key: K, mods: Command, chars: "\x01\x6a" } # Split Horizontal
+  - { key: J, mods: Control, chars: "\x01\x6b" } # Split Vertical
+  - { key: K, mods: Control, chars: "\x01\x6a" } # Split Horizontal
 
-  - { key: Back, mods: Command, chars: "\x15" } # Delete Line
+  - { key: Back, mods: Control, chars: "\x15" } # Delete Line
 
   - { key: Plus,           mods: Control,                         action: IncreaseFontSize }
   - { key: NumpadAdd,      mods: Control,                         action: IncreaseFontSize }
@@ -167,7 +167,7 @@ mouse:
     launcher:
       # This depends on your OS, on Mac it’s `open`
       program: open
-    modifiers: Command
+    modifiers: Control
 
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
