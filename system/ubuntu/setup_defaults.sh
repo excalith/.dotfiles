@@ -1,5 +1,5 @@
 #!/bin/sh
-# shellcheck disable=SC1091
+# shellcheck disable SC1091
 
 #==================================
 # Source utilities
@@ -23,6 +23,7 @@ execute "gsettings set org.gnome.desktop.interface gtk-theme Yaru-dark" "Set the
 execute "gsettings set org.gnome.desktop.interface icon-theme 'orange-red'" "Set icons Reversal Red"
 execute "dconf write /org/gtk/settings/file-chooser/sort-directories-first true" "Show directories first"
 execute "gsettings set org.gnome.desktop.interface clock-show-weekday true" "Show weekday in clock"
+execute "gsettings set org.gnome.desktop.background picture-uri file:///$HOME/.dotfiles/assets/wallpaper/ventura.jpg" "Set wallpaper"
 execute "gsettings set org.gnome.desktop.background picture-uri-dark file:///$HOME/.dotfiles/assets/wallpaper/ventura.jpg" "Set wallpaper"
 execute "gsettings reset org.gnome.shell.ubuntu color-scheme"
 
@@ -102,39 +103,39 @@ dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-right "['disab
 print_title "Extension Settings"
 
 # Dash To Dock for COSMIC
-dconf write /org/gnome/shell/extensions/dash-to-dock-pop/apply-custom-theme=false
-dconf write /org/gnome/shell/extensions/dash-to-dock-pop/background-opacity7
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/apply-custom-theme false
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/background-opacity 7
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/border-radius 12
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/custom-background-color false
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/custom-theme-shrink false
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/dash-max-icon-size 32
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/default-windows-preview-to-open false
-dconf write /org/gnome/shell/extensions/dash-to-dock-pop/dock-alignment 'CENTRE'
-dconf write /org/gnome/shell/extensions/dash-to-dock-pop/dock-position 'LEFT'
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/dock-alignment "'CENTRE'"
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/dock-position "'LEFT'"
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/floating-margin 6
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/force-straight-corner false
-dconf write /org/gnome/shell/extensions/dash-to-dock-pop/height-fraction 0.90000000000000002
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/height-fraction 0.9
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/hide-highlight false
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/hot-keys false
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/isolate-monitors false
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/preferred-monitor -2
-dconf write /org/gnome/shell/extensions/dash-to-dock-pop/preferred-monitor-by-connector 'Virtual-1'
-dconf write /org/gnome/shell/extensions/dash-to-dock-pop/running-indicator-style 'DOTS'
-dconf write /org/gnome/shell/extensions/dash-to-dock-pop/scroll-action 'switch-workspace'
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/preferred-monitor-by-connector "'Virtual-1'"
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/running-indicator-style "'DOTS'"
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/scroll-action "'switch-workspace'"
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/show-apps-at-top true
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/show-mounts true
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/show-show-apps-button true
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/show-trash false
 dconf write /org/gnome/shell/extensions/dash-to-dock-pop/show-windows-preview false
-dconf write /org/gnome/shell/extensions/dash-to-dock-pop/transparency-mode 'FIXED'
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/transparency-mode "'FIXED'"
 print_success "Dash To Dock COSMIC"
 
 # Always On Indicator
-dconf write /org/gnome/shell/extensions/always-indicator/color 'rgb(255,163,72)'
+dconf write /org/gnome/shell/extensions/always-indicator/color "'rgb(255,163,72)'"
 print_success "Always On Indicator"
 
 # Caffeine
-dconf write /org/gnome/shell/extensions/caffeine/nightlight-control 'never'
+dconf write /org/gnome/shell/extensions/caffeine/nightlight-control "'never'"
 dconf write /org/gnome/shell/extensions/caffeine/restore-state true
 dconf write /org/gnome/shell/extensions/caffeine/show-notifications false
 dconf write /org/gnome/shell/extensions/caffeine/user-enabled true
