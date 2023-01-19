@@ -12,10 +12,5 @@ funcsave fcd >/dev/null
 funcsave mkcd >/dev/null
 funcsave pping >/dev/null
 
-if status is-interactive
-and not set -q TMUX
-    exec tmux
-end
-
 # Source starship
 starship init fish | source
