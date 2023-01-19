@@ -174,6 +174,7 @@ rm -rf ~/master.tar.gz
 #==================================
 print_title "Install Gnome Extensions"
 
+extension_install "Dash To Dock (COSMIC)" "https://extensions.gnome.org/extension/5004/dash-to-dock-for-cosmic/"
 extension_install "User Themes" "https://extensions.gnome.org/extension/19/user-themes/"
 extension_install "Blur My Shell" "https://extensions.gnome.org/extension/3193/blur-my-shell/"
 extension_install "Rounded Corners" "https://extensions.gnome.org/extension/1514/rounded-corners/"

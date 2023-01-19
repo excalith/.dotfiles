@@ -55,6 +55,7 @@ gsettings set org.gnome.shell.keybindings switch-to-application-9 []
 #==================================
 print_title "Key Binding Settings"
 print_success "Setting Up Key Bindings"
+
 # Toggle Overview
 gsettings set org.gnome.shell.keybindings toggle-overview "['<Ctrl>Above_Tab']"
 
@@ -92,3 +93,57 @@ dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-up "['disabled
 dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-down "['disabled']"
 dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-left "['disabled']"
 dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-right "['disabled']"
+
+
+
+#==================================
+# Extensions
+#==================================
+print_title "Extension Settings"
+
+# Dash To Dock for COSMIC
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/apply-custom-theme=false
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/background-opacity7
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/border-radius 12
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/custom-background-color false
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/custom-theme-shrink false
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/dash-max-icon-size 32
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/default-windows-preview-to-open false
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/dock-alignment 'CENTRE'
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/dock-position 'LEFT'
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/floating-margin 6
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/force-straight-corner false
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/height-fraction 0.90000000000000002
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/hide-highlight false
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/hot-keys false
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/isolate-monitors false
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/preferred-monitor -2
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/preferred-monitor-by-connector 'Virtual-1'
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/running-indicator-style 'DOTS'
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/scroll-action 'switch-workspace'
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/show-apps-at-top true
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/show-mounts true
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/show-show-apps-button true
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/show-trash false
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/show-windows-preview false
+dconf write /org/gnome/shell/extensions/dash-to-dock-pop/transparency-mode 'FIXED'
+print_success "Dash To Dock COSMIC"
+
+# Always On Indicator
+dconf write /org/gnome/shell/extensions/always-indicator/color 'rgb(255,163,72)'
+print_success "Always On Indicator"
+
+# Caffeine
+dconf write /org/gnome/shell/extensions/caffeine/nightlight-control 'never'
+dconf write /org/gnome/shell/extensions/caffeine/restore-state true
+dconf write /org/gnome/shell/extensions/caffeine/show-notifications false
+dconf write /org/gnome/shell/extensions/caffeine/user-enabled true
+print_success "Caffeine"
+
+# Impatience
+dconf write /org/gnome/shell/extensions/net/gfxmonk/impatience/speed-factor 0.5
+print_success "Impatience"
+
+# Rounded Corners
+dconf write /org/gnome/shell/extensions/lennart-k/rounded_corners/corner-radius 12
+print_success "Rounded Corners"
