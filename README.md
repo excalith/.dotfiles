@@ -3,56 +3,31 @@
 # Excalith Dotfiles
 
 ## Features
+- A custom dotfiles installer
+- A [dotfiles manager](bin/dotfiles/) for post-install
+- The [installer](scripts/) is seperated from configs and install scripts
+- Requires git commands for syncing 
 
-**Shell**
-- Installs `fish` and `zsh`
-- Uses `starship` for shell prompt (supported configs for `bash`, `fish` and `zsh`)
-- Includes `tmux` configuration
+
+## Uses
+- Supports `bash`, `zsh` and `fish` with `starship` shell prompt and has `tmux` support
 - Replaces default terminal with `Alacritty` and `kitty`
-
-**Package Manager**
-
-| MacOS        | Ubuntu     |
-| ------------ | ---------- |
-| homebrew     | apt (nala) |
-| homebrew MAS | flatpak    |
-
-**Window Manager**
-
-| MacOS | Ubuntu |
-| ----- | ------ |
-| yabai | gnome  |
-
-**Packages**
-
-You can check setup scripts for [MacOS](system/macos/setup_packages.sh) and [Ubuntu](system/ubuntu/setup_packages.sh) for packages.
-
+- Does not use any fancy WM (on MacOS, only `yabai` and `skhd` used on top of the default DE)
+- Packages installed can be found in [MacOS](system/macos/setup_packages.sh) and [Ubuntu](system/ubuntu/setup_packages.sh) installer scripts
 
 
 ## Installation
-These dotfiles are intended for `MacOS 12.0 and above` and `Ubuntu 22.04 and above`
-
 Depending on your OS, copy and paste the code to start installation. This code will download my dotfiles and start setup depending on your OS.
 
-### MacOS
-Supports _**MacOS 12.0 Monterey**_ and above
+**>= MacOS 12.0 Monterey**
 ```bash
 bash -c "$(curl -LsS https://raw.github.com/excalith/.dotfiles/main/scripts/setup.sh)"
 ```
 
-### Ubuntu
-Supports _**Ubuntu 22.04 Jammy Jellyfish**_ and above
+**>= Ubuntu 22.04 Jammy Jellyfish**
 ```bash
 bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/scripts/setup.sh)"
 ```
-
-
-
-## TO-DO
-
-### Ubuntu
-- A wayland-compatible WM to act like yabai
-
 
 
 ## Credits

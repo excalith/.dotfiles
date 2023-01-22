@@ -58,7 +58,6 @@ download_dotfiles() {
     mkdir -p "$DOTFILES_DIR"
     print_result $? "Create '$DOTFILES_DIR'" "true"
 
-
     # Extract archive in the `dotfiles` directory.
     extract "$tmpFile" "$DOTFILES_DIR"
     print_result $? "Extract archive" "true"
