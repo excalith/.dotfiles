@@ -3,7 +3,7 @@
 [core]
 	editor = code --wait --new-window
     whitespace = -trailing-space # Don't consider trailing space change as a cause for merge conflicts
-    excludesFile = ~/.gitignore_global
+    excludesFile = ~/.config/git/ignore_global
     pager = delta
 	autocrlf = input
 [branch]
