@@ -33,17 +33,17 @@ symlink ~/.dotfiles/config/fish/theme/excalith.fish ~/.config/fish/theme/excalit
 
 # bash config
 print_title "Bash configuration"
-touch ~/.config/bash/.bash.local
 symlink ~/.dotfiles/config/bash/.bashrc ~/.config/bash/.bashrc
 bash <<'END_BASH'
     --rcfile ~/.config/bash/.bashrc >/dev/null 2>&1
 END_BASH
+touch ~/.config/bash/.bash.local
 
 # zsh config
 print_title "Zsh configuration"
-touch ~/.zsh.local
 symlink ~/.dotfiles/config/zsh/.zshrc ~/.zshrc
 symlink ~/.dotfiles/config/zsh/.zprofile ~/.zprofile
+touch ~/.zsh.local
 
 # starship config
 print_title "Starship configuration"
@@ -53,6 +53,7 @@ symlink ~/.dotfiles/config/starship/starship.toml ~/.config/starship.toml
 print_title "Git configuration"
 symlink ~/.dotfiles/config/git/config ~/.config/git/config
 symlink ~/.dotfiles/config/git/ignore_global ~/.config/git/ignore_global
+touch ~/.config/git/config.local
 
 # neofetch config
 print_title "Neofetch configuration"
@@ -69,7 +70,7 @@ symlink ~/.dotfiles/config/htop/htoprc ~/.config/htop/htoprc
 
 # alacritty config
 print_title "Alacritty configuration"
-symlink ~/.dotfiles/config/alacritty/alacritty_macos.yml ~/.config/alacritty/alacritty.yml
+symlink ~/.dotfiles/config/alacritty/alacrittyMacos.yml ~/.config/alacritty/alacritty.yml
 
 # kitty config
 print_title "Kitty configuration"

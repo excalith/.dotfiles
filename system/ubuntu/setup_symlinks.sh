@@ -34,10 +34,10 @@ touch ~/.config/fish/local.fish
 # bash config
 print_title "Bash configuration"
 symlink ~/.dotfiles/config/bash/.bashrc ~/.config/bash/.bashrc
-touch ~/.config/bash/.bash.local
 bash <<'END_BASH'
     --rcfile ~/.config/bash/.bashrc >/dev/null 2>&1
 END_BASH
+touch ~/.config/bash/.bash.local
 
 # zsh config
 print_title "Zsh configuration"
