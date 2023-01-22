@@ -11,10 +11,16 @@
 ## Installation
 These dotfiles are intended for `MacOS 12.0 and above` and `Ubuntu 22.04 and above`
 
-Copy and paste the code below to start installation. This code will download my dotfiles and start setup depending on your OS.
+Depending on your OS, copy and paste the code to start installation. This code will download my dotfiles and start setup depending on your OS.
 
+### MacOS
 ```bash
-bash -c "$(wget --no-cache -qO - https://raw.githubusercontent.com/excalith/.dotfiles-new/main/scripts/setup.sh)"
+bash -c "$(curl -LsS https://raw.github.com/excalith/.dotfiles-new/main/scripts/setup.sh)"
+```
+
+### Ubuntu
+```bash
+bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles-new/main/scripts/setup.sh)"
 ```
 
 ## TO-DO
