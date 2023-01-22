@@ -163,21 +163,21 @@ main() {
     . "$HOME/.dotfiles/system/$(get_os)/install.sh"
 
     # Ask for git credentials
-    . ~/.dotfiles/scripts/utils/generate_git_creds.sh
+    . "$HOME/.dotfiles/scripts/utils/generate_git_creds.sh"
 
     # Ask for SSH
-    . ~/.dotfiles/scripts/utils/generate_ssh.sh
+    . "$HOME/.dotfiles/scripts/utils/generate_ssh.sh"
 
     # Ask for GPG
-    . ~/.dotfiles/scripts/utils/generate_gpg.sh
+    . "$HOME/.dotfiles/scripts/utils/generate_gpg.sh"
 
     # Link to original repository and update contents of dotfiles
     if [ "$(git config --get remote.origin.url)" != "$DOTFILES_ORIGIN" ]; then
-        . ~/.dotfiles/scripts/utils/init_dotfile_repo.sh "$DOTFILES_ORIGIN"
+        . "$HOME/.dotfiles/scripts/utils/init_dotfile_repo.sh '$DOTFILES_ORIGIN'"
     fi
 
     # Ask for restart
-    . ~/.dotfiles/scripts/utils/restart.sh
+    . "$HOME/.dotfiles/scripts/utils/restart.sh"
 }
 
 main "$@"
