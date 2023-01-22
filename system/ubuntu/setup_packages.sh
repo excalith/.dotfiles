@@ -64,9 +64,8 @@ apt_install "Gnome Shell Extensions" "gnome-shell-extensions"
 apt_install "Gnome Shell Extension Manager" "gnome-shell-extension-manager"
 apt_install "Gnome Tweaks" "gnome-tweaks"
 
-apt_install "Alacritty" "alacritty"
-apt_install "Caffeine" "caffeine"
-apt_install "Notion" "notion"
+apt_install "heif-gdk-pixbuf" "heif-gdk-pixbuf"
+apt_install "heif-thumbnailer" "heif-thumbnailer"
 
 apt_install "gnupg" "gnupg"
 apt_install "gpg" "gpg"
@@ -104,6 +103,9 @@ apt_install "gcc" "gcc"
 apt_install "neovim" "neovim"
 apt_install "ffmpeg" "ffmpeg"
 
+apt_install "Alacritty" "alacritty"
+apt_install "Caffeine" "caffeine"
+apt_install "Notion" "notion"
 
 #==================================
 # Install Snap packages
