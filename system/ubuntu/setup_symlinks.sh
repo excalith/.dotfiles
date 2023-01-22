@@ -64,10 +64,6 @@ print_title "Midnight Commander configuration"
 symlink ~/.dotfiles/config/mc/ini ~/.config/mc/ini
 symlink ~/.dotfiles/config/mc/Arasaka.ini ~/.local/share/mc/skins/Arasaka.ini
 
-# htop config
-print_title "htop configuration"
-symlink ~/.dotfiles/config/htop/htoprc ~/.config/htop/htoprc
-
 # alacritty config
 print_title "Alacritty configuration"
 symlink ~/.dotfiles/config/alacritty/alacrittyLinux.yml ~/.config/alacritty/alacritty.yml

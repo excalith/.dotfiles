@@ -59,11 +59,7 @@ symlink ~/.dotfiles/config/neofetch/config.conf ~/.config/neofetch/config.conf
 # midnight commander theme
 print_title "Midnight Commander configuration"
 symlink ~/.dotfiles/config/mc/ini ~/.config/mc/ini
-symlink ~/.dotfiles/config/mc/Arasaka.ini ~/.local/share/mc/skins/Arasaka.ini
-
-# htop config
-print_title "htop configuration"
-symlink ~/.dotfiles/config/htop/htoprc ~/.config/htop/htoprc
+symlink ~/.dotfiles/config/mc/skins/Arasaka.ini ~/.local/share/mc/skins/Arasaka.ini 
 
 # alacritty config
 print_title "Alacritty configuration"
