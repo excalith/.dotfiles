@@ -37,13 +37,13 @@ Depending on your OS, copy and paste the code to start installation. This code w
 ### MacOS
 Supports _**MacOS 12.0 Monterey**_ and above
 ```bash
-bash -c "$(curl -LsS https://raw.github.com/excalith/.dotfiles-new/main/scripts/setup.sh)"
+bash -c "$(curl -LsS https://raw.github.com/excalith/.dotfiles/main/scripts/setup.sh)"
 ```
 
 ### Ubuntu
 Supports _**Ubuntu 22.04 Jammy Jellyfish**_ and above
 ```bash
-bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles-new/main/scripts/setup.sh)"
+bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/scripts/setup.sh)"
 ```
 
 
