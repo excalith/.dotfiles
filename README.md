@@ -1,12 +1,33 @@
 
 
 # Excalith Dotfiles
-> ⚠️ This repository is work-in-progress!
->
-> ⚠️ If you think you have no idea what you are doing with this setup, you should probably avoid using any dotfiles setup since they will override your own config files, which may cause issues on your end.
->
-> ⚠️ Do not use any dotfiles from people you do not trust or check the scripts before using them. I would suggest checking out the code and find some beautiful approaches regarding .dotfiles managements and create your very own system.
- 
+
+## Features
+
+**Shell**
+- Installs `fish` and `zsh`
+- Uses `starship` for shell prompt (supported configs for `bash`, `fish` and `zsh`)
+- Includes `tmux` configuration
+- Replaces default terminal with `Alacritty` and `kitty`
+
+**Package Manager**
+
+| MacOS        | Ubuntu     |
+| ------------ | ---------- |
+| homebrew     | apt (nala) |
+| homebrew MAS | flatpak    |
+
+**Window Manager**
+
+| MacOS | Ubuntu |
+| ----- | ------ |
+| yabai | gnome  |
+
+**Packages**
+
+You can check setup scripts for [MacOS](system/macos/setup_packages.sh) and [Ubuntu](system/ubuntu/setup_packages.sh) for packages.
+
+
 
 ## Installation
 These dotfiles are intended for `MacOS 12.0 and above` and `Ubuntu 22.04 and above`
@@ -14,23 +35,24 @@ These dotfiles are intended for `MacOS 12.0 and above` and `Ubuntu 22.04 and abo
 Depending on your OS, copy and paste the code to start installation. This code will download my dotfiles and start setup depending on your OS.
 
 ### MacOS
+Supports _**MacOS 12.0 Monterey**_ and above
 ```bash
 bash -c "$(curl -LsS https://raw.github.com/excalith/.dotfiles-new/main/scripts/setup.sh)"
 ```
 
 ### Ubuntu
+Supports _**Ubuntu 22.04 Jammy Jellyfish**_ and above
 ```bash
 bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles-new/main/scripts/setup.sh)"
 ```
 
+
+
 ## TO-DO
-This repository is still work-in-progress, updating my old private .dotfiles setup to be more maintainable. For this reason, there are a lot of things to be done to complete it properly. 
 
 ### Ubuntu
 - A wayland-compatible WM to act like yabai
 
-### MacOS
-- Need a MacOS VM to check this setup
 
 
 ## Credits

@@ -141,8 +141,7 @@ for app in "Activity Monitor" \
     "Photos" \
     "Safari" \
     "Spectacle" \
-    "SystemUIServer" \
-    "Terminal"; do
+    "SystemUIServer"; do
     killall "${app}" &>/dev/null
 done
 print_result $? "Killing Apps"
