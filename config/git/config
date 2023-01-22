@@ -66,7 +66,7 @@
     prereleaseSuffix = .rc
 [alias]   
     ## Status
-    st = !zsh ~/.dotfiles/Generic/custom/gitst/gitst.zsh
+    st = status -s
     stt = diff --stat
     ls = log --date=format:'%d-%m-%Y %H:%M:%S' --pretty=format:'%C(bold blue) %h %C(reset red)%ad %C(Yellow)%an %x09%C(Reset)%s%C(auto)%d%C(reset)' --all
     lt = log --all --graph --decorate=short --date=format:'%d-%m-%Y %H:%M:%S' --color --format=format:'%C(bold blue)%h%C(reset)   %x09%C(red)%ad %C(yellow)%an %C(white)%s %C(auto)%d%C(reset)'

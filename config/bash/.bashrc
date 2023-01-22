@@ -7,8 +7,7 @@ export LC_ALL=en_US.UTF-8
 export PATH="/usr/local/sbin:~/.local/bin:$PATH"
 
 # Include Bash Local
-bash_dir="$(dirname "$0")"
-"$bash_dir/.bash.local"
+source ~/.config/bash/.bash.local
 
 # Disable Gatekeeper for homebrew
 export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"
