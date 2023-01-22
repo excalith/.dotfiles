@@ -19,7 +19,7 @@ print_section "Installing Packages"
 #==================================
 print_title "Installing Brew"
 if ! cmd_exists "brew"; then
-	printf "\n" | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &> /dev/null
+	printf "\n" | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	#  └─ simulate the ENTER keypress
 fi
 print_result $? "Homebrew"
