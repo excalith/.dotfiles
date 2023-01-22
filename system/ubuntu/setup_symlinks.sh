@@ -4,7 +4,6 @@
 # Source utilities
 #==================================
 . "$HOME/.dotfiles/scripts/utils/utils.sh"
-. "$HOME/.dotfiles/scripts/utils/utils_ubuntu.sh"
 
 
 #==================================

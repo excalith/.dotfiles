@@ -4,7 +4,6 @@
 # Source utilities
 #==================================
 . "$HOME/.dotfiles/scripts/utils/utils.sh"
-. "$HOME/.dotfiles/scripts/utils/utils_ubuntu.sh"
 
 
 #==================================
@@ -33,11 +32,8 @@ symlink ~/.dotfiles/config/fish/theme/excalith.fish ~/.config/fish/theme/excalit
 
 # bash config
 print_title "Bash configuration"
-symlink ~/.dotfiles/config/bash/.bashrc ~/.config/bash/.bashrc
-bash <<'END_BASH'
-    --rcfile ~/.config/bash/.bashrc >/dev/null 2>&1
-END_BASH
-touch ~/.config/bash/.bash.local
+symlink ~/.dotfiles/config/bash/.bashrc ~/.bashrc
+touch ~/.bash.local
 
 # zsh config
 print_title "Zsh configuration"

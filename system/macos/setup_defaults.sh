@@ -3,8 +3,8 @@
 #==================================
 # Source utilities
 #==================================
-cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && . "../../utils.sh"
+. "$HOME/.dotfiles/scripts/utils/utils.sh"
+. "$HOME/.dotfiles/scripts/utils/utils_macos.sh"
 
 
 #==================================

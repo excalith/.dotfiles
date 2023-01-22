@@ -3,9 +3,9 @@
 #==================================
 # Source utilities
 #==================================
-cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && . "../../scripts/utils/utils.sh" \
-    && . "../../scripts/utils/utils_ubuntu.sh"
+. "$HOME/.dotfiles/scripts/utils/utils.sh"
+. "$HOME/.dotfiles/scripts/utils/utils_macos.sh"
+
 
 #==================================
 # Print Section Title
