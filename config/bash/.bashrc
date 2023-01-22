@@ -34,6 +34,7 @@ eval "$(starship init bash)"
 
 # Dotfiles
 alias dotfiles="bash ~/.dotfiles/bin/dotfiles/main.sh"
+alias colors="bash ~/.dotfiles/bin/colors/colors.sh"
 
 # Aliases
 alias ..="cd .."

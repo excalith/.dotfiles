@@ -118,6 +118,8 @@ color_terminals=
 
 screen-256color=
 
+xterm-kitty=
+
 [Panels]
 show_mini_info=true
 kilobyte_si=false

@@ -1,5 +1,6 @@
 # Dotfiles
 alias dotfiles="bash ~/.dotfiles/bin/dotfiles/main.sh"
+alias colors="bash ~/.dotfiles/bin/colors/colors.sh"
 
 # Clear terminal
 alias c="clear"

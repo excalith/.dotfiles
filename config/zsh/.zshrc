@@ -37,8 +37,9 @@ eval "$(hub alias -s)"
 export FZF_DEFAULT_OPTS='--height 96% --reverse --border rounded --preview "bat --style=numbers --color=always --line-range :500 {}"'
 
 # Include ZSH Local
+source ~/.zprofile
 source ~/.zsh.local
 
 # Source starship
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export STARSHIP_CONFIG=~/.config/starship.toml
 eval "$(starship init zsh)"

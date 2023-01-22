@@ -1,3 +1,7 @@
+# Run dotfiles bin
+alias dotfiles="bash ~/.dotfiles/bin/dotfiles/main.sh"
+alias colors="bash ~/.dotfiles/bin/colors/colors.sh"
+
 # Easier navigation
 alias ..="cd .."
 alias ...="cd ../.."
@@ -73,11 +77,6 @@ function gi() {
     sh ~/.dotfiles/bin/gitignore/gi.zsh
 }
 
-# Custom key binding help
-function dh() {
-    sh ~/.dotfiles/bin/help/help.sh "$1"
-}
-
 # Custom Pretty Ping
 function ping_pretty() {
 
@@ -136,9 +135,6 @@ function sreload() {
     source ~/.zprofile
     source ~/.zshrc
 }
-
-# Run dotfiles bin
-alias dotfiles="bash ~/.dotfiles/bin/dotfiles/main.sh"
 
 # CD into dir from anywhere
 alias j='fasd_cd -d'
