@@ -1,3 +1,6 @@
+# Dotfiles
+alias dotfiles="bash ~/.dotfiles/bin/dotfiles/main.sh"
+
 # Clear terminal
 alias c="clear"
 
@@ -27,11 +30,9 @@ alias locip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep
 alias nvupdate="nvim -c \"NvChadUpdate\""
 
 # Custom Folders
-alias dotfiles="cd ~/.dotfiles"
 alias projects="cd ~/Projects"
 alias config ="cd ~/.config"
 
 # Custom Functions
 alias sreload=". ~/.config/fish/config.fish"
-alias dh="sh ~/.dotfiles/bin/help/help.sh '$1'"
 alias gi="sh ~/.dotfiles/Generic/custom/gitignore/gi.zsh"

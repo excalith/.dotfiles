@@ -128,9 +128,6 @@ function arasaka() {
 " | nms -f red -ca
 }
 
-# Update oh-my-zsh
-alias supdate="omz update"
-
 # Update Neovim NVChad
 alias nvupdate="nvim -c \"NvChadUpdate\""
 
@@ -140,10 +137,8 @@ function sreload() {
     source ~/.zshrc
 }
 
-# CD into dotfiles
-function dotfiles() {
-    cd ~/.dotfiles
-}
+# Run dotfiles bin
+alias dotfiles="bash ~/.dotfiles/bin/dotfiles/main.sh"
 
 # CD into dir from anywhere
 alias j='fasd_cd -d'

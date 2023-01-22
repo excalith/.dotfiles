@@ -32,6 +32,8 @@ export FZF_DEFAULT_OPTS='--height 96% --reverse --border rounded --preview "bat 
 # Source starship
 eval "$(starship init bash)"
 
+# Dotfiles
+alias dotfiles="bash ~/.dotfiles/bin/dotfiles/main.sh"
 
 # Aliases
 alias ..="cd .."
@@ -81,12 +83,6 @@ function gi() {
     sh ~/.dotfiles/bin/gitignore/gi.zsh
 }
 export -f gi
-
-# Custom key binding help
-function dh() {
-    sh ~/.dotfiles/bin/help/help.sh "$1"
-}
-export -f dh
 
 # Custom Pretty Ping
 function ping_pretty() {

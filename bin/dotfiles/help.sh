@@ -1,18 +1,15 @@
 #!/bin/bash
+# shellcheck disable=SC1091
 
-if [ "$1" = "" ]; then
+#==================================
+# Source utilities
+#==================================
+. "$HOME/.dotfiles/scripts/utils/utils.sh"
+
+
+terminal_help() {
     echo "$(tput setaf 236)┌─────────────────────────────────────────────────────────────┐"
-    echo "$(tput setaf 236)│                     $(tput setaf 220)COMMAND HELP                            $(tput setaf 236)│"
-    echo "$(tput setaf 236)├───────────────────────────┬─────────────────────────────────┤"
-    echo "$(tput setaf 236)│ $(tput setaf 220)Argument                  $(tput setaf 236)│ $(tput setaf 220)Description                     $(tput setaf 236)│"
-    echo "$(tput setaf 236)├───────────────────────────┼─────────────────────────────────┤"
-    echo "$(tput setaf 236)│ $(tput setaf 15)-a                        $(tput setaf 236)│ $(tput setaf 15)Alacritty                       $(tput setaf 236)│"
-    echo "$(tput setaf 236)│ $(tput setaf 15)-v                        $(tput setaf 236)│ $(tput setaf 15)NeoVim                          $(tput setaf 236)│"
-    echo "$(tput setaf 236)│ $(tput setaf 15)-y                        $(tput setaf 236)│ $(tput setaf 15)Yabai/SKHD                      $(tput setaf 236)│"
-    echo "$(tput setaf 236)└────────────────────────┴────────────────────────────────────┘"
-elif [ "$1" = "-a" ]; then
-    echo "$(tput setaf 236)┌─────────────────────────────────────────────────────────────┐"
-    echo "$(tput setaf 236)│                   $(tput setaf 220)ALACRITTY KEY BINDINGS                    $(tput setaf 236)│"
+    echo "$(tput setaf 236)│                   $(tput setaf 220)TERMINAL KEY BINDINGS                     $(tput setaf 236)│"
     echo "$(tput setaf 236)├────────────────────────┬────────────────────────────────────┤"
     echo "$(tput setaf 236)│ $(tput setaf 220)Key Binding            $(tput setaf 236)│ $(tput setaf 220)Description                        $(tput setaf 236)│"
     echo "$(tput setaf 236)├────────────────────────┼────────────────────────────────────┤"
@@ -42,7 +39,10 @@ elif [ "$1" = "-a" ]; then
     echo "$(tput setaf 236)│ $(tput setaf 220)[$(tput setaf 15)j$(tput setaf 220)]$(tput setaf 15) + $(tput setaf 220)[$(tput setaf 15)INPUT$(tput setaf 220)]$(tput setaf 15)          $(tput setaf 236)│$(tput setaf 15) Auto-jump to directory             $(tput setaf 236)│"
     echo "$(tput setaf 236)│ $(tput setaf 220)[$(tput setaf 15)fd$(tput setaf 220)]$(tput setaf 15)                   $(tput setaf 236)│$(tput setaf 15) Fuzzy-Find a directory             $(tput setaf 236)│"
     echo "$(tput setaf 236)└────────────────────────┴────────────────────────────────────┘"
-elif [ "$1" = "-v" ]; then
+}
+
+neovim_help()
+{
     echo "$(tput setaf 236)┌─────────────────────────────────────────────────────────────┐"
     echo "$(tput setaf 236)│                     $(tput setaf 220)NEOVIM KEY BINDINGS                     $(tput setaf 236)│"
     echo "$(tput setaf 236)├────────────────────────┬────────────────────────────────────┤"
@@ -78,7 +78,10 @@ elif [ "$1" = "-v" ]; then
     echo "$(tput setaf 236)│ $(tput setaf 220)<$(tput setaf 15)leader$(tput setaf 220)>$(tput setaf 15)zf             $(tput setaf 236)│ $(tput setaf 15)Focus                              $(tput setaf 236)│"
     echo "$(tput setaf 236)│ $(tput setaf 220)<$(tput setaf 15)leader$(tput setaf 220)>$(tput setaf 15)zm             $(tput setaf 236)│ $(tput setaf 15)Minimalist                         $(tput setaf 236)│"
     echo "$(tput setaf 236)└────────────────────────┴────────────────────────────────────┘"
-elif [ "$1" = "-y" ]; then
+}
+
+wm_bindings_help()
+{
     echo "$(tput setaf 236)┌─────────────────────────────────────────────────────────────┐"
     echo "$(tput setaf 236)│                 $(tput setaf 220)YABAI-SKHD KEY BINDINGS                     $(tput setaf 236)│"
     echo "$(tput setaf 236)├───────────────────────────┬─────────────────────────────────┤"
@@ -99,4 +102,39 @@ elif [ "$1" = "-y" ]; then
     echo "$(tput setaf 236)│ $(tput setaf 220)[$(tput setaf 15)ALT$(tput setaf 220)]$(tput setaf 15) + $(tput setaf 220)[$(tput setaf 15)r$(tput setaf 220)]$(tput setaf 15)               $(tput setaf 236)│ $(tput setaf 15)Rotate tree                     $(tput setaf 236)│"
     echo "$(tput setaf 236)│ $(tput setaf 220)[$(tput setaf 15)ALT$(tput setaf 220)]$(tput setaf 15) + $(tput setaf 220)[$(tput setaf 15)c$(tput setaf 220)]$(tput setaf 15)               $(tput setaf 236)│ $(tput setaf 15)Balance window sizes            $(tput setaf 236)│"
     echo "$(tput setaf 236)└────────────────────────┴────────────────────────────────────┘"
-fi
+}
+
+main() {
+	print_section "Excalih Dotfiles Help"
+	print_option "1" "Alacritty / Kitty"
+	print_option "2" "NeoVim"
+	print_option "3" "Yabai / SKHD"
+	print_option "0" "Exit\n"
+	print_question "Choose an option: "
+
+    read -r ans
+    case $ans in
+    1)
+		terminal_help
+        exit 0
+        ;;
+    2)
+		neovim_help
+        exit 0
+        ;;
+    3)
+		wm_bindings_help
+        exit 0
+        ;;
+    0)
+        bash ~/.dotfiles/bin/dotfiles/main.sh
+        exit 0
+        ;;
+    *)
+        print_error "Wrong option: $ans"
+        exit 1
+        ;;
+    esac
+}
+
+main

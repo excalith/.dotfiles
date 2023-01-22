@@ -116,15 +116,15 @@ symlink() {
     execute "ln -sf $1 $2" "$(basename $1)    →    $2"
 }
 
-open_in_browser() {
+open_dir() {
     # The order of the following checks matters
     # as on Ubuntu there is also a utility called `open`.
     if cmd_exists "xdg-open"; then
-        xdg-open "$2"
+        xdg-open "$1"
     elif cmd_exists "open"; then
-        open "$2"
+        open "$1"
     else
-        print_warning "Please add the public SSH key to $1 ($2)"
+        print_warning "Can't open $1"
     fi
 
 }
@@ -188,8 +188,12 @@ print_question() {
     print_in_yellow "   [?] $1"
 }
 
-print_result() {
+print_option() {
+    print_in_yellow "   $1)"
+    print_in_white " $2\n"
+}
 
+print_result() {
     if [ "$1" -eq 0 ]; then
         print_success "$2"
     else
@@ -197,13 +201,16 @@ print_result() {
     fi
 
     return "$1"
-
 }
 
 print_error_stream() {
     while read -r line; do
         print_error "↳ ERROR: $line"
     done
+}
+
+print_in_white() {
+    print_in_color "$1" 7
 }
 
 print_in_green() {
@@ -220,6 +227,10 @@ print_in_red() {
 
 print_in_yellow() {
     print_in_color "$1" 3
+}
+
+print_in_blue() {
+    print_in_color "$1" 4
 }
 
 print_linke_break() {
