@@ -1,29 +1,26 @@
 #!/bin/bash
+# shellcheck disable=SC1091
+
+#==================================
+# Source utilities
+#==================================
+. "$HOME/.dotfiles/scripts/utils/utils.sh"
+. "$HOME/.dotfiles/scripts/utils/utils_macos.sh"
+
 
 #==================================
 # Print Section Title
 #==================================
-print_section "Running MacOS Dotfile Setup"
-
-
-cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && . "../../scripts/utils/utils.sh" \
-    && . "../../scripts/utils/utils_macos.sh"
-
-
-cd "../../system/macos"
+print_section "Running Linux Dotfile Setup"
 
 # setup symlinks
-. ~/.dotfiles/system/macos/setup_symlinks.sh
-
-# setup xcode
-. ~/.dotfiles/system/macos/setup_xcode.sh
+. "$HOME/.dotfiles/system/macos/setup_symlinks.sh"
 
 # setup packages
-. ~/.dotfiles/system/macos/setup_packages.sh
+. "$HOME/.dotfiles/system/macos/setup_packages.sh"
 
 # setup defaults
-. ~/.dotfiles/system/macos/setup_defaults.sh
+. "$HOME/.dotfiles/system/macos/setup_defaults.sh"
 
 # setup shell
-. ~/.dotfiles/system/macos/setup_shell.sh
+. "$HOME/.dotfiles/system/macos/setup_shell.sh"
