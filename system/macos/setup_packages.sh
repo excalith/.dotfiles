@@ -19,7 +19,6 @@ print_section "Installing Packages"
 #==================================
 print_title "Installing Brew"
 if ! cmd_exists "brew"; then
-	ask_for_sudo
 	printf "\n" | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &> /dev/null
 	#  └─ simulate the ENTER keypress
 fi
