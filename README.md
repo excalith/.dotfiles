@@ -1,7 +1,11 @@
 
 
-# Excalith Dotfiles
+<p align="center">
+	<h1 align="center">Excalith Dotfiles</h1>
+</p>
+
 ![Dotfiles Terminal Screenshot](assets/screenshots/dotfiles.png)
+
 ## Features
 - A custom dotfiles installer
 - A [dotfiles manager](bin/dotfiles/) for post-install
