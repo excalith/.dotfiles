@@ -1,0 +1,25 @@
+    [CMD] + [q]              Quit Alacritty
+    [CMD] + [w]              Close Tab/Pane
+    [F11]                    Fullscreen
+    [CTRL] + [A] + [TAB]     Show Directory Panel
+                                                                
+    [CMD] + [t]              Open New Tab
+    [CMD] + [s]              Select Tab
+    [CMD] + [Key 1...9]      Switch Tabs
+                                                                
+    [CMD] + [j]              Split Pane Vertical
+    [CMD] + [k]              Split Pane Horizontal
+    [CMD] + [d]              Select Pane
+    [F12]                    Focus Selected Pane
+                                                                
+    [CMD] + [Left]           Jump To Line Beggining
+    [CMD] + [Right]          Jump To Line End
+    [CMD] + [Up]             Previous Command
+    [CMD] + [Down]           Next Command
+    [CMD] + [Backspace]      Delete Line
+                                                                
+    [CMD] + [r]              Reload tmux configuration
+    [CMD] + [Shift] + [r]    Kill tmux server
+                                                                
+    [j] + [INPUT]            Auto-jump to directory
+    [fd]                     Fuzzy-Find a directory

@@ -1,0 +1,14 @@
+    [SHIFT] + [ALT] + [1...5]   Move focus between spaces       
+    [ALT] + [1...5]             Move window and focus space     
+                                                                
+    [ALT] + [h]                 Focus west                      
+    [ALT] + [j]                 Focus south                     
+    [ALT] + [k]                 Focus north                     
+    [ALT] + [l]                 Focus east                      
+                                                                
+    [ALT] + [z]                 Toggle fullscreen               
+    [ALT] + [f]                 Toggle native fullscreen        
+    [ALT] + [x]                 Toggle float                    
+                                                                
+    [ALT] + [r]                 Rotate tree                     
+    [ALT] + [c]                 Balance window sizes            

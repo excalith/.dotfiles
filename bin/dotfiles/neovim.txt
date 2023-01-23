@@ -1,0 +1,29 @@
+    Space                    Leader Key                         
+                                                                
+    i                        Insert Mode                        
+    :                        Command Mode                       
+    R                        Replace Mode                       
+    v                        Visual Mode (Highlighting)         
+    V                        Visual Mode (Highlighting Line)    
+    esc                      Return To Normal Mode              
+                                                                
+    w                        Next Word                          
+    b                        Previous Word                      
+    P                        Paste Before                       
+    p                        Paste After                        
+                                                                
+    J                        Join Lines                         
+    dd                       Delete Line                        
+    x                        Delete Char                        
+    X                        Delete Char (Backspace)            
+                                                                
+    u                        Undo                               
+    : <number>               Go To Line <number>                
+                                                                
+    <leader>/                Comment                            
+    <leader>Tab              Tree                               
+    <leader>fw               Telescope Grep                     
+    <leader>ff               Telescope Files                    
+    <leader>zz               Atraxis                            
+    <leader>zf               Focus                              
+    <leader>zm               Minimalist                         
