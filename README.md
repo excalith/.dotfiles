@@ -10,6 +10,7 @@
 - A custom dotfiles installer
 - A [dotfiles manager](bin/dotfiles/) for post-install
 - The [installer](scripts/) is seperated from configs and install scripts
+- Has post-install scripts for configuring `git`, `ssh` and `gpg`
 - Requires git commands for syncing 
 
 
@@ -18,7 +19,6 @@
 - Replaces default terminal with `Alacritty` and `kitty`
 - Packages can be found in [MacOS](system/macos/setup_packages.sh) and [Ubuntu](system/ubuntu/setup_packages.sh) scripts
 - Does not use any fancy WM (on MacOS, only `yabai` and `skhd` used on top of the default DE)
-- Has post-install scripts for configuring `git`, `ssh` and `gpg`
 
 
 ## Installation
@@ -33,6 +33,18 @@ bash -c "$(curl -LsS https://raw.github.com/excalith/.dotfiles/main/scripts/setu
 ```bash
 bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/scripts/setup.sh)"
 ```
+
+## Cloning
+If you want to create your own dotfiles from this repository, you should
+  - Fork or clone this repository
+  - Update [setup](scripts/setup.sh) script with your repository settings (do not change the preset `.dotfiles` path)
+  - Change the configs and packages as you wish
+  - Push your configs to **your own** repository
+  - Run setup bash commands
+
+
+## Maintenance
+You can use `dotfiles` command for a primitive (WIP) dotfile manager script for running maintenance commands
 
 
 ## Credits
