@@ -1,7 +1,7 @@
 
 
 # Excalith Dotfiles
-
+![Dotfiles Terminal Screenshot](assets/screenshots/dotfiles.png)
 ## Features
 - A custom dotfiles installer
 - A [dotfiles manager](bin/dotfiles/) for post-install
