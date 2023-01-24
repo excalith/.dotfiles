@@ -78,7 +78,7 @@ symlink ~/.dotfiles/config/kitty/openactions.conf ~/.config/kitty/openactions.co
 symlink ~/.dotfiles/config/kitty/theme.conf ~/.config/kitty/theme.conf
 
 # tmux config
-print_title "TMUX configuration"
+print_title "tmux configuration"
 symlink ~/.dotfiles/config/tmux/tmux.conf ~/.config/tmux/tmux.conf
 
 # yabai config

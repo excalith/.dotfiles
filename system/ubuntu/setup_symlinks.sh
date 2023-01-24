@@ -55,7 +55,7 @@ symlink ~/.dotfiles/config/starship/starship.toml ~/.config/starship.toml
 print_title "Git configuration"
 symlink ~/.dotfiles/config/git/config ~/.config/git/config
 symlink ~/.dotfiles/config/git/ignore_global ~/.config/git/ignore_global
-touch ~/.dotfiles/config/git/config.local
+touch ~/.config/git/config.local
 
 # neofetch config
 print_title "Neofetch configuration"
@@ -64,7 +64,7 @@ symlink ~/.dotfiles/config/neofetch/config.conf ~/.config/neofetch/config.conf
 # midnight commander theme
 print_title "Midnight Commander configuration"
 symlink ~/.dotfiles/config/mc/ini ~/.config/mc/ini
-symlink ~/.dotfiles/config/mc/Arasaka.ini ~/.local/share/mc/skins/Arasaka.ini
+symlink ~/.dotfiles/config/mc/skins/Arasaka.ini ~/.local/share/mc/skins/Arasaka.ini 
 
 # alacritty config
 print_title "Alacritty configuration"
