@@ -1,4 +1,5 @@
 format = """
+$os\
 $hostname\
 $directory\
 $git_branch\
@@ -25,16 +26,16 @@ symbol = " "
 
 [shell]
 disabled = false
-format = "${sudo}${indicator} "
-bash_indicator = "[$_](purple)"
-fish_indicator = "[➼](purple)"
-zsh_indicator = "[z](purple)"
-powershell_indicator = "[>_](purple)"
-unknown_indicator = "[?](purple)"
+format = "${indicator} ${sudo} "
+bash_indicator = '[\$](purple)'
+zsh_indicator = '[z](purple)'
+fish_indicator = '[➼](purple)'
+powershell_indicator = '[>_](purple)'
+unknown_indicator = '[?](purple)'
 
 [sudo]
 style = 'bold green'
-symbol = 's '
+symbol = ' '
 disabled = false
 
 [directory]
@@ -43,7 +44,7 @@ home_symbol = '~'
 read_only = " "
 read_only_style = "bold red"
 truncation_length = 4
-truncation_symbol = '…/'
+truncation_symbol = ''
 truncate_to_repo = true
 
 [hostname]
@@ -51,6 +52,21 @@ ssh_only = true
 format = '(bold blue)[$hostname](bold red): '
 trim_at = '.companyname.com'
 disabled = false
+
+[os]
+format = "[($symbol)]($style)"
+style = "bold red"
+disabled = false
+
+[os.symbols]
+Alpine = ' '
+Arch = ' '
+Debian = ' '
+Linux = ' '
+Macos = ' '
+Ubuntu = ' '
+Windows = ' '
+Unknown = ' '
 
 [memory_usage]
 symbol = " "
@@ -94,7 +110,14 @@ diverged = ' [](bold red) ([⇡${ahead_count}](bold green) [⇣${behind_count
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
 style = "bright-black"
-cherry_pick = '[🍒 PICKING](bold red)'
+cherry_pick = '[ PICKING](bold red)'
+merge = '[󰦦 MERGING](bold red)'
+rebase = '[󰦦 REBASING](bold red)'
+
+[git_commit]
+commit_hash_length = 7
+tag_symbol = '󰓹 '
+disabled = false
 
 [aws]
 symbol = "  "
