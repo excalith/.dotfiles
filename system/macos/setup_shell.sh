@@ -15,11 +15,17 @@ print_section "Installing Fish Shell"
 
 
 #==================================
+# Install ZSH
+#==================================
+print_title "Installing ZSH"
+brew_install "ZSH" "zsh"
+
+
+#==================================
 # Install Fish
 #==================================
 print_title "Installing Fish Setup"
 brew_install "Fish" "fish"
-brew_install "Starship" "starship"
 brew_install "Fisher" "fisher"
 
 
@@ -32,6 +38,13 @@ fisher_install "FZF" "PatrickF1/fzf.fish"
 fisher_install "Puffer Fish" "nickeb96/puffer-fish"
 fisher_install "Done" "franciscolourenco/done"
 fisher_install "Fish SSH Agent" "danhper/fish-ssh-agent"
+
+
+#==================================
+# Install starship prompt
+#==================================
+print_title "Installing Starship Prompt"
+brew_install "Starship" "starship"
 
 
 #==================================

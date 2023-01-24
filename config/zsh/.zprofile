@@ -136,6 +136,20 @@ function sreload() {
     source ~/.zshrc
 }
 
+# Update shell
+function supdate() {
+    printf "\nUpdating zsh\n"
+    OS=$(uname)
+    case $OS in
+    Linux)
+        sudo apt upgrade -qqy --fix-missing && sudo apt install --allow-unauthenticated -qqy "zsh"
+        ;;
+    Darwin)
+        brew upgrade zsh
+        ;;
+    esac
+}
+
 # CD into dir from anywhere
 alias j='fasd_cd -d'
 

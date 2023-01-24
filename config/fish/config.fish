@@ -11,6 +11,7 @@ set fish_color_valid_path
 funcsave fcd >/dev/null
 funcsave mkcd >/dev/null
 funcsave pping >/dev/null
+funcsave supdate >/dev/null
 
 # Source starship
 starship init fish | source

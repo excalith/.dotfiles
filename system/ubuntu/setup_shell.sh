@@ -15,17 +15,17 @@ print_section "Shell Setup"
 
 
 #==================================
+# Install ZSH
+#==================================
+print_title "Installing ZSH"
+apt_install "ZSH" "zsh"
+
+
+#==================================
 # Install Fish
 #==================================
 print_title "Installing Fish"
 apt_install "Fish" "fish"
-
-
-#==================================
-# Install Starship
-#==================================
-curl -sS https://starship.rs/install.sh | sh -s -- -y  >/dev/null 2>&1
-print_result $? "Starship" "true"
 
 
 #==================================
@@ -45,6 +45,14 @@ fisher_install "FZF" "PatrickF1/fzf.fish"
 fisher_install "Puffer Fish" "nickeb96/puffer-fish"
 fisher_install "Done" "franciscolourenco/done"
 fisher_install "Fish SSH Agent" "danhper/fish-ssh-agent"
+
+
+#==================================
+# Install starship prompt
+#==================================
+print_title "Installing Starship Prompt"
+curl -sS https://starship.rs/install.sh | sh -s -- -y  >/dev/null 2>&1
+print_result $? "Starship" "true"
 
 
 #==================================
