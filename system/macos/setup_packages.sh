@@ -46,6 +46,7 @@ brew_tap 'teamookla/speedtest'
 print_title "Installing Brew Packages"
 brew_install "wget" "wget"
 brew_install "mas" "mas"
+brew_install "fd" "fd"
 brew_install "fzf" "fzf"
 brew_install "fasd" "fasd"
 brew_install "dockutil" "dockutil"

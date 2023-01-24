@@ -86,6 +86,7 @@ apt_install "less" "less"
 apt_install "exa" "exa"
 apt_install "bat" "bat"
 apt_install "tre-command" "tre-command"
+apt_install "fd-find" "fd-find"
 apt_install "fzf" "fzf"
 apt_install "ripgrep" "ripgrep"
 
