@@ -35,7 +35,7 @@ function code() {
 
 # Adds .gitignore files
 function gi() {
-    sh ~/.dotfiles/bin/gitignore/gi.zsh
+    bash ~/.dotfiles/bin/gitignore/gi.sh
 }
 
 # Custom Pretty Ping
