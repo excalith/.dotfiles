@@ -18,8 +18,10 @@ print_section "Installing Packages"
 # Add keys to apt
 #==================================
 print_title "Adding Keys"
+sudo mkdir -p /etc/apt/keyrings
 execute "sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" "Mono (Add Key)"
-
+curl -fsSL --silent https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg &> /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list &> /dev/null
 
 #==================================
 # Add repositories to apt
@@ -91,6 +93,7 @@ apt_install "fd-find" "fd-find"
 apt_install "fzf" "fzf"
 apt_install "ripgrep" "ripgrep"
 
+apt_install "gum" "gum"
 apt_install "htop" "htop"
 apt_install "httpie" "httpie"
 apt_install "prettyping" "prettyping"
