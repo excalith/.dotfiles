@@ -14,7 +14,7 @@
 print_section "Running Linux Dotfile Setup"
 
 # setup symlinks
-. "$HOME/.dotfiles/system/ubuntu/setup_symlinks.sh"
+. "$HOME/.dotfiles/system/symlink.sh"
 
 # setup packages
 . "$HOME/.dotfiles/system/ubuntu/setup_packages.sh"

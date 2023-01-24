@@ -47,15 +47,7 @@ df_maintenance() {
 	if [ "$CHOICE" == "$OPT_1" ]; then
 		gum confirm "Do You Want To $CHOICE?"
 		if [ $? -eq 0 ]; then
-			os_name="$(get_os)"
-			if [ "$os_name" == "macos" ]; then
-				bash ~/.dotfiles/system/macos/setup_symlinks.sh
-			elif [ "$os_name" == "ubuntu" ]; then
-				bash ~/.dotfiles/system/ubuntu/setup_symlinks.sh
-			else
-				print_error "$os_name is not supported."
-				main
-			fi
+			bash ~/.dotfiles/system/symlink.sh
 		else
 			df_maintenance
 		fi

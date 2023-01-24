@@ -5,7 +5,7 @@
 # Source utilities
 #==================================
 . "$HOME/.dotfiles/scripts/utils/utils.sh"
-
+ os_name="$(get_os)"
 
 #==================================
 # Print Section Title
@@ -68,12 +68,20 @@ symlink ~/.dotfiles/config/mc/skins/Arasaka.ini ~/.local/share/mc/skins/Arasaka.
 
 # alacritty config
 print_title "Alacritty configuration"
-symlink ~/.dotfiles/config/alacritty/alacrittyLinux.yml ~/.config/alacritty/alacritty.yml
+if [ "$os_name" == "macos" ]; then
+	symlink ~/.dotfiles/config/alacritty/alacrittyMacos.yml ~/.config/alacritty/alacritty.yml
+elif [ "$os_name" == "ubuntu" ]; then
+	symlink ~/.dotfiles/config/alacritty/alacrittyLinux.yml ~/.config/alacritty/alacritty.yml
+fi
 
 # kitty config
 print_title "Kitty configuration"
 symlink ~/.dotfiles/config/kitty/kitty.conf ~/.config/kitty/kitty.conf
-symlink ~/.dotfiles/config/kitty/keymapLinux.conf ~/.config/kitty/keymap.conf
+if [ "$os_name" == "macos" ]; then
+	symlink ~/.dotfiles/config/kitty/keymapMacos.conf ~/.config/kitty/keymap.conf
+elif [ "$os_name" == "ubuntu" ]; then
+	symlink ~/.dotfiles/config/kitty/keymapLinux.conf ~/.config/kitty/keymap.conf
+fi
 symlink ~/.dotfiles/config/kitty/openactions.conf ~/.config/kitty/openactions.conf
 symlink ~/.dotfiles/config/kitty/theme.conf ~/.config/kitty/theme.conf
 
@@ -81,6 +89,17 @@ symlink ~/.dotfiles/config/kitty/theme.conf ~/.config/kitty/theme.conf
 print_title "tmux configuration"
 symlink ~/.dotfiles/config/tmux/tmux.conf ~/.config/tmux/tmux.conf
 
-# bat configuration
-print_title "bat binary"
-symlink /usr/bin/batcat ~/.local/bin/bat
+
+if [ "$os_name" == "macos" ]; then
+	# yabai config
+	print_title "Yabai configuration"
+	symlink ~/.dotfiles/config/yabai/.yabairc ~/.config/yabairc
+
+	# skhd config
+	print_title "SKHD configuration"
+	symlink ~/.dotfiles/config/skhd/.skhdrc ~/.config/skhdrc
+elif [ "$os_name" == "ubuntu" ]; then
+	# bat configuration
+	print_title "bat binary"
+	symlink /usr/bin/batcat ~/.local/bin/bat
+fi
