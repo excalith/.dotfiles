@@ -32,7 +32,7 @@ alias nvupdate="nvim -c \"NvChadUpdate\""
 
 # Custom Folders
 alias projects="cd ~/Projects"
-alias config ="cd ~/.config"
+alias config="cd ~/.config"
 
 # Custom Functions
 alias sreload=". ~/.config/fish/config.fish"

@@ -65,6 +65,22 @@ alias hg="history | rg " # +command
 alias pubip="dig +short txt ch whoami.cloudflare @1.0.0.1"
 alias locip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
 
+# Flush DNS
+function flushdns() {
+    printf "\nFlushing DNS\n"
+    OS=$(uname)
+    case $OS in
+    Linux)
+        sudo systemd-resolve --flush-caches
+        ;;
+    Darwin)
+        dscacheutil -flushcache
+        ;;
+    esac
+}
+
+# Fast CD into directories
+alias fcd='cd $(tree -dfia -L 1 | fzf)'
 
 # Functions
 # Makes directory and cd's into it
