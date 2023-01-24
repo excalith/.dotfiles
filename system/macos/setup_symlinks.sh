@@ -23,7 +23,7 @@ symlink ~/.dotfiles/config/fish/config.fish ~/.config/fish/config.fish
 symlink ~/.dotfiles/config/fish/export.fish ~/.config/fish/export.fish
 symlink ~/.dotfiles/config/fish/bindings.fish ~/.config/fish/bindings.fish
 
-symlink ~/.dotfiles/config/fish/functions/arsaka.fish ~/.config/fish/functions/arsaka.fish
+symlink ~/.dotfiles/config/fish/functions/arasaka.fish ~/.config/fish/functions/arasaka.fish
 symlink ~/.dotfiles/config/fish/functions/fcd.fish ~/.config/fish/functions/fcd.fish
 symlink ~/.dotfiles/config/fish/functions/flushdns.fish ~/.config/fish/functions/flushdns.fish
 symlink ~/.dotfiles/config/fish/functions/gi.fish ~/.config/fish/functions/gi.fish
