@@ -87,6 +87,7 @@ brew_install "speedtest" "speedtest"
 brew_install "tldr" "tldr"
 brew_install "shpotify" "shpotify"
 brew_install "cmatrix" "cmatrix"
+brew_install "no-more-secrets" "no-more-secrets"
 brew_install "yabai" "koekeishiya/formulae/yabai"
 brew_install "skhd" "koekeishiya/formulae/skhd"
 
