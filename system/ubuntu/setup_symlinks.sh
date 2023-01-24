@@ -21,12 +21,15 @@ print_section "Creating Symlinks"
 print_title "Fish configuration"
 symlink ~/.dotfiles/config/fish/config.fish ~/.config/fish/config.fish
 symlink ~/.dotfiles/config/fish/export.fish ~/.config/fish/export.fish
-symlink ~/.dotfiles/config/fish/aliases.fish ~/.config/fish/aliases.fish
 symlink ~/.dotfiles/config/fish/bindings.fish ~/.config/fish/bindings.fish
 
+symlink ~/.dotfiles/config/fish/functions/arsaka.fish ~/.config/fish/functions/arsaka.fish
 symlink ~/.dotfiles/config/fish/functions/fcd.fish ~/.config/fish/functions/fcd.fish
+symlink ~/.dotfiles/config/fish/functions/flushdns.fish ~/.config/fish/functions/flushdns.fish
+symlink ~/.dotfiles/config/fish/functions/gi.fish ~/.config/fish/functions/gi.fish
 symlink ~/.dotfiles/config/fish/functions/mkcd.fish ~/.config/fish/functions/mkcd.fish
 symlink ~/.dotfiles/config/fish/functions/pping.fish ~/.config/fish/functions/pping.fish
+symlink ~/.dotfiles/config/fish/functions/sreload.fish ~/.config/fish/functions/sreload.fish
 symlink ~/.dotfiles/config/fish/functions/supdate.fish ~/.config/fish/functions/supdate.fish
 
 symlink ~/.dotfiles/config/fish/theme/excalith.fish ~/.config/fish/theme/excalith.fish
@@ -34,16 +37,12 @@ touch ~/.config/fish/local.fish
 
 # bash config
 print_title "Bash configuration"
-symlink ~/.dotfiles/config/bash/.bashrc ~/.config/bash/.bashrc
-bash <<'END_BASH'
-    --rcfile ~/.config/bash/.bashrc >/dev/null 2>&1
-END_BASH
-touch ~/.config/bash/.bash.local
+symlink ~/.dotfiles/config/bash/.bashrc ~/.bashrc
+touch ~/.bash.local
 
 # zsh config
 print_title "Zsh configuration"
 symlink ~/.dotfiles/config/zsh/.zshrc ~/.zshrc
-symlink ~/.dotfiles/config/zsh/.zprofile ~/.zprofile
 touch ~/.zsh.local
 
 # starship config
@@ -52,9 +51,9 @@ symlink ~/.dotfiles/config/starship/starship.toml ~/.config/starship.toml
 
 # git config
 print_title "Git configuration"
-touch ~/.dotfiles/config/git/config.local
 symlink ~/.dotfiles/config/git/config ~/.config/git/config
 symlink ~/.dotfiles/config/git/ignore_global ~/.config/git/ignore_global
+touch ~/.dotfiles/config/git/config.local
 
 # neofetch config
 print_title "Neofetch configuration"

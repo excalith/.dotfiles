@@ -36,9 +36,42 @@ eval "$(hub alias -s)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 96% --reverse --border rounded --preview "bat --style=numbers --color=always --line-range :500 {}"'
 
+# Easy navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias .2='cd ../../'
+alias .3='cd ../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+# Reload zsh sessions
+function sreload() {
+    source ~/.zshrc
+	source ~/.zsh.local
+	source ~/.config/bash/aliases.bash
+	source ~/.config/bash/functions.bash
+}
+
+# Update shell
+function supdate() {
+    printf "\nUpdating zsh\n"
+    OS=$(uname)
+    case $OS in
+    Linux)
+        sudo apt upgrade -qqy --fix-missing && sudo apt install --allow-unauthenticated -qqy "zsh"
+        ;;
+    Darwin)
+        brew upgrade zsh
+        ;;
+    esac
+}
+
 # Include ZSH Local
-source ~/.zprofile
 source ~/.zsh.local
+source ~/.config/bash/aliases.bash
+source ~/.config/bash/functions.bash
 
 # Source starship
 export STARSHIP_CONFIG=~/.config/starship.toml

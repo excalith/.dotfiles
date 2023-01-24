@@ -1,4 +1,4 @@
-# Dotfiles
+# Run dotfiles bin
 alias dotfiles="bash ~/.dotfiles/bin/dotfiles/main.sh"
 alias colors="bash ~/.dotfiles/bin/colors/colors.sh"
 
@@ -9,10 +9,10 @@ alias c="clear"
 alias exa='command exa --group-directories-first -laFh --grid --git --icons'
 alias cat=bat
 alias man=batman
-alias vim=nvim .
+alias vim='nvim .'
 alias lg=lazygit
 alias matrix='cmatrix -aBf'
-alias ping=pping
+alias ping=ping_pretty
 alias fast='fast -u --single-line'
 
 # History
@@ -30,10 +30,3 @@ alias locip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep
 # Update Neovim NVChad
 alias nvupdate="nvim -c \"NvChadUpdate\""
 
-# Custom Folders
-alias projects="cd ~/Projects"
-alias config="cd ~/.config"
-
-# Custom Functions
-alias sreload=". ~/.config/fish/config.fish"
-alias gi="sh ~/.dotfiles/Generic/custom/gitignore/gi.zsh"
