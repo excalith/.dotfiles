@@ -15,7 +15,6 @@ funcsave flushdns >/dev/null
 funcsave sreload >/dev/null
 funcsave supdate >/dev/null
 funcsave spupdate >/dev/null
-funcsave gi >/dev/null
 funcsave arasaka >/dev/null
 
 # Source starship

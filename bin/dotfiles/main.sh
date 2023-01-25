@@ -22,6 +22,12 @@ df_main() {
 		exit 0
 	elif  [ "$CHOICE" == "$OPT_2" ]; then
 		printf "  Comparing config changes with upstream\n"
+		current_dir=$(pwd)
+		cd ~/.dotfiles && \
+fish <<'END_FISH'
+	gd
+END_FISH
+		cd "$current_dir" || exit
 		exit 0
 	elif  [ "$CHOICE" == "$OPT_3" ]; then
 		printf "  Launching .dotfiles project in code editor\n"
@@ -77,7 +83,7 @@ df_help() {
 	OPT_0="Back"
 
 	os_name="$(get_os)"
-	if [ "$os_name" == "maos" ]; then
+	if [ "$os_name" == "macos" ]; then
 		CHOICE=$(gum choose --height 10 "$OPT_1" "$OPT_2" "$OPT_3" "$OPT_0")
 	elif [ "$os_name" == "ubuntu" ]; then
 		CHOICE=$(gum choose --height 10 "$OPT_1" "$OPT_2" "$OPT_0")
@@ -86,11 +92,11 @@ df_help() {
 	fi
 
 	if [ "$CHOICE" == "$OPT_1" ]; then
-		cat < terminal.txt | gum filter
+		cat < ~/.dotfiles/bin/dotfiles/terminal.txt | gum filter
 	elif  [ "$CHOICE" == "$OPT_2" ]; then
-		cat < neovim.txt | gum filter
+		cat < ~/.dotfiles/bin/dotfiles/neovim.txt | gum filter
 	elif  [ "$CHOICE" == "$OPT_3" ]; then
-		cat < yabai.txt | gum filter
+		cat < ~/.dotfiles/bin/dotfiles/yabai.txt | gum filter
 	elif  [ "$CHOICE" == "$OPT_0" ]; then
 		df_main
 	fi
