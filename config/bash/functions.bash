@@ -33,11 +33,6 @@ function code() {
     VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args "$*"
 }
 
-# Adds .gitignore files
-function gi() {
-    bash ~/.dotfiles/bin/gitignore/gi.sh
-}
-
 # Custom Pretty Ping
 function ping_pretty() {
 
@@ -46,6 +41,19 @@ function ping_pretty() {
     else
         prettyping --nolegend "$@"
     fi
+}
+
+function spupdate() {
+    printf "\nUpdating starfish\n"
+    OS=$(uname)
+    case $OS in
+    Linux)
+        curl -sS https://starship.rs/install.sh | sh
+        ;;
+    Darwin)
+        brew upgrade starship
+        ;;
+    esac
 }
 
 function arasaka() {
@@ -94,7 +102,7 @@ then
     export -f flushdns
     export -f mkcd
     export -f code
-    export -f gi
     export -f ping_pretty
     export -f arasaka
+    export -f spupdate
 fi

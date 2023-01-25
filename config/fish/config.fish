@@ -12,8 +12,9 @@ funcsave fcd >/dev/null
 funcsave mkcd >/dev/null
 funcsave pping >/dev/null
 funcsave flushdns >/dev/null
-funcsave supdate >/dev/null
 funcsave sreload >/dev/null
+funcsave supdate >/dev/null
+funcsave spupdate >/dev/null
 funcsave gi >/dev/null
 funcsave arasaka >/dev/null
 

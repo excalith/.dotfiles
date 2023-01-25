@@ -31,6 +31,7 @@ symlink ~/.dotfiles/config/fish/functions/mkcd.fish ~/.config/fish/functions/mkc
 symlink ~/.dotfiles/config/fish/functions/pping.fish ~/.config/fish/functions/pping.fish
 symlink ~/.dotfiles/config/fish/functions/sreload.fish ~/.config/fish/functions/sreload.fish
 symlink ~/.dotfiles/config/fish/functions/supdate.fish ~/.config/fish/functions/supdate.fish
+symlink ~/.dotfiles/config/fish/functions/spupdate.fish ~/.config/fish/functions/spupdate.fish
 
 symlink ~/.dotfiles/config/fish/theme/excalith.fish ~/.config/fish/theme/excalith.fish
 touch ~/.config/fish/local.fish

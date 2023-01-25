@@ -37,3 +37,6 @@ set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.
 
 # Grep colors
 setenv GREP_OPTIONS "--color=auto"
+
+# after `forgit` was loaded
+export PATH="$PATH:$FORGIT_INSTALL_DIR/bin"

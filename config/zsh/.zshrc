@@ -20,8 +20,12 @@ export COLUMNS=80
 # Setup Bat
 export BAT_PAGER="less -RF"
 
-# Plugins
-plugins=(git macos arasaka z sudo dirhistory history)
+# Setup FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS='--height 96% --reverse --border rounded --preview "bat --style=numbers --color=always --line-range :500 {}"'
+
+# forgit
+export PATH="$PATH:$FORGIT_INSTALL_DIR/bin"
 
 # Setup FASD
 eval "$(fasd --init auto)"
@@ -31,10 +35,6 @@ eval $(thefuck --alias)
 
 # Setup GitHub Hub
 eval "$(hub alias -s)"
-
-# Setup FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS='--height 96% --reverse --border rounded --preview "bat --style=numbers --color=always --line-range :500 {}"'
 
 # Easy navigation
 alias ..="cd .."
