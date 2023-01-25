@@ -57,16 +57,18 @@ export_gpg() {
 main() {
 	print_section "GPG Setup"
 
-    ask_for_confirmation "Do you want to setup GPG?"
-    printf "\n"
-
-    if answer_is_yes; then
-        generate_gpg_key
-        register_to_shell
-        export_gpg
-    else
-        print_warning "Skipped GPG setup"
+    if [ ! "$@" ]; then
+        ask_for_confirmation "Do you want to setup GPG?"
+        printf "\n"
+        if ! answer_is_yes; then
+            print_warning "Skipped GPG setup"
+            return
+        fi
     fi
+
+    generate_gpg_key
+    register_to_shell
+    export_gpg
 }
 
-main
+main "$@"

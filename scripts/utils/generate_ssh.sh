@@ -44,15 +44,15 @@ add_ssh_configs() {
             "  AddKeysToAgent yes" \
             "  UseKeychain yes" \
             "  IdentityFile $1" \
-            "  LogLevel ERROR" >> ~/.ssh/config
+            "  LogLevel ERROR" >>~/.ssh/config
 
     # Check if the OS is Linux
     elif [ "$os" == "Linux" ]; then
         printf "%s\n" \
             "Host *" \
             "  IdentityFile $1" \
-            "  LogLevel ERROR" >> ~/.ssh/config
-    
+            "  LogLevel ERROR" >>~/.ssh/config
+
     # Exit if not supported OS
     else
         print_error "Could not create SSH config for $os"
@@ -61,15 +61,15 @@ add_ssh_configs() {
     print_result $? "Add SSH configs"
 }
 
-copy_pubkey () {
+copy_pubkey() {
     print_title "Public Key Management"
 
     if cmd_exists "pbcopy"; then
-        pbcopy < "$1"
+        pbcopy <"$1"
         print_result $? "Copy public SSH key to clipboard"
 
     elif cmd_exists "xclip"; then
-        xclip -selection clip < "$1"
+        xclip -selection clip <"$1"
         print_result $? "Copy public SSH key to clipboard"
 
     else
@@ -78,20 +78,18 @@ copy_pubkey () {
 }
 
 main() {
-	print_section "SSH Setup"
+    print_section "SSH Setup"
 
-    ask_for_confirmation "Do you want to setup SSH?"
-    printf "\n"
-
-    if answer_is_yes; then
-        ssh -T git@github.com &> /dev/null
-
-        if [ $? -ne 1 ]; then
-            setup
+    if [ ! "$@" ]; then
+        ask_for_confirmation "Do you want to setup SSH?"
+        printf "\n"
+        if ! answer_is_yes; then
+            print_warning "Skipped SSH setup"
+            return
         fi
-    else	
-		print_warning "Skipped SSH setup"
-	fi
+    fi
+
+    setup
 }
 
-main
+main "$@"
