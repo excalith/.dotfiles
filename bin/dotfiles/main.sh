@@ -8,10 +8,10 @@
 
 
 df_main() {
-	OPT_1="Directory..."
-	OPT_2="Edit..."
-	OPT_3="Generate..."
-	OPT_4="Help"
+	OPT_1="Directory"
+	OPT_2="Edit"
+	OPT_3="Generate"
+	OPT_4="Help"
 	OPT_0="Exit"
 	CHOICE=$(gum choose --height 10 "$OPT_1" "$OPT_2" "$OPT_3" "$OPT_4" "$OPT_0")
 
@@ -31,8 +31,16 @@ df_main() {
 
 df_sub_dir() {
 	OPT_1="Open Directory"
-	OPT_2="CD Directory"
+	OPT_2="CD Into Directory"
 	OPT_0="Back"
+
+	os_name="$(get_os)"
+	if [ "$os_name" == "macos" ]; then
+		OPT_1="Open Directory In Finder"
+	elif [ "$os_name" == "ubuntu" ]; then
+		OPT_1="Open Directory In File Browser"
+	fi
+
 	CHOICE=$(gum choose --height 10 "$OPT_1" "$OPT_2" "$OPT_0")
 
 	if [ "$CHOICE" == "$OPT_1" ]; then
@@ -106,7 +114,7 @@ df_sub_generate() {
 df_sub_help() {
 	OPT_1="Terminal"
 	OPT_2="NeoVim"
-	OPT_3="Yabai / SKHD"
+	OPT_3="Yabai"
 	OPT_0="Back"
 
 	os_name="$(get_os)"
