@@ -55,4 +55,4 @@ I have modified this dotfiles with my own taste of config files and added a bunc
 
 ## License
 
-The code is available under the [MIT license](license).
+The code is available under the [MIT license](LICENSE).
