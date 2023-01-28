@@ -112,10 +112,12 @@ apt_install "Alacritty" "alacritty"
 apt_install "Caffeine" "caffeine"
 apt_install "Notion" "notion"
 
+
 #==================================
 # Install Snap packages
 #==================================
 print_title "Install Snap Packages"
+snap_install "spt" "spt"
 snap_install "GitKraken" "gitkraken"
 snap_install "VS Code" "code"
 snap_install "1Password" "1password"

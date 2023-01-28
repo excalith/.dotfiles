@@ -1,6 +1,6 @@
 # Excalith Dotfiles
 
-![Dotfiles Terminal Screenshot](assets/screenshots/dotfiles.png)
+![Screenshot of alacritty terminal with tmux, using neofetch, nvim and custom scripts](assets/screenshots/dotfiles.png)
 
 ## Features
 
@@ -8,14 +8,14 @@
 - A [dotfiles manager](bin/dotfiles/) for post-install
 - The [installer](scripts/) is seperated from configs and install scripts
 - Has post-install scripts for configuring `git`, `ssh` and `gpg`
-- Requires git commands for syncing
+- Requires git commands for syncing without fancy dotfiles managers
 
 ## Uses
 
 - Supports `bash`, `zsh` and `fish` with `starship` shell prompt and has `tmux` support
 - Replaces default terminal with `Alacritty` and `kitty`
 - Packages can be found in [MacOS](system/macos/setup_packages.sh) and [Ubuntu](system/ubuntu/setup_packages.sh) scripts
-- Does not use any fancy WM (on MacOS, only `yabai` and `skhd` used on top of the default DE)
+- Does not use any WM (on MacOS, only `yabai` and `skhd` used on top of the default DE)
 
 ## Installation
 
