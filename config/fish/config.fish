@@ -18,5 +18,7 @@ funcsave supdate >/dev/null
 funcsave pupdate >/dev/null
 funcsave arasaka >/dev/null
 
+alias ping pping
+
 # Source starship
 starship init fish | source

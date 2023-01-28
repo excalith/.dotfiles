@@ -1,12 +1,7 @@
-# function bind_enter
-#     set -l lastline $history[1]
-#     set -l cmdline (commandline)
-#     if test -z (string trim "$cmdline")
-#         commandline -r $lastline
-#         commandline -f execute
-#     else
-#         commandline -f execute
-#     end
-# end
+# https://fishshell.com/docs/current/cmds/bind.html
 
-# bind \r bind_enter
+# Start fzf for finding files while displaying them within bat
+bind \ct 'fzf --preview "bat --style=numbers --color=always --line-range :500 {}"'
+
+# Start fzf for fuzzy-cd into dir
+bind \cd 'cd $(tree -dfia -L 1 | fzf)'
