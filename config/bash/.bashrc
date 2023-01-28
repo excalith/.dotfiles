@@ -40,6 +40,9 @@ source "$HOME/.bash.local"
 source "$HOME/.config/bash/aliases.bash"
 source "$HOME/.config/bash/functions.bash"
 
+# Pretty ping alias
+alias ping=ping_pretty
+
 # forgit
 export PATH="$PATH:$FORGIT_INSTALL_DIR/bin"
 

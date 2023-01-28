@@ -12,7 +12,6 @@ alias man=batman
 alias vim='nvim .'
 alias lg=lazygit
 alias matrix='cmatrix -aBf'
-alias ping=ping_pretty
 alias fast='fast -u --single-line'
 
 # History
@@ -28,14 +27,4 @@ alias pubip="dig +short txt ch whoami.cloudflare @1.0.0.1"
 alias locip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
 
 # Update Neovim NVChad
-alias nvupdate="nvim -c \"NvChadUpdate\""
-
-# fasd Aliases
-alias a='fasd -a'        # any
-alias s='fasd -si'       # show / search / select
-alias d='fasd -d'        # directory
-alias f='fasd -f'        # file
-alias sd='fasd -sid'     # interactive directory selection
-alias sf='fasd -sif'     # interactive file selection
-alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-alias zz='fasd_cd -d -i' # cd with interactive selection
+alias nupdate="nvim -c \"NvChadUpdate\""

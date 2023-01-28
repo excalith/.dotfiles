@@ -46,6 +46,9 @@ alias .3='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 
+# Pretty ping alias
+alias ping=ping_pretty
+
 # Reload zsh sessions
 function sreload() {
     source ~/.zshrc
