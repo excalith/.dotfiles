@@ -25,6 +25,7 @@ eval "$(fasd --init auto)"
 
 # FZF Defaults
 export FZF_DEFAULT_OPTS='--height 96% --reverse --border rounded --preview "bat --style=numbers --color=always --line-range :500 {}"'
+export FZF_CTRL_T_OPTS='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"'
 
 # Refresh shell config
 function sreload() {
