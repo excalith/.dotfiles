@@ -4,7 +4,7 @@
 window:
   # Window dimensions (changes require restart)
   dimensions:
-    columns: 120
+    columns: 130
     lines: 45
 
   # Window padding (changes require restart)
@@ -59,7 +59,7 @@ font:
     style: "Light Italic"
 
   # Point size of the font
-  size: 14.0
+  size: 15.5
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
