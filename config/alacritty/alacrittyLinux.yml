@@ -82,7 +82,6 @@ draw_bold_text_with_bright_colors: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: true
 
-# Colors
 # Colors (Horizon Dark - https://github.com/eendroroy/alacritty-theme/blob/master/themes/horizon-dark.yaml)
 colors:
   # Primary colors
@@ -165,8 +164,7 @@ mouse:
   #modifiers: Control|Shift
   hints:
     launcher:
-      # This depends on your OS, on Mac it’s `open`
-      program: open
+      program: open # This depends on your OS, on Mac it’s `open`
     modifiers: Control
 
 selection:
@@ -225,14 +223,7 @@ debug:
 alt_send_esc: false
 
 # Shell
-#
-# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
-# Entries in shell.args are passed unmodified as arguments to the shell.
-# shell:
-#   program: /usr/local/bin/oh-my-zsh
-#   args:
-#     - --command=tmux
-# vim: nospell
+# Start fish with tmux session
 shell:
   program: /usr/bin/tmux
   args:

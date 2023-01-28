@@ -13,8 +13,9 @@ funcsave mkcd >/dev/null
 funcsave pping >/dev/null
 funcsave flushdns >/dev/null
 funcsave sreload >/dev/null
+funcsave treload >/dev/null
 funcsave supdate >/dev/null
-funcsave spupdate >/dev/null
+funcsave pupdate >/dev/null
 funcsave arasaka >/dev/null
 
 # Source starship

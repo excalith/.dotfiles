@@ -1,4 +1,4 @@
-function spupdate --description 'Updates starship shell prompt'
+function pupdate --description 'Updates starship shell prompt'
     printf "\nUpdating starfish\n"
 	switch (uname)
 		case Linux
@@ -6,4 +6,5 @@ function spupdate --description 'Updates starship shell prompt'
 		case Darwin
 			brew upgrade starship
 	end
+	tmux display-message "Starship Prompt Update Complete"
 end

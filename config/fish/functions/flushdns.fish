@@ -6,4 +6,6 @@ function flushdns --description 'Flush DNS'
 		case Darwin
 			dscacheutil -flushcache
 	end
+	
+	tmux display-message "Flushed DNS"
 end

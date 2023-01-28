@@ -15,6 +15,8 @@ function flushdns() {
         dscacheutil -flushcache
         ;;
     esac
+
+    tmux display-message "Flushed DNS"
 }
 
 
@@ -43,7 +45,7 @@ function ping_pretty() {
     fi
 }
 
-function spupdate() {
+function pupdate() {
     printf "\nUpdating starfish\n"
     OS=$(uname)
     case $OS in
@@ -54,6 +56,14 @@ function spupdate() {
         brew upgrade starship
         ;;
     esac
+
+    tmux display-message "Starship Prompt Update Completed"
+}
+
+function treload ()
+{
+    tmux source-file ~/.config/tmux/tmux.conf
+    tmux display-message "TMUX Config Reloaded"
 }
 
 function arasaka() {

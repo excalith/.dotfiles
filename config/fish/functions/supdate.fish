@@ -6,4 +6,5 @@ function supdate --description 'Updates fish shell'
 		case Darwin
 			brew upgrade fish
 	end
+	tmux display-message "Fish Shell Update Complete"
 end

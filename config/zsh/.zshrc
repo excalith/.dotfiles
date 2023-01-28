@@ -52,6 +52,8 @@ function sreload() {
 	source ~/.zsh.local
 	source ~/.config/bash/aliases.bash
 	source ~/.config/bash/functions.bash
+
+    tmux display-message "ZSH Shell Config Reloaded"
 }
 
 # Update shell
@@ -66,6 +68,8 @@ function supdate() {
         brew upgrade zsh
         ;;
     esac
+
+    tmux display-message "ZSH Shell Update Complete"
 }
 
 # Include ZSH Local
