@@ -80,12 +80,12 @@ format = "[$symbol]($style)"
 [cmd_duration]
 min_time = 5_000
 show_milliseconds = false
-format = "took [$duration]($style)"
-style = "yellow"
+format = "[ $duration]($style)"
+style = "fg:240"
 
 [time]
 disabled = false
-style = "bold white"
+style = "fg:240"
 format = "[$time]($style)"
 
 [git_branch]
@@ -94,18 +94,18 @@ format = "[$symbol$branch]($style) "
 style = "bold bright-purple"
 
 [git_status]
-format = '[\[ ](bold purple)$all_status$ahead_behind[ \]](bold purple)'
-up_to_date = '[✓](bold green)'
-staged     = '[+](bold green)'
-modified   = '[!](bold yellow)'
-renamed    = '[~](bold yellow)'
-deleted    = '[✘](bold yellow)'
-stashed    = '[\$](bold bright-purple)'
-untracked  = '[?](bold bold bright-purple)'
-conflicted = '[=](bold red)'
-ahead = ' [⇡${count}](bold green)'
-behind = ' [⇣${count}](bold red)'
-diverged = ' [](bold red) ([⇡${ahead_count}](bold green) [⇣${behind_count}](bold red))'
+format = '[\[](bold purple)$all_status$ahead_behind[\]](bold purple)'
+up_to_date = '[✓](green)'
+staged     = '[+](green)'
+modified   = '[!](yellow)'
+renamed    = '[~](yellow)'
+deleted    = '[✘](yellow)'
+stashed    = '[\$](bright-purple)'
+untracked  = '[?](bright-purple)'
+conflicted = '[=](red)'
+ahead = ' [⇡${count}](green)'
+behind = ' [⇣${count}](red)'
+diverged = ' [](red) ([⇡${ahead_count}](green) [⇣${behind_count}](red))'
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
