@@ -99,16 +99,16 @@ up_to_date = '[✓](green)'
 staged     = '[+](green)'
 modified   = '[!](yellow)'
 renamed    = '[~](yellow)'
-deleted    = '[✘](yellow)'
+deleted    = '[✖](yellow)'
 stashed    = '[\$](bright-purple)'
 untracked  = '[?](bright-purple)'
 conflicted = '[=](red)'
-ahead = ' [⇡${count}](green)'
-behind = ' [⇣${count}](red)'
-diverged = ' [](red) ([⇡${ahead_count}](green) [⇣${behind_count}](red))'
+ahead = '[⇡${count}](green)'
+behind = '[⇣${count}](red)'
+diverged = ' [](red)([⇡${ahead_count}](green)[⇣${behind_count}](red))'
 
 [git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
+format = '\([$state($progress_current/$progress_total)]($style)\) '
 style = "bright-black"
 cherry_pick = '[ PICKING](bold red)'
 merge = '[󰦦 MERGING](bold red)'
@@ -127,6 +127,10 @@ symbol = " "
 
 [docker_context]
 symbol = " "
+
+[dotnet]
+symbol = ' '
+heuristic = true
 
 [golang]
 symbol = " "
