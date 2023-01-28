@@ -108,6 +108,14 @@ cmd_exists() {
     command -v "$1" &> /dev/null
 }
 
+is_git_repository() {
+    git rev-parse &> /dev/null
+}
+
+repo_has_remote_url() {
+    git config --get remote.origin.url  &> /dev/null
+}
+
 #==================================
 # Symlink
 #==================================

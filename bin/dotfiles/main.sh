@@ -11,9 +11,10 @@ df_main() {
 	OPT_1="Directory"
 	OPT_2="Edit"
 	OPT_3="Generate"
-	OPT_4="Help"
+	OPT_4="Sync"
+	OPT_9="Help"
 	OPT_0="Exit"
-	CHOICE=$(gum choose --height 10 "$OPT_1" "$OPT_2" "$OPT_3" "$OPT_4" "$OPT_0")
+	CHOICE=$(gum choose --height 10 "$OPT_1" "$OPT_2" "$OPT_3" "$OPT_4" "$OPT_9" "$OPT_0")
 
 	if [ "$CHOICE" == "$OPT_1" ]; then
 		df_sub_dir
@@ -22,6 +23,8 @@ df_main() {
 	elif  [ "$CHOICE" == "$OPT_3" ]; then
 		df_sub_generate
 	elif  [ "$CHOICE" == "$OPT_4" ]; then
+		df_sub_sync
+	elif  [ "$CHOICE" == "$OPT_9" ]; then
 		df_sub_help
 	elif  [ "$CHOICE" == "$OPT_0" ]; then
 		print_in_green "  Bye!\n"
@@ -48,7 +51,7 @@ df_sub_dir() {
 		open_dir "$HOME/.dotfiles"
 		exit 0
 	elif  [ "$CHOICE" == "$OPT_2" ]; then
-		cd "$HOME/.dotfiles" || exit
+		cd "$HOME/.dotfiles" || exit 1
 	elif  [ "$CHOICE" == "$OPT_0" ]; then
 			df_main
 	fi
@@ -67,7 +70,7 @@ df_sub_edit() {
 fish <<'END_FISH'
 	gd
 END_FISH
-		cd "$current_dir" || exit
+		cd "$current_dir" || exit 1
 		exit 0
 	elif  [ "$CHOICE" == "$OPT_2" ]; then
 		printf "  Launching .dotfiles project in code editor\n"
@@ -108,6 +111,45 @@ df_sub_generate() {
 		fi
 	elif  [ "$CHOICE" == "$OPT_0" ]; then
 			df_main
+	fi
+}
+
+df_sub_sync() {
+	OPT_1="Initialize Repo"
+	OPT_2="Set Upstream"
+	OPT_3="Pull From Repo"
+	OPT_0="Back"
+	CHOICE=$(gum choose --height 10 "$OPT_1" "$OPT_2" "$OPT_3" "$OPT_0")
+
+	if [ "$CHOICE" == "$OPT_1" ]; then
+		if ! is_git_repository; then
+			cd "$HOME/.dotfiles" || exit 1
+			git init
+		else
+			print_warning "Git repository already initialized"
+		fi
+
+	elif  [ "$CHOICE" == "$OPT_2" ]; then
+		 if ! repo_has_remote_url; then
+			print_question "Paste your dotfiles repo\n"
+			GIT_ORIGIN=$(gum input --placeholder "git@github.com:excalith/.dotfiles.git")
+			git remote add origin "$GIT_ORIGIN"
+		else
+			print_warning "Git repository already has remote url"
+		fi
+
+	elif  [ "$CHOICE" == "$OPT_3" ]; then
+		if ! is_git_repository; then
+			print_warning "Not a git repository"
+		else
+            git fetch --all 1> /dev/null \
+				&& git stash > /dev/null \
+                && git pull \
+				&& git pop > /dev/null
+		fi
+
+	elif  [ "$CHOICE" == "$OPT_0" ]; then
+		df_main
 	fi
 }
 

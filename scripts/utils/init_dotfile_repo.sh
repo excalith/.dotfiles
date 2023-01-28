@@ -7,11 +7,6 @@
 . "$HOME/.dotfiles/scripts/utils/utils.sh"
 
 
-is_git_repository() {
-    git rev-parse &> /dev/null
-}
-
-
 initialize_git_repository() {
     declare -r GIT_ORIGIN="$1"
 
