@@ -35,6 +35,7 @@ print_title "Tapping Brew Packages"
 brew_tap 'homebrew/core'
 brew_tap 'homebrew/bundle'
 brew_tap 'homebrew/cask' || true
+brew_tap 'homebrew/cask-versions'
 brew_tap 'homebrew/cask-fonts'
 brew_tap 'eth-p/software'
 brew_tap 'teamookla/speedtest'
@@ -96,6 +97,8 @@ brew_install "skhd" "koekeishiya/formulae/skhd"
 # Brew Cask
 #==================================
 print_title "Installing Brew Casks"
+brew_install "Firefox" "firefox" "--cask"
+brew_install "Firefox Developer" "firefox-developer-edition" "--cask"
 brew_install "Brave Browser" "brave-browser" "--cask"
 brew_install "Alacritty" "alacritty" "--cask"
 # brew_install "Kitty" "kitty" "--cask"
