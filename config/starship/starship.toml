@@ -26,7 +26,7 @@ symbol = " "
 
 [shell]
 disabled = false
-format = "${indicator} ${sudo} "
+format = "${sudo}${indicator} "
 bash_indicator = '[\$](purple)'
 zsh_indicator = '[z](purple)'
 fish_indicator = '[➼](purple)'
@@ -35,7 +35,7 @@ unknown_indicator = '[?](purple)'
 
 [sudo]
 style = 'bold green'
-symbol = ' '
+symbol = ''
 disabled = false
 
 [directory]
