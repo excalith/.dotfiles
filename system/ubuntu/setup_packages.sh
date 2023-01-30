@@ -18,8 +18,12 @@ print_section "Installing Packages"
 # Add keys to apt
 #==================================
 print_title "Adding Keys"
+
+# Mono
 sudo mkdir -p /etc/apt/keyrings
 execute "sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" "Mono (Add Key)"
+
+# Charm
 curl -fsSL --silent https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg &> /dev/null
 echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list &> /dev/null
 
@@ -148,13 +152,15 @@ flatpak_install "Steam" "com.valvesoftware.Steam"
 #==================================
 print_title "Install Packages From Source"
 
-# Kitty
-curl -L --silent https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
-cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
-sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
-sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+# Tmux Plugin Manager (TPM)
+execute "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm" "TMUX Plugin Manager (TPM)"
 
+# # Kitty
+# curl -L --silent https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+# ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
+# cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+# sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+# sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
 
 # LazyGit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v*([^"]+)".*/\1/')

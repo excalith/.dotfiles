@@ -98,7 +98,7 @@ brew_install "skhd" "koekeishiya/formulae/skhd"
 print_title "Installing Brew Casks"
 brew_install "Brave Browser" "brave-browser" "--cask"
 brew_install "Alacritty" "alacritty" "--cask"
-brew_install "Kitty" "kitty" "--cask"
+# brew_install "Kitty" "kitty" "--cask"
 brew_install "VS Code" "visual-studio-code" "--cask"
 brew_install "Unity3D" "unity-hub" "--cask"
 brew_install "gpg" "gpg" "--cask"
@@ -175,3 +175,6 @@ rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
 rm -rf ~/.cache/nvim
 execute "git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1" "NvChad"
+
+# Tmux Plugin Manager (TPM)
+execute "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm" "TMUX Plugin Manager (TPM)"

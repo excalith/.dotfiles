@@ -58,6 +58,12 @@ print_result $? "Starship" "true"
 
 
 #==================================
+# Instal TMUX Plugins
+#==================================
+~/.tmux/plugins/tpm/scripts/install_plugins.sh
+
+
+#==================================
 # Change Default Shell
 #==================================
 print_title "Changing Default Shell"

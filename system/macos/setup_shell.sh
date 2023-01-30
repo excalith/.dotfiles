@@ -50,6 +50,12 @@ brew_install "Starship" "starship"
 
 
 #==================================
+# Instal TMUX Plugins
+#==================================
+~/.tmux/plugins/tpm/scripts/install_plugins.sh
+
+
+#==================================
 # Change Default Shell
 #==================================
 print_title "Changing Default Shell"
@@ -59,4 +65,3 @@ execıte "chsh -s $(which fish)" "Changing default shell into fish"
 # execute "sudo echo /usr/local/bin/fish >> /etc/shells" "Adding fish to shells"
 # execute "chsh -s /usr/local/bin/fish" "Changing default shell into fish"
 execute "fish_update_completions >/dev/null 2>&1" "Updating fish completions"
-
