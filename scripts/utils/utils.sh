@@ -170,7 +170,7 @@ print_section() {
 
     print_linke_break
     print_in_green "$BANNER_TOP"
-    print_in_green "\n|        $TITLE        |\n"
+    print_in_green "\n│        $TITLE        │\n"
     print_in_green "$BANNER_BOTTOM"
     print_linke_break
 
