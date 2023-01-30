@@ -89,6 +89,10 @@ colors:
     background: "0x1c1e26"
     foreground: "0xe0e0e0"
 
+  # Cursor color
+  cursor:
+    cursor: '0x29d398'
+    
   # Normal colors
   normal:
     black: "0x16161c"
@@ -114,8 +118,8 @@ colors:
 # Visual Bell
 bell:
   animation: EaseOutExpo
-  color: "#ffffff"
-  duration: 0
+  color: "0xfab795"
+  duration: 4
 
 # Key bindings (Read key code with `xxd -psd`)
 key_bindings:
