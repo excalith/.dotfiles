@@ -229,8 +229,10 @@ alt_send_esc: false
 # Shell
 # Start fish with tmux session
 shell:
-  program: /usr/local/bin/fish
+  program: /usr/local/bin/tmux
   args:
-    - -l
-    - -c
-    - "tmux attach || tmux"
+    - new-session
+    - -A
+    - -D
+    - -s
+    - main
