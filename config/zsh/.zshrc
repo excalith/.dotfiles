@@ -20,10 +20,6 @@ export COLUMNS=80
 # Setup Bat
 export BAT_PAGER="less -RF"
 
-# Setup FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS='--height 96% --reverse --border rounded --preview "bat --style=numbers --color=always --line-range :500 {}"'
-
 # forgit
 export PATH="$PATH:$FORGIT_INSTALL_DIR/bin"
 
@@ -36,25 +32,52 @@ eval $(thefuck --alias)
 # Setup GitHub Hub
 eval "$(hub alias -s)"
 
+# Setup Antigen
+source "$HOME/.config/antigen.zsh"
+
+# Setup Plugins
+antigen bundle wfxr/forgit
+antigen bundle unixorn/fzf-zsh-plugin@main
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen apply
+
+# ZSH Highlight Configuration
+(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path]=none
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+
+# Setup FZF
+[ -f ~/.fzf/.fzf.zsh ] && source ~/.fzf/.fzf.zsh
+# export FZF_TMUX=1
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_CTRL_T_OPTS='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"'
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap"
+
 # Easy navigation
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias .2='cd ../../'
-alias .3='cd ../../../'
-alias .4='cd ../../../../'
-alias .5='cd ../../../../..'
 
-# Pretty ping alias
+# Include ZSH Local
+source "$HOME/.zsh.local"
+source "$HOME/.config/bash/aliases.bash"
+source "$HOME/.config/bash/functions.bash"
+
+# Source starship
+export STARSHIP_CONFIG=~/.config/starship.toml
+eval "$(starship init zsh)"
+
+# Custom ZSH Functions and Aliases# Pretty ping alias
 alias ping=ping_pretty
 
 # Reload zsh sessions
 function sreload() {
-    source ~/.zshrc
-	source ~/.zsh.local
-	source ~/.config/bash/aliases.bash
-	source ~/.config/bash/functions.bash
+    source "$HOME/.zshrc"
+	source "$HOME/.zsh.local"
+	source "$HOME/.config/bash/aliases.bash"
+	source "$HOME/.config/bash/functions.bash"
 
     tmux display-message "ZSH Shell Config Reloaded"
 }
@@ -74,12 +97,3 @@ function supdate() {
 
     tmux display-message "ZSH Shell Update Complete"
 }
-
-# Include ZSH Local
-source ~/.zsh.local
-source ~/.config/bash/aliases.bash
-source ~/.config/bash/functions.bash
-
-# Source starship
-export STARSHIP_CONFIG=~/.config/starship.toml
-eval "$(starship init zsh)"

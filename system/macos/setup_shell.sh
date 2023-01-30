@@ -20,6 +20,8 @@ print_section "Installing Fish Shell"
 print_title "Installing ZSH"
 brew_install "ZSH" "zsh"
 
+curl -L git.io/antigen > "$HOME/.config/antigen.zsh"
+print_progress "Installing Antigen"
 
 #==================================
 # Install Fish

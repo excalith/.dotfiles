@@ -33,9 +33,9 @@ set -gx BAT_PAGER "less -RF"
 set -gx EDITOR "nvim"
 
 # FZF
-set FZF_TMUX 1
 set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-set -gx FZF_CTRL_T_OPTS 'fzf --preview "bat --style=numbers --color=always --line-range :500 {}"'
+set -gx FZF_CTRL_T_OPTS '--preview "bat --style=numbers --color=always --line-range :500 {}"'
+set -gx FZF_CTRL_R_OPTS "--preview 'echo {}' --preview-window down:3:hidden:wrap"
 
 # Grep colors
 setenv GREP_OPTIONS "--color=auto"
