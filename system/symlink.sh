@@ -29,6 +29,7 @@ symlink ~/.dotfiles/config/fish/functions/flushdns.fish ~/.config/fish/functions
 symlink ~/.dotfiles/config/fish/functions/gi.fish ~/.config/fish/functions/gi.fish
 symlink ~/.dotfiles/config/fish/functions/mkcd.fish ~/.config/fish/functions/mkcd.fish
 symlink ~/.dotfiles/config/fish/functions/pping.fish ~/.config/fish/functions/pping.fish
+symlink ~/.dotfiles/config/fish/functions/ql.fish ~/.config/fish/functions/ql.fish
 symlink ~/.dotfiles/config/fish/functions/sreload.fish ~/.config/fish/functions/sreload.fish
 symlink ~/.dotfiles/config/fish/functions/treload.fish ~/.config/fish/functions/treload.fish
 symlink ~/.dotfiles/config/fish/functions/supdate.fish ~/.config/fish/functions/supdate.fish

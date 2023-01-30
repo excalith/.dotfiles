@@ -66,6 +66,19 @@ function treload ()
     tmux display-message "TMUX Config Reloaded"
 }
 
+function ql()
+{
+    OS=$(uname)
+    case $OS in
+    Linux)
+        printf "Not implemented yet!\n"
+        ;;
+    Darwin)
+        qlmanage -p "$@" >/dev/null 2>/dev/null &
+        ;;
+    esac
+}
+
 function arasaka() {
     echo "\
                                                          ...--...                                                   \n\
