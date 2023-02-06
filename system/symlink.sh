@@ -96,6 +96,9 @@ symlink ~/.dotfiles/config/kitty/theme.conf ~/.config/kitty/theme.conf
 print_title "tmux configuration"
 symlink ~/.dotfiles/config/tmux/tmux.conf ~/.config/tmux/tmux.conf
 
+# lunar vim config
+print_title "LunarVim configuration"
+symlink ~/.dotfiles/config/lvim/config.lua ~/.config/lvim/config.lua
 
 if [ "$os_name" == "macos" ]; then
 	# yabai config
