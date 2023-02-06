@@ -3,6 +3,9 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# Dotfiles Path
+export DOTFILES_PATH="$HOME/.dotfiles"	
+
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/sbin:~/.local/bin:$PATH"
 

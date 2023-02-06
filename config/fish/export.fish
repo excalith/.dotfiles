@@ -2,7 +2,7 @@
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 # Dotfiles Path
-set -gx DOTFILES $HOME"/.dotfiles"	
+set -gx DOTFILES_PATH "$HOME/.dotfiles"	
 
 # Language Default
 set -gx LANG en_US.UTF-8
@@ -10,9 +10,12 @@ set -gx LANGUAGE en_US.UTF-8
 set -gx LC_ALL en_US.UTF-8
 set -gx LC_CTYPE en_US.UTF-8
 
+set -gx PATH "/usr/local/sbin:~/.local/bin:$PATH"
+
 # Add Path
 fish_add_path "./bin"
 fish_add_path "/usr/local/bin"
+fish_add_path "/usr/local/sbin"
 fish_add_path "/usr/local/opt/"
 
 # Export Homebrew Path

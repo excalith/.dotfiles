@@ -64,6 +64,10 @@ touch ~/.config/git/config.local
 print_title "Neofetch configuration"
 symlink ~/.dotfiles/config/neofetch/config.conf ~/.config/neofetch/config.conf
 
+# fastfatch config
+print_title "Fastfatch configuration"
+symlink ~/.dotfiles/config/fastfatch/config.conf ~/.config/fastfatch/config.conf
+
 # midnight commander theme
 print_title "Midnight Commander configuration"
 symlink ~/.dotfiles/config/mc/ini ~/.config/mc/ini
