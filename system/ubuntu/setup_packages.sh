@@ -112,6 +112,8 @@ apt_install "gcc" "gcc"
 apt_install "neovim" "neovim"
 apt_install "ffmpeg" "ffmpeg"
 
+apt_install "nudoku" "nudoku"
+
 apt_install "Alacritty" "alacritty"
 apt_install "Caffeine" "caffeine"
 apt_install "Notion" "notion"
