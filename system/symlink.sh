@@ -108,6 +108,10 @@ if [ "$os_name" == "macos" ]; then
 	# skhd config
 	print_title "SKHD configuration"
 	symlink ~/.dotfiles/config/skhd/.skhdrc ~/.config/skhdrc
+
+	# karabiner config
+	print_title "Karabiner configuration"
+	symlink ~/.dotfiles/config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 elif [ "$os_name" == "ubuntu" ]; then
 	# bat configuration
 	print_title "bat binary"
