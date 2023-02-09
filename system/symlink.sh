@@ -112,6 +112,7 @@ if [ "$os_name" == "macos" ]; then
 	# karabiner config
 	print_title "Karabiner configuration"
 	symlink ~/.dotfiles/config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
+	symlink ~/.dotfiles/config/karabiner/complex_modifications.json ~/.config/karabiner/assets/complex_modifications/complex_modifications.json
 elif [ "$os_name" == "ubuntu" ]; then
 	# bat configuration
 	print_title "bat binary"
