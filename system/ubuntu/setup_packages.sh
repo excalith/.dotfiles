@@ -105,6 +105,7 @@ apt_install "prettyping" "prettyping"
 apt_install "tldr" "tldr"
 apt_install "neofetch" "neofetch"
 
+apt_install "ranger" "ranger"
 apt_install "midnight-commander" "mc"
 apt_install "node" "nodejs"
 apt_install "yarn" "yarn"
