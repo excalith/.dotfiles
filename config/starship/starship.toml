@@ -24,14 +24,15 @@ $shell"""
 [fill]
 symbol = " "
 
+# Nice NerdFonts icons:               
 [shell]
 disabled = false
 format = "${sudo}${indicator} "
-bash_indicator = '[\$](purple)'
-zsh_indicator = '[z](purple)'
-fish_indicator = '[➼](purple)'
-powershell_indicator = '[>_](purple)'
-unknown_indicator = '[?](purple)'
+bash_indicator = '[](purple)'
+zsh_indicator = '[](purple)'
+fish_indicator = '[](purple)'
+powershell_indicator = '[](purple)'
+unknown_indicator = '[](purple)'
 
 [sudo]
 style = 'bold green'
