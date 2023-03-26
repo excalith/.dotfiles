@@ -86,7 +86,7 @@ custom_cursor_colors: true
 colors:
   # Primary colors
   primary:
-    background: "0x1c1e26"
+    background: "0x1e212b"
     foreground: "0xe0e0e0"
 
   # Cursor color
@@ -233,3 +233,7 @@ shell:
     - -D
     - -s
     - main
+
+# Support 256 color
+env:
+  TERM: xterm-256color

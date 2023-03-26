@@ -233,3 +233,7 @@ shell:
     - -D
     - -s
     - main
+    
+# Support 256 color
+env:
+  TERM: xterm-256color
