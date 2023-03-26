@@ -223,9 +223,6 @@ debug:
 # directory of the parent process will be used.
 # working_directory: ~/Projects
 
-# Send ESC (\x1b) before characters when alt is pressed.
-alt_send_esc: false
-
 # Shell
 # Start fish with tmux session
 shell:
