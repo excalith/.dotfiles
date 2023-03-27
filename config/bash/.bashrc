@@ -14,6 +14,9 @@ export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"
 # Export GPG TTY
 export GPG_TTY=$(tty)
 
+# Set default terminal
+export TERM=alacritty
+
 # Enable mouse scroll for less
 export LESS=-R
 export LESS='--mouse --wheel-lines=3'
