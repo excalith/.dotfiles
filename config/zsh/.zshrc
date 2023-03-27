@@ -6,8 +6,11 @@ export LC_ALL=en_US.UTF-8
 # Dotfiles Path
 export DOTFILES_PATH="$HOME/.dotfiles"	
 
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="/usr/local/sbin:~/.local/bin:$PATH"
+# export PATH
+export PATH=$HOME/.local/bin:$HOME/local/sbin:$HOME/bin:$PATH
+
+# forgit
+export PATH="$PATH:$FORGIT_INSTALL_DIR/bin"
 
 # Disable Gatekeeper for homebrew
 export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"
@@ -22,9 +25,6 @@ export COLUMNS=80
 
 # Setup Bat
 export BAT_PAGER="less -RF"
-
-# forgit
-export PATH="$PATH:$FORGIT_INSTALL_DIR/bin"
 
 # Setup FASD
 eval "$(fasd --init auto)"

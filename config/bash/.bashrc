@@ -1,4 +1,3 @@
-# If you come from bash you might have to change your $PATH.
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8

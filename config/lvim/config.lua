@@ -1,78 +1,62 @@
---[[
-lvim is the global options object
+-- Neovim API aliases
+local exec = vim.api.nvim_exec 	-- execute Vimscript
+local cmd = vim.cmd     		    -- execute Vim commands
+local opt = vim.opt         	  -- global/buffer/windows-scoped options
+local fn = vim.fn       		    -- call Vim functions
+local g = vim.g         		    -- global variables
 
-Linters should be
-filled in as strings with either
-a global executable or a path to
-an executable
-]]
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
+-- Requires
+require("eslint").setup()
+require('mini.map').setup()
 
--- general
-lvim.log.level = "warn"
-lvim.format_on_save.enabled = false
+-- General
+lvim.log.level = "info"
+
+-- Generic settings
 lvim.colorscheme = "horizon"
--- to disable icons and use a minimalist setup, uncomment the following
--- lvim.use_icons = false
-
--- keymappings [view all the defaults by pressing <leader>Lk]
-lvim.leader = "space"
--- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
--- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
--- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
--- unmap a default keymapping
--- vim.keymap.del("n", "<C-Up>")
--- override a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
-
--- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
--- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
--- local _, actions = pcall(require, "telescope.actions")
--- lvim.builtin.telescope.defaults.mappings = {
---   -- for input mode
---   i = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---     ["<C-n>"] = actions.cycle_history_next,
---     ["<C-p>"] = actions.cycle_history_prev,
---   },
---   -- for normal mode
---   n = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---   },
--- }
-
--- Change theme settings
--- lvim.builtin.theme.options.dim_inactive = true
--- lvim.builtin.theme.options.style = "storm"
-
--- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
--- }
-
--- TODO: User Config for predefined plugins
--- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
+lvim.lint_on_save = true
+lvim.format_on_save = false
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-lvim.builtin.nvimtree.setup.open_on_setup = true
-lvim.builtin.nvimtree.setup.filters.dotfiles = false
-lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
+lvim.builtin.lualine.style = "lvim"
+lvim.builtin.treesitter.auto_install = true
 lvim.builtin.treesitter.highlight.enable = true
-lvim.format_on_save = false
-lvim.lint_on_save = true
+
+-- General
+opt.shell = "/bin/sh"
+opt.mouse = 'a'               -- enable mouse support
+opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
+opt.swapfile = false           -- don't use swapfile
+opt.wrap = true               -- line wrapping
+opt.linebreak = false         -- don't split words
+
+-- Neovim UI
+opt.syntax = 'enable'       -- enable syntax highlighting
+opt.number = true           -- show line number
+opt.showmatch = true        -- highlight matching parenthesis
+opt.relativenumber = false  -- show relative distance between rows
+opt.scrolloff = 100         -- keep 10 row buffer on screen edges
+opt.foldmethod = 'marker'   -- enable folding (default 'foldmarker')
+opt.colorcolumn = '120'     -- line length marker at 80 columns
+opt.splitright = true       -- vertical split to the right
+opt.splitbelow = true       -- horizontal split to the bottom
+opt.ignorecase = true       -- ignore case letters when search
+opt.smartcase = true        -- ignore lowercase for the whole pattern
+opt.hlsearch = false        -- remove highlighting after search
+
+-- Tabs, indent
+opt.expandtab = true     -- use tabs instead of spaces
+opt.shiftwidth = 3       -- shift 3 spaces when tab
+opt.tabstop = 3          -- 1 tab == 3 spaces
+opt.smartindent = true   -- autoindent new lines
+
+-- Keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
+lvim.leader = "space"
+
+lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 lvim.builtin.which_key.mappings["q"] = {
     "<cmd>:quitall<CR>", "Quit"
@@ -86,9 +70,76 @@ lvim.builtin.which_key.mappings["t"] = {
     "<cmd>:FloatermToggle<CR>", "Toggle Terminal"
 }
 
+lvim.builtin.which_key.mappings["f"] = {
+  name = "Find",
+  h = { "<cmd>Telescope help_tags<cr>", "Help" },
+  k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+  C = { "<cmd>Telescope commands<cr>", "Commands" },
+  l = { "<cmd>Telescope resume<cr>", "Last Search" },
+  r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+  f = { "<cmd>Telescope find_files<cr>", "Find files" },
+  t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+  s = { "<cmd>Telescope grep_string<cr>", "Find String" },
+  b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+  H = { "<cmd>Telescope highlights<cr>", "Highlights" },
+  c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+  i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
+  M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+  R = { "<cmd>Telescope registers<cr>", "Registers" },
+}
 
+-- Telescope settings
+lvim.builtin.telescope = {
+  active = true,
+  defaults = {
+    prompt_prefix = "  ",
+    selection_caret = "  ",
+    entry_prefix = "  ",
+    initial_mode = "insert",
+    selection_strategy = "reset",
+    sorting_strategy = "ascending",
+    layout_strategy = "horizontal",
+    layout_config = {
+      horizontal = {
+        prompt_position = "top",
+        preview_width = 0.55,
+        results_width = 0.8,
+      },
+      vertical = {
+        mirror = false,
+      },
+      width = 0.85,
+      height = 0.80,
+      preview_cutoff = 120,
+    },
+    winblend = 0,
+    path_display = { "truncate" },
+    file_ignore_patterns = { "node_modules" },
+    color_devicons = true,
+    border = {},
+    borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+    set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
+    file_sorter = require("telescope.sorters").get_fuzzy_file,
+    generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+    file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+    grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+    qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+    buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+    mappings = {
+      n = { ["q"] = require("telescope.actions").close },
+    },
+  }
+}
 
--- if you don't want all the parsers change this to a table of the ones you want
+-- Highlight on yank
+exec([[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
+  augroup end
+]], false)
+
+-- Treesitter settings
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
@@ -104,139 +155,86 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
 }
 
-
--- Neovim API aliases
-local cmd = vim.cmd     		-- execute Vim commands
-local exec = vim.api.nvim_exec 	-- execute Vimscript
-local fn = vim.fn       		-- call Vim functions
-local g = vim.g         		-- global variables
-local opt = vim.opt         	-- global/buffer/windows-scoped options
-
--- General
-opt.mouse = 'a'               -- enable mouse support
-opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
-opt.swapfile = false          -- don't use swapfile
-opt.wrap = true               -- line wrapping
-opt.linebreak = true          -- don't split words
-
--- Neovim UI
-opt.syntax = 'enable'         -- enable syntax highlighting
-opt.number = true             -- show line number
-opt.showmatch = true          -- highlight matching parenthesis
-opt.relativenumber = true     -- show relative distance between rows
-opt.scrolloff = 10            -- keep 10 row buffer on screen edges
-opt.foldmethod = 'marker'     -- enable folding (default 'foldmarker')
-opt.colorcolumn = '120'        -- line length marker at 80 columns
-opt.splitright = true         -- vertical split to the right
-opt.splitbelow = true         -- horizontal split to the bottom
-opt.ignorecase = true         -- ignore case letters when search
-opt.smartcase = true          -- ignore lowercase for the whole pattern
-opt.hlsearch = false          -- remove highlighting after search
-
--- Tabs, indent
------------------------------------------------------------
-opt.expandtab = false     -- use tabs instead of spaces
-opt.shiftwidth = 4        -- shift 4 spaces when tab
-opt.tabstop = 3           -- 1 tab == 4 spaces
-opt.smartindent = true    -- autoindent new lines
-
--- highlight on yank
-exec([[
-  augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
-  augroup end
-]], false)
-
-
-
--- load required null-ls references
-local h = require("null-ls.helpers")
-local cmd_resolver = require("null-ls.helpers.command_resolver")
-local methods = require("null-ls.methods")
-local u = require("null-ls.utils")
-local FORMATTING = methods.internal.FORMATTING
-
--- Define the new javascript formatter
-local pe = h.make_builtin({
-  name = "prettier_eslint",
-  meta = {
-    url = "https://github.com/prettier/prettier-eslint-cli",
-    description = "Eslint + Prettier",
+-- Linters and formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  { command = "stylua" },
+  {
+    command = "prettier",
+    extra_args = { "--print-width", "100" },
+    filetypes = { "typescript", "typescriptreact" },
   },
-  method = FORMATTING,
-  filetypes = {
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue",
-    "jsx"
-  },
-  factory = h.formatter_factory,
-  generator_opts = {
-    command = "prettier-eslint",
-    args = { "--stdin", "--parser", "babel", "--resolve-plugins-relative-to", "~/.nvm/versions/node/v16.16.0/lib" },
-    to_stdin = true,
-  },
-})
-
--- optional: Define a second formatter for JSON
-local pejson = h.make_builtin({
-  name = "prettier_eslint_json",
-  meta = {
-    url = "https://github.com/prettier/prettier-eslint-cli",
-    description = "Eslint + Prettier",
-  },
-  method = FORMATTING,
-  filetypes = {
-    "json",
-    "cjson",
-  },
-  factory = h.formatter_factory,
-  generator_opts = {
-    command = "prettier-eslint",
-    args = { "--stdin", "--parser", "json" },
-    to_stdin = true,
-  },
-})
-
--- Enable the the defined formatters
--- if you are using vanilla NeoVim + null-ls please
--- read how to install/enable on
--- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/CONFIG.md 
-local nls = require("null-ls")
-nls.setup {
-  on_attach = require("lvim.lsp").common_on_attach,
-  sources = {
-    pe,
-    pejson
-  }
 }
 
--- optional: LunarVim related step. Here we enable eslint as linter for Javascript.
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
+  { command = "flake8", filetypes = { "python" } },
   {
-    command = "eslint",
-    filetypes = { "javascript" }
-  }
+    command = "shellcheck",
+    args = { "--severity", "warning" },
+  },
 }
 
--- Additional Plugins
+lvim.builtin.nvimtree.setup.filters.custom = { "node_modules", ".git", ".next", ".DS_Store"}
+
+lvim.builtin.telescope.defaults.file_ignore_patterns = {
+  ".git/",
+  "vendor/*",
+  "%.lock",
+  "__pycache__/*",
+  "%.sqlite3",
+  "%.ipynb",
+  "node_modules/*",
+  "%.jpg",
+  "%.jpeg",
+  "%.png",
+  "%.svg",
+  "%.otf",
+  "%.ttf",
+  "%.webp",
+  ".dart_tool/",
+  ".github/",
+  ".gradle/",
+  ".idea/",
+  ".settings/",
+  ".vscode/",
+  "__pycache__/",
+  "build/",
+  "env/",
+  "gradle/",
+  "node_modules/",
+  "%.pdb",
+  "%.dll",
+  "%.class",
+  "%.exe",
+  "%.cache",
+  "%.ico",
+  "%.pdf",
+  "%.dylib",
+  "%.jar",
+  "%.docx",
+  "%.met",
+  "smalljre_*/*",
+  ".vale/",
+  "%.burp",
+  "%.mp4",
+  "%.mkv",
+  "%.rar",
+  "%.zip",
+  "%.7z",
+  "%.tar",
+  "%.bz2",
+  "%.epub",
+  "%.flac",
+  "%.tar.gz",
+}
+
+-- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
-    {
       {"lunarvim/horizon.nvim"},
       {"echasnovski/mini.nvim"},
       {"voldikss/vim-floaterm"},
       {'neovim/nvim-lspconfig'},
       {'jose-elias-alvarez/null-ls.nvim'},
-      {'MunifTanjim/eslint.nvim'},
-    }
+      {'MunifTanjim/eslint.nvim'}
 }
-
-
-require('mini.map').setup()
-require("eslint").setup()
-
-
