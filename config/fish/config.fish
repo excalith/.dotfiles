@@ -10,7 +10,8 @@ set fish_color_valid_path
 
 funcsave fcd >/dev/null
 funcsave mkcd >/dev/null
-funcsave pping >/dev/null
+funcsave c_prettyping >/dev/null
+funcsave c_mtr >/dev/null
 funcsave flushdns >/dev/null
 funcsave ql >/dev/null
 funcsave sreload >/dev/null
@@ -19,7 +20,8 @@ funcsave supdate >/dev/null
 funcsave pupdate >/dev/null
 funcsave arasaka >/dev/null
 
-alias ping pping
+alias ping c_prettyping
+alias traceroute c_mtr
 
 # Source starship
 starship init fish | source

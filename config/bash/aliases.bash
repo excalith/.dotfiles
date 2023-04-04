@@ -14,6 +14,9 @@ alias lg=lazygit
 alias matrix='cmatrix -aBf'
 alias fast='fast -u --single-line'
 
+alias ping='c_prettyping'
+alias traceroute='c_mtr'
+
 # History
 alias h="history -15"    # last 10 history commands
 alias hc="history -c"    # clear history

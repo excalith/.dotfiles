@@ -75,9 +75,6 @@ source "$HOME/.config/bash/functions.bash"
 export STARSHIP_CONFIG=~/.config/starship.toml
 eval "$(starship init zsh)"
 
-# Custom ZSH Functions and Aliases# Pretty ping alias
-alias ping=ping_pretty
-
 # Reload zsh sessions
 function sreload() {
     source "$HOME/.zshrc"

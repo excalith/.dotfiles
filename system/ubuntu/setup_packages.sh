@@ -101,6 +101,7 @@ apt_install "gum" "gum"
 apt_install "htop" "htop"
 apt_install "httpie" "httpie"
 apt_install "prettyping" "prettyping"
+apt_install "mtr" "mtr"
 
 apt_install "tldr" "tldr"
 apt_install "neofetch" "neofetch"

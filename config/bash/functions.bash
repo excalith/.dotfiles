@@ -36,12 +36,22 @@ function code() {
 }
 
 # Custom Pretty Ping
-function ping_pretty() {
+function c_prettyping() {
 
     if [ $# -eq 0 ]; then
         prettyping --nolegend 1.1.1.1
     else
         prettyping --nolegend "$@"
+    fi
+}
+
+# Custom Pretty Ping
+function c_mtr() {
+
+    if [ $# -eq 0 ]; then
+        sudo mtr 1.1.1.1
+    else
+        sudo mtr "$@"
     fi
 }
 
@@ -125,7 +135,8 @@ then
     export -f flushdns
     export -f mkcd
     export -f code
-    export -f ping_pretty
+    export -f c_prettyping
+    export -f c_mtr
     export -f arasaka
-    export -f spupdate
+    export -f pupdate
 fi
