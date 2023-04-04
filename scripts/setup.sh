@@ -123,17 +123,12 @@ verify_os() {
     
     # Check if the OS is `Arch` and supported
     elif [ "$os_name" == "arch" ]; then
-
-        if is_supported_version "$os_version" "$MINIMUM_ARCH_VERSION"; then
-            print_success "$os_name $os_version is supported (current is $os_version))"
-            return 0
-        else
-            print_error "Minimum Arch $MINIMUM_ARCH_VERSION is required"
-        fi
+        print_success "$os_name $os_version is supported"
+        return 0
 
     # Exit if not supported OS
     else
-        print_error "$os_name is not supported. This dotfiles are intended for MacOS and Ubuntu"
+        print_error "$os_name is not supported. This dotfiles are intended for MacOS, Ubuntu and Arch"
     fi
 
     return 1
