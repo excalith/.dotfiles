@@ -21,7 +21,7 @@ print_title "Desktop Environment Settings"
 execute "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'" "Set dark mode"
 execute "gsettings set org.gnome.desktop.interface gtk-theme Yaru-dark" "Set theme Yaru Dark"
 execute "gsettings set org.gnome.desktop.interface icon-theme 'Reversal-red'" "Set icons Reversal Red"
-execute "dconf write /org/gtk/settings/file-chooser/sort-directories-first true" "Show directories first"
+execute "gsettings set org.gtk.settings.file-chooser.sort-directories-first true" "Show directories first"
 execute "gsettings set org.gnome.desktop.interface clock-show-weekday true" "Show weekday in clock"
 execute "gsettings set org.gnome.desktop.background picture-uri file:///$HOME/.dotfiles/assets/wallpaper/ventura.jpg" "Set wallpaper"
 execute "gsettings set org.gnome.desktop.background picture-uri-dark file:///$HOME/.dotfiles/assets/wallpaper/ventura.jpg" "Set wallpaper"
@@ -30,25 +30,26 @@ execute "gsettings set org.gnome.desktop.wm.preferences auto-raise 'true'"
 #==================================
 # Dock
 #==================================
-print_title "Dock Settings"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop click-action 'minimize'" "Set dock click action"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop extend-height false" "Set dock height"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop show-trash false" "Hide trash icon"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop show-mounts false" "Hide mounts icon"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop show-mounts-network false" "Hide network icon"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop dash-max-icon-size 28" "Set icon size"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop unity-backlit-items false" "Set backlit false"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop hot-keys false" "Disable hotkeys"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop border-radius 8" "Set border radius"
-gsettings set org.gnome.shell.keybindings switch-to-application-1 []
-gsettings set org.gnome.shell.keybindings switch-to-application-2 []
-gsettings set org.gnome.shell.keybindings switch-to-application-3 []
-gsettings set org.gnome.shell.keybindings switch-to-application-4 []
-gsettings set org.gnome.shell.keybindings switch-to-application-5 []
-gsettings set org.gnome.shell.keybindings switch-to-application-6 []
-gsettings set org.gnome.shell.keybindings switch-to-application-7 []
-gsettings set org.gnome.shell.keybindings switch-to-application-8 []
-gsettings set org.gnome.shell.keybindings switch-to-application-9 []
+# print_title "Dock Settings"
+# execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop click-action 'minimize'" "Set dock click action"
+# execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop extend-height false" "Set dock height"
+# execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop show-trash false" "Hide trash icon"
+# execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop show-mounts false" "Hide mounts icon"
+# execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop show-mounts-network false" "Hide network icon"
+# execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop dash-max-icon-size 28" "Set icon size"
+# execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop unity-backlit-items false" "Set backlit false"
+# execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop hot-keys false" "Disable hotkeys"
+# execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop border-radius 8" "Set border radius"
+
+# gsettings set org.gnome.shell.keybindings switch-to-application-1 []
+# gsettings set org.gnome.shell.keybindings switch-to-application-2 []
+# gsettings set org.gnome.shell.keybindings switch-to-application-3 []
+# gsettings set org.gnome.shell.keybindings switch-to-application-4 []
+# gsettings set org.gnome.shell.keybindings switch-to-application-5 []
+# gsettings set org.gnome.shell.keybindings switch-to-application-6 []
+# gsettings set org.gnome.shell.keybindings switch-to-application-7 []
+# gsettings set org.gnome.shell.keybindings switch-to-application-8 []
+# gsettings set org.gnome.shell.keybindings switch-to-application-9 []
 
 
 #==================================
