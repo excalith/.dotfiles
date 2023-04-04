@@ -11,7 +11,7 @@
 #==================================
 # Print Section Title
 #==================================
-print_section "Running Linux Dotfile Setup"
+print_section "Running Arch Dotfiles Setup"
 
 # setup symlinks
 . "$HOME/.dotfiles/system/symlink.sh"

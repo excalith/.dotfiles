@@ -11,7 +11,7 @@
 #==================================
 # Print Section Title
 #==================================
-print_section "Applying Ubuntu Defaults"
+print_section "Applying Arch Defaults"
 
 
 #==================================
@@ -25,21 +25,21 @@ execute "dconf write /org/gtk/settings/file-chooser/sort-directories-first true"
 execute "gsettings set org.gnome.desktop.interface clock-show-weekday true" "Show weekday in clock"
 execute "gsettings set org.gnome.desktop.background picture-uri file:///$HOME/.dotfiles/assets/wallpaper/ventura.jpg" "Set wallpaper"
 execute "gsettings set org.gnome.desktop.background picture-uri-dark file:///$HOME/.dotfiles/assets/wallpaper/ventura.jpg" "Set wallpaper"
-execute "gsettings reset org.gnome.shell.ubuntu color-scheme"
 execute "gsettings set org.gnome.desktop.wm.preferences auto-raise 'true'"
 
 #==================================
 # Dock
 #==================================
 print_title "Dock Settings"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'" "Set dock click action"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false" "Set dock height"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false" "Hide trash icon"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false" "Hide mounts icon"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts-network false" "Hide network icon"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 32" "Set icon size"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items false" "Set backlit false"
-execute "gsettings set org.gnome.shell.extensions.dash-to-dock hot-keys false" "Disable hotkeys"
+execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop click-action 'minimize'" "Set dock click action"
+execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop extend-height false" "Set dock height"
+execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop show-trash false" "Hide trash icon"
+execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop show-mounts false" "Hide mounts icon"
+execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop show-mounts-network false" "Hide network icon"
+execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop dash-max-icon-size 28" "Set icon size"
+execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop unity-backlit-items false" "Set backlit false"
+execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop hot-keys false" "Disable hotkeys"
+execute "gsettings set org.gnome.shell.extensions.dash-to-dock-pop border-radius 8" "Set border radius"
 gsettings set org.gnome.shell.keybindings switch-to-application-1 []
 gsettings set org.gnome.shell.keybindings switch-to-application-2 []
 gsettings set org.gnome.shell.keybindings switch-to-application-3 []
