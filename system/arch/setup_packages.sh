@@ -19,28 +19,33 @@ print_title "Update Packages"
 pacman_update
 
 #==================================
-# Install aura AUR helper
+# Install essential packages
 #==================================
-print_title "Install AUR Helper"
-git clone https://aur.archlinux.org/aura-bin.git /tmp/aura-git-cloned
-cd /tmp/aura-git-cloned/
-makepkg -sfci --noconfirm --needed
+print_title "Install Essential Packages"
+pacman_install "git" "git"
+pacman_install "base-devel" "base-devel"
+
+#==================================
+# Install AUR helper
+#==================================
+print_title "Install Yay"
+git clone --quiet https://aur.archlinux.org/yay.git /tmp/yay
+cd ~/tmp/yay
+makepkg -sfci --noconfirm --needed --silend >/dev/null 2>&1
 
 #==================================
 # Install package managers
 #==================================
 print_title "Install Package Managers"
 pacman_install "flatpak" "flatpak"
-pacman_install "flatpak gnome plugin" "gnome-software-plugin-flatpak"
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo >/dev/null 2>&1
+
 
 #==================================
 # Install Pacman packages
 #==================================
 print_title "Install Pacman Packages"
-pacman_install "base-devel" "base-devel"
 pacman_install "Gnome Shell Extensions" "gnome-shell-extensions"
-# apt_install "Gnome Shell Extension Manager" "gnome-shell-extension-manager"
 pacman_install "Gnome Tweaks" "gnome-tweaks"
 
 pacman_install "gnupg" "gnupg"
@@ -83,8 +88,8 @@ pacman_install "Alacritty" "alacritty"
 # Install Snap packages
 #==================================
 print_title "Install Snap Packages"
+systemtcl enable --now snapd.apparmor
 snap_install "spt" "spt"
-snap_install "GitKraken" "gitkraken"
 snap_install "VS Code" "code"
 snap_install "1Password" "1password"
 
@@ -144,7 +149,6 @@ rm -rf ~/master.tar.gz
 # Install Extensions
 #==================================
 print_title "Install Gnome Extensions"
-
 extension_install "Dash To Dock (COSMIC)" "https://extensions.gnome.org/extension/5004/dash-to-dock-for-cosmic/"
 extension_install "User Themes" "https://extensions.gnome.org/extension/19/user-themes/"
 extension_install "Blur My Shell" "https://extensions.gnome.org/extension/3193/blur-my-shell/"
