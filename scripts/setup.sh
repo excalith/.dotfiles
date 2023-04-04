@@ -14,6 +14,7 @@ declare DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY
 declare DOTFILES_DIR="$HOME/.dotfiles"
 declare MINIMUM_MACOS_VERSION="12.0"
 declare MINIMUM_UBUNTU_VERSION="20.04"
+declare MINIMUM_ARCH_VERSION="20.04"
 
 #==================================
 # Helper Functions
@@ -120,6 +121,16 @@ verify_os() {
             print_error "Minimum Ubuntu $MINIMUM_UBUNTU_VERSION is required"
         fi
     
+    # Check if the OS is `Arch` and supported
+    elif [ "$os_name" == "arch" ]; then
+
+        if is_supported_version "$os_version" "$MINIMUM_ARCH_VERSION"; then
+            print_success "$os_name $os_version is supported"
+            return 0
+        else
+            print_error "Minimum Arch $MINIMUM_ARCH_VERSION is required"
+        fi
+
     # Exit if not supported OS
     else
         print_error "$os_name is not supported. This dotfiles are intended for MacOS and Ubuntu"
