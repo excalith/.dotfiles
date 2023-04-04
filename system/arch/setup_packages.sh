@@ -36,7 +36,7 @@ print_title "Install AUR Helper"
 rm -rf ~/tmp/yay
 execute "git clone --quiet https://aur.archlinux.org/yay.git ~/tmp/yay" "Cloning yay"
 cd ~/tmp/yay
-execute "makepkg -sfci --noconfirm --needed --silent" "Building yay"
+execute "makepkg -sfci --noconfirm --needed" "Building yay"
 
 
 #==================================
@@ -127,6 +127,7 @@ flatpak_install "Steam" "com.valvesoftware.Steam"
 print_title "Install Packages From Source"
 
 # Tmux Plugin Manager (TPM)
+rm -rf ~/.tmux/plugins/tpm
 execute "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm" "TMUX Plugin Manager (TPM)"
 
 
@@ -163,8 +164,5 @@ extension_install "User Themes" "https://extensions.gnome.org/extension/19/user-
 extension_install "Blur My Shell" "https://extensions.gnome.org/extension/3193/blur-my-shell/"
 extension_install "Rounded Corners" "https://extensions.gnome.org/extension/1514/rounded-corners/"
 extension_install "Places Status Indicator" "https://extensions.gnome.org/extension/8/places-status-indicator/"
-extension_install "Always Indicator" "https://extensions.gnome.org/extension/2594/always-indicator/"
 extension_install "Removable Drive Menu" "https://extensions.gnome.org/extension/7/removable-drive-menu/"
 extension_install "Caffeine" "https://extensions.gnome.org/extension/517/caffeine/"
-extension_install "Impatience" "https://extensions.gnome.org/extension/277/impatience/"
-extension_install "User Avatar" "https://extensions.gnome.org/extension/5506/user-avatar-in-quick-settings/"
