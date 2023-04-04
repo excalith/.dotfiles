@@ -108,7 +108,7 @@ verify_os() {
             print_success "$os_name $os_version is supported"
             return 0
         else
-            print_error "Minimum MacOS $MINIMUM_MACOS_VERSION is required"
+            print_error "Minimum MacOS $MINIMUM_MACOS_VERSION is required (current is $os_version)"
         fi
 
     # Check if the OS is `Ubuntu` and supported
@@ -118,14 +118,14 @@ verify_os() {
             print_success "$os_name $os_version is supported"
             return 0
         else
-            print_error "Minimum Ubuntu $MINIMUM_UBUNTU_VERSION is required"
+            print_error "Minimum Ubuntu $MINIMUM_UBUNTU_VERSION is required (current is $os_version)"
         fi
     
     # Check if the OS is `Arch` and supported
     elif [ "$os_name" == "arch" ]; then
 
         if is_supported_version "$os_version" "$MINIMUM_ARCH_VERSION"; then
-            print_success "$os_name $os_version is supported"
+            print_success "$os_name $os_version is supported (current is $os_version))"
             return 0
         else
             print_error "Minimum Arch $MINIMUM_ARCH_VERSION is required"
