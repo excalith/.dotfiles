@@ -138,6 +138,4 @@
 	icontheme = dark
 [include]
     path = ~/.config/git/config.local
-[user]
-	name = Can Cellek
-	email = can.cellek@gmail.com
+
