@@ -33,6 +33,7 @@ pacman_install "base-devel" "base-devel"
 #==================================
 print_title "Install AUR Helper"
 
+rm -rf ~/tmp/yay
 execute "git clone --quiet https://aur.archlinux.org/yay.git ~/tmp/yay" "Cloning yay"
 cd ~/tmp/yay
 execute "makepkg -sfci --noconfirm --needed --silent" "Building yay"
@@ -94,7 +95,7 @@ pacman_install "Alacritty" "alacritty"
 # Install Snap packages
 #==================================
 print_title "Install Snap Packages"
-systemtcl enable --now snapd.apparmor
+systemctl enable --now snapd.apparmor
 snap_install "spt" "spt"
 snap_install "VS Code" "code"
 snap_install "1Password" "1password"
