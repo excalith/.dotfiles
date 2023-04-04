@@ -12,11 +12,13 @@
 #==================================
 print_section "Installing Packages"
 
+
 #==================================
 # Update APT packages
 #==================================
 print_title "Update Packages"
 pacman_update
+
 
 #==================================
 # Install essential packages
@@ -25,13 +27,16 @@ print_title "Install Essential Packages"
 pacman_install "git" "git"
 pacman_install "base-devel" "base-devel"
 
+
 #==================================
 # Install AUR helper
 #==================================
-print_title "Install Yay"
-git clone --quiet https://aur.archlinux.org/yay.git /tmp/yay
+print_title "Install AUR Helper"
+
+execute "git clone --quiet https://aur.archlinux.org/yay.git ~/tmp/yay" "Cloning yay"
 cd ~/tmp/yay
-makepkg -sfci --noconfirm --needed --silend >/dev/null 2>&1
+execute "makepkg -sfci --noconfirm --needed --silent" "Building yay"
+
 
 #==================================
 # Install package managers
@@ -55,6 +60,7 @@ pacman_install "wget" "wget"
 pacman_install "pyhton3" "python3"
 pacman_install "git" "git"
 pacman_install "git-lfs" "git-lfs"
+pacman_install "jq" "jq"
 
 pacman_install "tmux" "tmux"
 pacman_install "less" "less"
@@ -122,12 +128,14 @@ print_title "Install Packages From Source"
 # Tmux Plugin Manager (TPM)
 execute "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm" "TMUX Plugin Manager (TPM)"
 
+
 # LazyGit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v*([^"]+)".*/\1/')
 curl -Lo lazygit.tar.gz --silent --output /dev/null "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 rm -rf lazygit.tar.gz
 print_success "lazygit"
+
 
 # Reversal Icons
 wget -qO ~/reversal.tar.gz https://github.com/yeyushengfan258/Reversal-icon-theme/archive/master.tar.gz
