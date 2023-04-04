@@ -5,25 +5,25 @@
 # Source utilities
 #==================================
 . "$HOME/.dotfiles/scripts/utils/utils.sh"
-. "$HOME/.dotfiles/scripts/utils/utils_ubuntu.sh"
+. "$HOME/.dotfiles/scripts/utils/utils_arch.sh"
 
 
 #==================================
 # Print Section Title
 #==================================
-print_section "Running Ubuntu Dotfiles Setup"
+print_section "Running Arch Dotfiles Setup"
 
 # setup symlinks
 . "$HOME/.dotfiles/system/symlink.sh"
 
 # setup packages
-. "$HOME/.dotfiles/system/ubuntu/setup_packages.sh"
+. "$HOME/.dotfiles/system/arch/setup_packages.sh"
 
 # setup fonts
-. "$HOME/.dotfiles/system/ubuntu/setup_fonts.sh"
+. "$HOME/.dotfiles/system/arch/setup_fonts.sh"
 
 # setup defaults
-. "$HOME/.dotfiles/system/ubuntu/setup_defaults.sh"
+. "$HOME/.dotfiles/system/arch/setup_defaults.sh"
 
 # setup shell
-. "$HOME/.dotfiles/system/ubuntu/setup_shell.sh"
+. "$HOME/.dotfiles/system/arch/setup_shell.sh"

@@ -15,11 +15,10 @@
 ## Uses
 
 - Supports `bash`, `zsh` and `fish` with `starship` shell prompt and has `tmux` support
-- Replaces default terminal with `Alacritty` and `kitty`
-- Packages can be found in [MacOS](system/macos/setup_packages.sh) and [Ubuntu](system/ubuntu/setup_packages.sh) setup scripts
-- Does not use any WM (on MacOS, only `yabai` and `skhd` used on top of the default DE)
+- Replaces default terminal with `Alacritty`
 
 ## Installation
+
 Depending on your OS, copy and paste the code to start installation. This code will download my dotfiles and start setup depending on your OS.
 
 > If you have no idea what this repository is all about, please do not simply run these commands. They will override your configurations with my configurations and install bunch of packages.
@@ -31,6 +30,12 @@ bash -c "$(curl -LsS https://raw.github.com/excalith/.dotfiles/main/scripts/setu
 ```
 
 ### Ubuntu 22.04 Jammy Jellyfish (and above)
+
+```bash
+bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/scripts/setup.sh)"
+```
+
+### Arch Linux
 
 ```bash
 bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/scripts/setup.sh)"
