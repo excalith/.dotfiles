@@ -174,10 +174,10 @@ rm -rf lazygit.tar.gz
 print_success "lazygit"
 
 # NvChad
-rm -rf ~/.config/nvim
-rm -rf ~/.local/share/nvim
-rm -rf ~/.cache/nvim
-execute "git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1" "NvChad"
+# rm -rf ~/.config/nvim
+# rm -rf ~/.local/share/nvim
+# rm -rf ~/.cache/nvim
+# execute "git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1" "NvChad"
 
 # Reversal Icons
 wget -qO ~/reversal.tar.gz https://github.com/yeyushengfan258/Reversal-icon-theme/archive/master.tar.gz

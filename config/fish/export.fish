@@ -36,7 +36,7 @@ set -gx COLUMNS 80
 set -gx BAT_PAGER "less -RF"
 
 # Editor
-set -gx EDITOR "nvim"
+set -gx EDITOR "lvim"
 
 # FZF
 set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'

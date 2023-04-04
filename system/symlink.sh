@@ -87,15 +87,15 @@ elif [ "$os_name" == "ubuntu" ]; then
 fi
 
 # kitty config
-print_title "Kitty configuration"
-symlink ~/.dotfiles/config/kitty/kitty.conf ~/.config/kitty/kitty.conf
-if [ "$os_name" == "macos" ]; then
-	symlink ~/.dotfiles/config/kitty/keymapMacos.conf ~/.config/kitty/keymap.conf
-elif [ "$os_name" == "ubuntu" ]; then
-	symlink ~/.dotfiles/config/kitty/keymapLinux.conf ~/.config/kitty/keymap.conf
-fi
-symlink ~/.dotfiles/config/kitty/openactions.conf ~/.config/kitty/openactions.conf
-symlink ~/.dotfiles/config/kitty/theme.conf ~/.config/kitty/theme.conf
+# print_title "Kitty configuration"
+# symlink ~/.dotfiles/config/kitty/kitty.conf ~/.config/kitty/kitty.conf
+# if [ "$os_name" == "macos" ]; then
+# 	symlink ~/.dotfiles/config/kitty/keymapMacos.conf ~/.config/kitty/keymap.conf
+# elif [ "$os_name" == "ubuntu" ]; then
+# 	symlink ~/.dotfiles/config/kitty/keymapLinux.conf ~/.config/kitty/keymap.conf
+# fi
+# symlink ~/.dotfiles/config/kitty/openactions.conf ~/.config/kitty/openactions.conf
+# symlink ~/.dotfiles/config/kitty/theme.conf ~/.config/kitty/theme.conf
 
 # tmux config
 print_title "tmux configuration"

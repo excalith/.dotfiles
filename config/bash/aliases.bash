@@ -9,7 +9,6 @@ alias c="clear"
 alias exa='command exa --group-directories-first -laFh --grid --git --icons'
 alias cat=bat
 alias man=batman
-alias vim='nvim .'
 alias lg=lazygit
 alias matrix='cmatrix -aBf'
 alias fast='fast -u --single-line'
@@ -31,3 +30,6 @@ alias locip="sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep
 
 # Update Neovim NVChad
 alias nupdate="nvim -c \"NvChadUpdate\""
+
+# Update LunarVim
+alias lvupdate="lvim +LvimUpdate +q"

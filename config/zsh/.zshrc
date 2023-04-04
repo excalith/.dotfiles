@@ -21,6 +21,9 @@ export GPG_TTY=$(tty)
 # Set default terminal
 export TERM=alacritty
 
+# Set default editor
+export EDITOR="lvim"
+
 # Enable mouse scroll for less
 export LESS=-R
 export LESS='--mouse --wheel-lines=3'
