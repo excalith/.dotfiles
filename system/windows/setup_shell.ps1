@@ -1,6 +1,3 @@
-Set-ExecutionPolicy RemoteSigned -Force
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
-
 # Clink CMD Starship Init
 $filePath = [System.IO.Path]::Combine($env:LocalAppData, 'clink\starship.lua')
 $fileContent = "load(io.popen('starship init cmd'):read('*a'))()"
