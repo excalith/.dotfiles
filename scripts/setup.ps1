@@ -38,4 +38,27 @@ function Install-Dotfiles {
     }
 }
 
+function Start-Setup {
+    # Define the path to the additional script
+    $additionalScript = Join-Path $env:USERPROFILE '.dotfiles\system\windows\install.ps1'
+
+    # Check if the additional script exists
+    if (-not (Test-Path -Path $additionalScript)) {
+        Write-Host "Error: Additional script not found at $additionalScript."
+        return
+    }
+
+    try {
+        # Run the additional script
+        . $additionalScript
+
+        Write-Host "Additional installation script executed successfully."
+    }
+    catch {
+        Write-Host "Error: $_"
+    }
+}
+
 Install-Dotfiles
+
+Start-Setup

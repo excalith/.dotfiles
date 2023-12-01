@@ -2,6 +2,8 @@
 $DOTFILES = Join-Path $HOME ".dotfiles"
 $CONFIG = Join-Path $HOME ".config"
 
+Write-Host "Running Additional Script"
+
 # Setup Config
 
 # Setup Packages
