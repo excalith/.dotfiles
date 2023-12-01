@@ -31,6 +31,7 @@ format = "${sudo}${indicator} "
 bash_indicator = '[](purple)'
 zsh_indicator = '[](purple)'
 fish_indicator = '[](purple)'
+cmd_indicator = '[](purple)'
 powershell_indicator = '[](purple)'
 unknown_indicator = '[](purple)'
 
