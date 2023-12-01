@@ -47,7 +47,12 @@ bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/
 
 Allow remote scripts to run
 ```ps
+# Allows you to run the script from remote
+Set-ExecutionPolicy Bypass -Scope Process
+
+# Allows you to run scripts locally
 Set-ExecutionPolicy RemoteSigned -Force
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
 ```
 
 Download the dotfiles and start setup
