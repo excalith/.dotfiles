@@ -52,7 +52,7 @@ Set-ExecutionPolicy Bypass -Scope Process
 
 Download the dotfiles and start setup
 ```
-Invoke-Expression (Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/excalith/.dotfiles/main/scripts/setup.ps1').Content
+Invoke-Expression (Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/excalith/.dotfiles/windows/scripts/setup.ps1').Content
 ```
 
 Reset Execution Policy
