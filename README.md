@@ -43,7 +43,7 @@ bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/
 
 
 ### Windows (10 and above)
-> :warning: This is still **Work In Progress**. Better you keep away from windows setup.
+> :warning: This is still **Work In Progress**. Better you keep away from windows setup. Once I complete WSL, I will remove Hyper.js and use Alacritty instead.
 
 Allow remote scripts to run
 ```ps
@@ -64,6 +64,8 @@ Reset Execution Policy
 ```ps
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Restricted
 ```
+
+> By default, Ubuntu WSL is installed. However, you should enable **Windows Subsystem for Linux** and **Virtual Machine Platform** to use it.
 
 ## Using Dotfiles
 

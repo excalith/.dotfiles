@@ -14,6 +14,7 @@ install_winget "Nvidia.GeForceExperience"
 # Development
 install_winget "Git.Git"
 install_winget "chrisant996.Clink"
+install_winget "Alacritty.Alacritty"
 install_winget "Vercel.Hyper"
 install_winget "Starship.Starship"
 install_winget "Microsoft.VisualStudioCode"
