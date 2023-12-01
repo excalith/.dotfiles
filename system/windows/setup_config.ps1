@@ -21,6 +21,8 @@ function New-Symlink {
     }
 }
 
+Write-Host "Creating Symbolic Links"
+
 New-Symlink "$env:USERPROFILE\.dotfiles\config\git\config" "$env:USERPROFILE\.config\git\.gitconfig"
 New-Symlink "$env:USERPROFILE\.dotfiles\config\git\ignore_global" "$env:USERPROFILE\.config\git\ignore_global"
 

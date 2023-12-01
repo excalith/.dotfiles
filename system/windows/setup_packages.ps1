@@ -1,10 +1,10 @@
 # Starts installation through WinGet
 function install_winget($package) {
-  "Installing: $package"
-   winget install -e --id $package --accept-package-agreements
+  Write-Host "Installing: $package"
+  winget install -e --id $package --accept-package-agreements
 }
 
-echo "Installing WinGet Packages"
+Write-Host  "Installing WinGet Packages"
 
 # Initial
 install_winget "AgileBits.1Password"

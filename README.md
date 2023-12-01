@@ -46,17 +46,17 @@ bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/
 > :warning: This is still **Work In Progress**. Better you keep away from windows setup.
 
 Allow remote scripts to run
-```
+```ps
 Set-ExecutionPolicy RemoteSigned -Force
 ```
 
 Download the dotfiles and start setup
-```
+```ps
 Invoke-Expression (Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/excalith/.dotfiles/main/scripts/setup.ps1').Content
 ```
 
 Reset Execution Policy
-```
+```ps
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Restricted
 ```
 
