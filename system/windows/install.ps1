@@ -28,5 +28,8 @@ Run-Script ".dotfiles\system\windows\setup_config.ps1"
 # Setup Packages
 Run-Script ".dotfiles\system\windows\setup_packages.ps1"
 
+# Setup Fonts
+Run-Script ".dotfiles\system\windows\setup_fonts.ps1"
+
 # Setup Shell
 Run-Script ".dotfiles\system\windows\setup_shell.ps1"
