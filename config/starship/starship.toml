@@ -28,12 +28,12 @@ symbol = " "
 [shell]
 disabled = false
 format = "${sudo}${indicator} "
-bash_indicator = '[](purple)'
-zsh_indicator = '[](purple)'
+bash_indicator = '[](gray)'
+zsh_indicator = '[](purple)'
 fish_indicator = '[](purple)'
-cmd_indicator = '[](purple)'
-powershell_indicator = '[](purple)'
-unknown_indicator = '[](purple)'
+cmd_indicator = '[](red)'
+powershell_indicator = '[󰨊](blue)'
+unknown_indicator = '[](red)'
 
 [sudo]
 style = 'bold green'
