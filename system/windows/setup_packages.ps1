@@ -57,3 +57,9 @@ install_winget "Bitdefender.Bitdefender"
 
 # WSL
 install_winget "Canonical.Ubuntu.2204"
+
+
+
+
+# choco install nerd-fonts-firacode
+# choco install nerd-fonts-firamono

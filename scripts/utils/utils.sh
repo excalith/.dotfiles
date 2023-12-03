@@ -10,9 +10,16 @@ get_os() {
 
     if [ "$kernelName" == "Darwin" ]; then
         os="macos"
-    elif [ "$kernelName" == "Linux" ] && \
-         [ -e "/etc/os-release" ]; then
+    elif [ "$kernelName" == "Linux" ] && [ -e "/etc/os-release" ]; then
         os="$(. /etc/os-release; printf "%s" "$ID")"
+
+        if grep -qi "Microsoft" /proc/version; then            
+            if grep -qi "Microsoft" /proc/version && [ "$os" == "ubuntu" ]; then
+                os="wsl_ubuntu"
+            else
+                 os="$kernelName" 
+            fi
+        fi
     else
         os="$kernelName"
     fi

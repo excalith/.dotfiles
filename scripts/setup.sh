@@ -14,7 +14,6 @@ declare DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY
 declare DOTFILES_DIR="$HOME/.dotfiles"
 declare MINIMUM_MACOS_VERSION="12.0"
 declare MINIMUM_UBUNTU_VERSION="20.04"
-declare MINIMUM_ARCH_VERSION="20.04"
 
 #==================================
 # Helper Functions
@@ -120,6 +119,11 @@ verify_os() {
         else
             print_error "Minimum Ubuntu $MINIMUM_UBUNTU_VERSION is required (current is $os_version)"
         fi
+
+    # Check if the OS is `Windows WSL` and supported
+    elif [ "$os_name" == "wsl_ubuntu" ]; then
+            print_success "Windows WSL on Ubuntu is supported"
+            return 0
     
     # Check if the OS is `Arch` and supported
     elif [ "$os_name" == "arch" ]; then

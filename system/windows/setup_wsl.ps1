@@ -6,6 +6,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 
 # Enable WSL 2 and set Version 2 as default
 wsl.exe --install
+wsl.exe --update
 wsl --set-default-version 2
 
 # Install Ubuntu (installed via winget packages)
