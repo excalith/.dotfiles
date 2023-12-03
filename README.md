@@ -14,7 +14,7 @@
 
 ## Uses
 
-- Supports `bash`, `zsh` and `fish` with `starship` shell prompt and has `tmux` support
+- Supports `bash`, `zsh`, `fish`, `cmd` and `powershell` with `starship` shell prompt and has `tmux` support except for `cmd` and `powershell`
 - Replaces default terminal with `Alacritty`
 
 ## Installation
@@ -43,7 +43,9 @@ bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/
 
 
 ### Windows (10 and above)
-> :warning: This is still **Work In Progress**. Better you keep away from windows setup. Once I complete WSL, I will remove Hyper.js and use Alacritty instead.
+> :warning: This is still **Work In Progress**. Better to keep away from windows until I complete it with WSL.
+
+#### Windows
 
 Allow remote scripts to run
 ```ps
@@ -65,6 +67,7 @@ Reset Execution Policy
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Restricted
 ```
 
+#### WSL Ubuntu
 To install packages for WSL Ubuntu, run the following command on WSL terminal.
 ```bash
 bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/scripts/setup.sh)"
