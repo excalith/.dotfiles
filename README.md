@@ -65,7 +65,11 @@ Reset Execution Policy
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Restricted
 ```
 
-> By default, Ubuntu WSL is installed. However, you should enable **Windows Subsystem for Linux** and **Virtual Machine Platform** to use it.
+To install packages for WSL Ubuntu, run the following command on WSL terminal.
+```bash
+bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/scripts/setup.sh)"
+```
+
 
 ## Using Dotfiles
 
