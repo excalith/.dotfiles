@@ -69,15 +69,14 @@ fisher_install "Fish SSH Agent" "danhper/fish-ssh-agent"
 #==================================
 print_title "Changing Default Shell"
 
-print_in_green "sed 1"
-sudo sed -i '/auth       required   pam_shells.so/ s//auth       sufficient   pam_shells.so/g' /etc/pam.d/chsh >/dev/null 2>&1
-print_in_green "tee fish -> shells"
-which fish | sudo tee -a /etc/shells >/dev/null 2>&1
-print_in_green "chsh which fish"
-sudo chsh -s "$(which fish)" >/dev/null 2>&1
-print_in_green "sed 2"
-sudo sed -i '/auth       sufficient   pam_shells.so/ s//auth       required   pam_shells.so/g' /etc/pam.d/chsh >/dev/null 2>&1
-
+sudo chsh -s $(which fish)
 print_result $? "Change fish as default shell" "true"
 
 
+#==================================
+# Change Default Shell
+#==================================
+print_title "Creating SSH Directory"
+
+mkdir ~/.ssh
+print_in_green "Created empy .ssh folder"
