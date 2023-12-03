@@ -35,12 +35,6 @@ export BAT_PAGER="less -RF"
 # Setup FASD
 eval "$(fasd --init auto)"
 
-# Setup The Fuck
-eval $(thefuck --alias)
-
-# Setup GitHub Hub
-eval "$(hub alias -s)"
-
 # Setup Antigen
 source "$HOME/.config/antigen.zsh"
 
