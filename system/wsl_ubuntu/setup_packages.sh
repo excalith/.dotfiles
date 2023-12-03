@@ -30,7 +30,6 @@ print_title "Adding Repositories"
 apt_add_repo "Universe" "universe"
 apt_add_repo "Multiverse" "multiverse"
 apt_add_repo "Fish" "ppa:fish-shell/release-3"
-apt_add_repo "Alacritty" "ppa:aslatter/ppa"
 
 
 #==================================
