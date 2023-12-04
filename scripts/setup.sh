@@ -3,7 +3,7 @@
 #==================================
 # Variables
 #==================================
-declare GITHUB_REPOSITORY="excalith/.dotfiles-new"
+declare GITHUB_REPOSITORY="excalith/.dotfiles"
 declare DOTFILES_ORIGIN="git@github.com:$GITHUB_REPOSITORY.git"
 declare DOTFILES_TARBALL_URL="https://github.com/$GITHUB_REPOSITORY/tarball/main"
 declare DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/scripts/utils/utils.sh"
