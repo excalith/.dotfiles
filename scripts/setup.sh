@@ -175,11 +175,11 @@ main() {
     # Ask for git credentials
     . "$HOME/.dotfiles/scripts/utils/generate_git_creds.sh"
 
-    # Ask for SSH
-    . "$HOME/.dotfiles/scripts/utils/generate_ssh.sh"
+    # Ask for SSH (Disabled since I started using another method)
+    #. "$HOME/.dotfiles/scripts/utils/generate_ssh.sh"
 
-    # Ask for GPG
-    . "$HOME/.dotfiles/scripts/utils/generate_gpg.sh"
+    # Ask for GPG (Disabled since I started using another method)
+    #. "$HOME/.dotfiles/scripts/utils/generate_gpg.sh"
 
     # Link to original repository and update contents of dotfiles
     if [ "$(git config --get remote.origin.url)" != "$DOTFILES_ORIGIN" ]; then
