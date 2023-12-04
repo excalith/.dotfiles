@@ -19,7 +19,7 @@ export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"
 export GPG_TTY=$(tty)
 
 # Set default terminal
-export TERM=alacritty
+#export TERM=alacritty
 
 # Set default editor
 export EDITOR="lvim"

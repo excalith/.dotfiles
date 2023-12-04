@@ -20,7 +20,7 @@ export GPG_TTY=$(tty)
 export EDITOR="lvim"
 
 # Set default terminal
-export TERM=alacritty
+#export TERM=alacritty
 
 # Enable mouse scroll for less
 export LESS=-R
