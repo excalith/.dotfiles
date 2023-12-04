@@ -33,12 +33,6 @@ apt_add_repo "Fish" "ppa:fish-shell/release-3"
 
 
 #==================================
-# Add sources to APT
-#==================================
-# print_title "Adding Sources"
-
-
-#==================================
 # Update APT packages
 #==================================
 print_title "Update & Upgrade APT"

@@ -23,6 +23,7 @@ install_winget "Fork.Fork"
 install_winget "OpenJS.NodeJS"
 install_winget "BaldurKarlsson.RenderDoc"
 install_winget "GitHub.GitLFS"
+install_winget "Docker.DockerDesktop"
 
 # Art
 install_winget "BlenderFoundation.Blender"
