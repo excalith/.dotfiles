@@ -127,7 +127,12 @@ verify_os() {
     
     # Check if the OS is `Arch` and supported
     elif [ "$os_name" == "arch" ]; then
-        print_success "$os_name $os_version is supported"
+        print_success "$os_name is supported"
+        return 0
+
+    # Check if the OS is `Alpine` and supported
+    elif [ "$os_name" == "alpine" ]; then
+        print_success "$os_name is supported"
         return 0
 
     # Exit if not supported OS

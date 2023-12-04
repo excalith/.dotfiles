@@ -19,6 +19,8 @@ get_os() {
             else
                  os="$kernelName" 
             fi
+        elif [ "$os" == "alpine" ] && [ -e "/etc/alpine-release" ]; then
+            os="alpine"
         fi
     else
         os="$kernelName"
