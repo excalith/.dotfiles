@@ -28,6 +28,7 @@ install_winget "Docker.DockerDesktop"
 # Art
 install_winget "BlenderFoundation.Blender"
 install_winget "Figma.Figma"
+install_winget "Ferdium.Ferdium"
 
 # Productivity
 install_winget "Notion.Notion"
