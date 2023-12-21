@@ -119,6 +119,7 @@ flatpak_install "Transmission" "com.transmissionbt.Transmission"
 flatpak_install "Spotify" "com.spotify.Client"
 flatpak_install "VLC" "org.videolan.VLC"
 flatpak_install "Steam" "com.valvesoftware.Steam"
+flatpak_install "OBS Studio" "com.obsproject.Studio"
 
 
 #==================================

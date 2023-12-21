@@ -28,7 +28,6 @@ install_winget "Docker.DockerDesktop"
 # Art
 install_winget "BlenderFoundation.Blender"
 install_winget "Figma.Figma"
-install_winget "Ferdium.Ferdium"
 
 # Productivity
 install_winget "Notion.Notion"
@@ -49,6 +48,7 @@ install_winget "Spotify.Spotify"
 install_winget "VideoLAN.VLC"
 install_winget "7zip.7zip"
 install_winget "HandBrake.HandBrake"
+install_winget "OBSProject.OBSStudio"
 
 # Utilities
 install_winget "Microsoft.PowerToys"

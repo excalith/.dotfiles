@@ -34,6 +34,7 @@ print_title "Adding Repositories"
 apt_add_repo "Universe" "universe"
 apt_add_repo "Multiverse" "multiverse"
 apt_add_repo "Fish" "ppa:fish-shell/release-3"
+apt_add_repo "OBS Studio" "ppa:obsproject/obs-studio"
 apt_add_repo "Alacritty" "ppa:aslatter/ppa"
 
 
@@ -119,6 +120,7 @@ apt_install "nudoku" "nudoku"
 apt_install "Alacritty" "alacritty"
 apt_install "Caffeine" "caffeine"
 apt_install "Notion" "notion"
+apt_install "OBS Studio" "obs-studio"
 
 
 #==================================
