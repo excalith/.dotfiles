@@ -169,7 +169,7 @@ df_sub_help() {
 	fi
 
 	if [ "$CHOICE" == "$OPT_1" ]; then
-		cat < ~/.dotfiles/bin/dotfiles/terminal.txt | gum filter
+		cat < ~/.dotfiles/bin/dotfiles/alacritty.txt | gum filter
 	elif  [ "$CHOICE" == "$OPT_2" ]; then
 		cat < ~/.dotfiles/bin/dotfiles/neovim.txt | gum filter
 	elif  [ "$CHOICE" == "$OPT_3" ]; then

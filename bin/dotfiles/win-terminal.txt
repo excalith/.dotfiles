@@ -1,0 +1,13 @@
+    [CTRL] + [t]             Open New Tab
+    [CTRL] + [w]             Close Tab/Pane
+    [CTRL] + [l]             Split Pane Horizontal
+    [CTRL] + [k]             Split Pane Vertical
+    
+    [CTRL] + [Backspace]     Delete Line
+    [CTRL] + [Left]          Jump To Line Beggining
+    [CTRL] + [Right]         Jump To Line End
+    [Up]                     Previous Command
+    [Down]                   Next Command
+
+    [F11]                    Fullscreen
+    [ALT] + [F4]             Quit Terminal

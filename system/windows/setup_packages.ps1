@@ -36,6 +36,7 @@ Install-WingetPackage "DockerDesktop" "Docker.DockerDesktop"
 Install-WingetPackage "Insomnia" "Insomnia.Insomnia"
 Install-WingetPackage "delta" "dandavison.delta"
 Install-WingetPackage "bat" "sharkdp.bat"
+Install-WingetPackage "gum" "charmbracelet.gum"
 
 # Art
 Write-Title "Art Packages"

@@ -219,6 +219,19 @@ function Set-GitCredentials {
     }
 }
 
+#==================================
+# Git Utilities
+#==================================
+function Test-IsRepository {
+    $isRepository = git rev-parse --is-inside-work-tree 2>&1
+
+    if ($isRepository -eq "true") {
+        return $true
+    }
+    else {
+        return $false
+    }
+}
 
 #==================================
 # Print
