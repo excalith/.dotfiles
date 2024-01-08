@@ -8,8 +8,6 @@ export DOTFILES_PATH="$HOME/.dotfiles"
 
 # export PATH
 export PATH=$HOME/.local/bin:$HOME/local/sbin:$HOME/bin:$PATH
-export GIT_GLOBAL_IGNORE_PATH="$HOME/.config/git/.gitignore_global"
-export GIT_CUSTOM_PATH="$HOME/.config/git/.gitconfig_local"
 
 # forgit
 export PATH="$PATH:$FORGIT_INSTALL_DIR/bin"

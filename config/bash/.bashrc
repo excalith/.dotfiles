@@ -6,8 +6,6 @@ export LC_ALL=en_US.UTF-8
 
 # Dotfiles Path
 export DOTFILES_PATH="$HOME/.dotfiles"	
-export GIT_GLOBAL_IGNORE_PATH="$HOME/.config/git/.gitignore_global"
-export GIT_CUSTOM_PATH="$HOME/.config/git/.gitconfig_local"
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/sbin:~/.local/bin:$PATH"

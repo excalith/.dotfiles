@@ -20,10 +20,10 @@ main() {
 	    ask "Git E-Mail  : "
 		local email="$(get_answer)"
 
-        touch ~/.config/git/config.local
+        touch ~/.config/git/.gitconfig.local
         echo "[user]
     	name = $username
-    	email = $email" >~/.config/git/config.local
+    	email = $email" >~/.config/git/.gitconfig.local
 
 		printf "\n"
 		print_result $? "Generate git credentials"

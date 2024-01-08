@@ -22,6 +22,9 @@ function Run-Script {
 
 Write-Host "Running Windows Setup"
 
+# Setup Variables
+Run-Script ".dotfiles\system\windows\setup_variables.ps1"
+
 # Setup Config
 Run-Script ".dotfiles\system\windows\setup_config.ps1"
 
@@ -33,3 +36,6 @@ Run-Script ".dotfiles\system\windows\setup_fonts.ps1"
 
 # Setup Shell
 Run-Script ".dotfiles\system\windows\setup_shell.ps1"
+
+# Generate Git Credentials
+Run-Script ".dotfiles\scripts\utils\generate_git_creds.ps1"
