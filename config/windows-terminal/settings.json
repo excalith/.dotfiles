@@ -6,17 +6,17 @@
         {
             "command": 
             {
-                "action": "newTab"
-            },
-            "keys": "ctrl+t"
-        },
-        {
-            "command": 
-            {
                 "action": "copy",
                 "singleLine": false
             },
             "keys": "ctrl+c"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab"
+            },
+            "keys": "ctrl+t"
         },
         {
             "command": 
@@ -31,15 +31,6 @@
             "keys": "ctrl+v"
         },
         {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
-        },
-        {
             "command": "find",
             "keys": "ctrl+shift+f"
         },
@@ -47,9 +38,10 @@
             "command": 
             {
                 "action": "splitPane",
-                "split": "down"
+                "split": "auto",
+                "splitMode": "duplicate"
             },
-            "keys": "ctrl+j"
+            "keys": "alt+shift+d"
         },
         {
             "command": "unbound",
@@ -74,6 +66,14 @@
         {
             "command": 
             {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "keys": "ctrl+j"
+        },
+        {
+            "command": 
+            {
                 "action": "quakeMode"
             },
             "keys": "win+f11"
@@ -87,7 +87,7 @@
     "confirmCloseAllTabs": false,
     "copyFormatting": "none",
     "copyOnSelect": true,
-    "defaultProfile": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "focusFollowMouse": true,
     "language": "en-US",
     "newTabMenu": 
@@ -102,12 +102,12 @@
         {
             "colorScheme": "One Dark",
             "elevate": true,
-            "experimental.retroTerminalEffect": false,
+            "experimental.retroTerminalEffect": true,
             "font": 
             {
                 "face": "FiraCode Nerd Font Mono"
             },
-            "opacity": 92,
+            "opacity": 45,
             "scrollbarState": "hidden",
             "startingDirectory": "%USERPROFILE%",
             "useAcrylic": true,
@@ -130,22 +130,10 @@
                 "name": "Command Prompt"
             },
             {
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": true,
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure"
-            },
-            {
                 "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
                 "hidden": false,
                 "name": "Ubuntu",
                 "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
-            },
-            {
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "hidden": true,
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
