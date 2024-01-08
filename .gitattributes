@@ -1,5 +1,10 @@
+# Define text file attributes
+# - Treat them as text
+# - Set line endings depending on extension, neither on checkout nor on checkin
 *.sh      text eol=lf 
 *.bash    text eol=lf 
+*.bashrc   text eol=lf
+*.zshrc    text eol=lf
 *.fish    text eol=lf 
 *.cmd     text eol=crlf
 *.ps1     text eol=crlf
