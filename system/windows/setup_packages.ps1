@@ -6,8 +6,8 @@ Write-Section "Installing WinGet Packages"
 # Update Winget MS Store
 Write-Title "Updating Winget MS Store"
 try {
-    winget source update --name msstore
-    Write-Success "Updated Winget MS Store"   
+    winget source update --name msstore > $null
+    Write-Success "Updated Winget Source MS Store"   
 }
 catch {
     Write-Error "Failed to update Winget MS Store"
