@@ -3,6 +3,8 @@ set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 # Dotfiles Path
 set -gx DOTFILES_PATH "$HOME/.dotfiles"	
+set -gx GIT_GLOBAL_IGNORE_PATH "$HOME/.config/git/.gitignore_global"
+set -gx GIT_CUSTOM_PATH "$HOME/.config/git/.gitconfig_local"
 
 # Language Default
 set -gx LANG en_US.UTF-8

@@ -1,9 +1,12 @@
+[user]
+    name = $GIT_AUTHOR_NAME
+    email = $GIT_AUTHOR_EMAIL
 [init]
 	defaultBranch = main
 [core]
 	editor = code --wait --new-window
     whitespace = -trailing-space # Don't consider trailing space change as a cause for merge conflicts
-    excludesFile = ~/.config/git/ignore_global
+    excludesFile = $GIT_GLOBAL_IGNORE_PATH
     pager = delta
 	autocrlf = input
 [branch]
@@ -137,5 +140,4 @@
 	theme = flat-dark-blue
 	icontheme = dark
 [include]
-    path = ~/.config/git/config.local
-
+    path = $GIT_CUSTOM_PATH

@@ -58,8 +58,8 @@ symlink ~/.dotfiles/config/starship/starship.toml ~/.config/starship.toml
 # git config
 print_title "Git configuration"
 symlink ~/.dotfiles/config/git/config ~/.config/git/config
-symlink ~/.dotfiles/config/git/ignore_global ~/.config/git/ignore_global
-touch ~/.config/git/config.local
+symlink ~/.dotfiles/config/git/ignore_global ~/.config/git/.gitignore_global
+touch ~/.config/git/.gitconfig.local
 
 # neofetch config
 print_title "Neofetch configuration"
@@ -119,6 +119,10 @@ if [ "$os_name" == "macos" ]; then
 	symlink ~/.dotfiles/config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 	symlink ~/.dotfiles/config/karabiner/complex_modifications.json ~/.config/karabiner/assets/complex_modifications/complex_modifications.json
 elif [ "$os_name" == "ubuntu" ]; then
+	# bat configuration
+	print_title "bat binary"
+	symlink /usr/bin/batcat ~/.local/bin/bat
+elif [ "$os_name" == "wsl_ubuntu" ]; then
 	# bat configuration
 	print_title "bat binary"
 	symlink /usr/bin/batcat ~/.local/bin/bat
