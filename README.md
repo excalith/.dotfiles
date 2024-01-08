@@ -41,13 +41,12 @@ bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/
 bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/scripts/setup.sh)"
 ```
 
-
 ### Windows (10 and above)
-> :warning: This is still **Work In Progress**. Better to keep away from windows until I complete it with WSL.
 
 #### Windows
 
 Allow remote scripts to run
+
 ```ps
 # Allows you to run the script from remote
 Set-ExecutionPolicy Bypass -Scope Process
@@ -58,21 +57,24 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
 ```
 
 Download the dotfiles and start setup
+
 ```ps
 Invoke-Expression (Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/excalith/.dotfiles/main/scripts/setup.ps1').Content
 ```
 
 Reset Execution Policy
+
 ```ps
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Restricted
 ```
 
 #### WSL Ubuntu
+
 To install packages for WSL Ubuntu, run the following command on WSL terminal.
+
 ```bash
 bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/scripts/setup.sh)"
 ```
-
 
 ## Using Dotfiles
 
