@@ -1,4 +1,7 @@
-Write-Host "Creating Environment Variables"
+# Source Windows Utilities
+. "$env:USERPROFILE\.dotfiles\scripts\utils\utils_windows.ps1"
 
-setx DOTFILES_PATH="$env:USERPROFILE\.dotfiles"	
-setx GIT_SSH "C:\Windows\System32\OpenSSH\ssh.exe"
+Write-Section "Creating Up Variables"
+
+Set-EnvironmentVariable "DOTFILES_PATH" "$env:USERPROFILE\.dotfiles"
+Set-EnvironmentVariable "GIT_SSH" "C:\Windows\System32\OpenSSH\ssh.exe"

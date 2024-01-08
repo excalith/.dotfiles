@@ -1,69 +1,77 @@
-# Starts installation through WinGet
-function install_winget($package) {
-  Write-Host "Installing: $package"
-  winget install -e --id $package --accept-package-agreements
+# Source Windows Utilities
+. "$env:USERPROFILE\.dotfiles\scripts\utils\utils_windows.ps1"
+
+Write-Section "Installing WinGet Packages"
+
+# Update Winget MS Store
+Write-Title "Updating Winget MS Store"
+try {
+    winget source update --name msstore
+    Write-Success "Updated Winget MS Store"   
+}
+catch {
+    Write-Error "Failed to update Winget MS Store"
 }
 
-Write-Host  "Installing WinGet Packages"
-
 # Initial
-install_winget "AgileBits.1Password"
-install_winget "Mozilla.Firefox"
-install_winget "Nvidia.GeForceExperience"
+Write-Title "Initial Packages"
+Install-WingetPackage "Firefox" "Mozilla.Firefox"
+Install-WingetPackage "1Password" "AgileBits.1Password"
+Install-WingetPackage "GeForceExperience" "Nvidia.GeForceExperience"
 
 # Development
-install_winget "Git.Git"
-install_winget "chrisant996.Clink"
-install_winget "Alacritty.Alacritty"
-install_winget "Vercel.Hyper"
-install_winget "Starship.Starship"
-install_winget "Microsoft.VisualStudioCode"
-install_winget "JetBrains.Rider"
-install_winget "Fork.Fork"
-install_winget "OpenJS.NodeJS"
-install_winget "BaldurKarlsson.RenderDoc"
-install_winget "GitHub.GitLFS"
-install_winget "Docker.DockerDesktop"
-install_winget "dandavison.delta"
-install_winget "sharkdp.bat"
+Write-Title "Development Packages"
+Install-WingetPackage "Git" "Git.Git"
+Install-WingetPackage "Clink" "chrisant996.Clink"
+Install-WingetPackage "Alacritty" "Alacritty.Alacritty"
+Install-WingetPackage "Hyper" "Vercel.Hyper"
+Install-WingetPackage "Starship" "Starship.Starship"
+Install-WingetPackage "VisualStudioCode" "Microsoft.VisualStudioCode"
+Install-WingetPackage "Rider" "JetBrains.Rider"
+Install-WingetPackage "Fork" "Fork.Fork"
+Install-WingetPackage "NodeJS" "OpenJS.NodeJS"
+Install-WingetPackage "RenderDoc" "BaldurKarlsson.RenderDoc"
+Install-WingetPackage "GitLFS" "GitHub.GitLFS"
+Install-WingetPackage "DockerDesktop" "Docker.DockerDesktop"
+Install-WingetPackage "Insomnia" "Insomnia.Insomnia"
+Install-WingetPackage "delta" "dandavison.delta"
+Install-WingetPackage "bat" "sharkdp.bat"
 
 # Art
-install_winget "BlenderFoundation.Blender"
-install_winget "Figma.Figma"
+Write-Title "Art Packages"
+Install-WingetPackage "Blender" "BlenderFoundation.Blender"
+Install-WingetPackage "Figma" "Figma.Figma"
 
 # Productivity
-install_winget "Notion.Notion"
-install_winget "LukiLabs.Craft"
+Write-Title "Productivity Packages"
+Install-WingetPackage "Notion" "Notion.Notion"
+Install-WingetPackage "Craft" "LukiLabs.Craft"
 
 # Game
-install_winget "EpicGames.EpicGamesLauncher"
-install_winget "Valve.Steam"
+Write-Title "Game Packages"
+Install-WingetPackage "EpicGamesLauncher" "EpicGames.EpicGamesLauncher"
+Install-WingetPackage "Steam" "Valve.Steam"
 
 # Social
-install_winget "Mailbird.Mailbird"
-install_winget "Discord.Discord"
-install_winget "Telegram.TelegramDesktop"
-# install_winget "WhatsApp.WhatsApp" # Old version
+Write-Title "Social Packages"
+Install-WingetPackage "Canary Mail" "XPDC1PRBHG5NJ3" "msstore"
+Install-WingetPackage "Discord" "Discord.Discord"
+Install-WingetPackage "TelegramDesktop" "Telegram.TelegramDesktop"
 
 # Media
-install_winget "Spotify.Spotify"
-install_winget "VideoLAN.VLC"
-install_winget "7zip.7zip"
-install_winget "HandBrake.HandBrake"
-install_winget "OBSProject.OBSStudio"
+Write-Title "Media Packages"
+Install-WingetPackage "Spotify" "Spotify.Spotify"
+Install-WingetPackage "VLC" "VideoLAN.VLC"
+Install-WingetPackage "7zip" "7zip.7zip"
+Install-WingetPackage "HandBrake" "HandBrake.HandBrake"
+Install-WingetPackage "OBS Studio" "OBSProject.OBSStudio"
 
 # Utilities
-install_winget "Microsoft.PowerToys"
-install_winget "DelugeTeam.Deluge"
-install_winget "Bitdefender.Bitdefender"
-# install_winget "SteelSeries.GG"
-# install_winget "CPUID.CPU-Z.ROG"
+Write-Title "Utilities Packages"
+Install-WingetPackage "PowerToys" "Microsoft.PowerToys"
+Install-WingetPackage "Deluge" "DelugeTeam.Deluge"
+Install-WingetPackage "Bitdefender" "Bitdefender.Bitdefender"
 
 # WSL
-install_winget "Canonical.Ubuntu.2204"
-
-
-
-
-# choco install nerd-fonts-firacode
-# choco install nerd-fonts-firamono
+Write-Title "WSL Packages"
+Install-WingetPackage "Ubuntu 22.04" "Canonical.Ubuntu.2204"
