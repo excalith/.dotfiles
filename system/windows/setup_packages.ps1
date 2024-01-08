@@ -24,6 +24,7 @@ install_winget "OpenJS.NodeJS"
 install_winget "BaldurKarlsson.RenderDoc"
 install_winget "GitHub.GitLFS"
 install_winget "Docker.DockerDesktop"
+install_winget "dandavison.delta"
 
 # Art
 install_winget "BlenderFoundation.Blender"
