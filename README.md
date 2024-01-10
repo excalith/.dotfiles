@@ -20,7 +20,7 @@
 ## Installation
 
 > [!CAUTION]
-> If you have no idea what this repository is all about, please do not simply run these commands. They will override your configurations with my configurations and install bunch of packages.
+> If you have no idea what a dotfile is all about, please do not simply run these commands. They will override your configurations with my configurations and install bunch of packages.
 
 Depending on your OS, copy and paste the code to start installation. This code will download my dotfiles and start setup depending on your OS.
 
