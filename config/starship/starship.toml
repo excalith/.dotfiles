@@ -1,4 +1,5 @@
 format = """
+$sudo\
 $os\
 $hostname\
 $directory\
@@ -27,10 +28,10 @@ symbol = " "
 # Nice NerdFonts icons:               
 [shell]
 disabled = false
-format = "${sudo}${indicator} "
+format = "${indicator} "
 bash_indicator = '[](gray)'
-zsh_indicator = '[](purple)'
-fish_indicator = '[](purple)'
+zsh_indicator = '[](purple)'
+fish_indicator = '[󰈺](purple)'
 cmd_indicator = '[](red)'
 powershell_indicator = '[󰨊](blue)'
 unknown_indicator = '[](red)'
@@ -43,7 +44,7 @@ disabled = false
 [directory]
 style = "bold green"
 home_symbol = '~'
-read_only = " "
+read_only = " "
 read_only_style = "bold red"
 truncation_length = 4
 truncation_symbol = ''
@@ -71,7 +72,7 @@ Windows = ' '
 Unknown = ' '
 
 [memory_usage]
-symbol = " "
+symbol = "󰍛 "
 
 [jobs]
 symbol = ""
