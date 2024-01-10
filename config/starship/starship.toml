@@ -37,8 +37,9 @@ powershell_indicator = '[󰨊](blue)'
 unknown_indicator = '[](red)'
 
 [sudo]
+symbol = ' '
 style = 'bold green'
-symbol = ''
+format = "'[$symbol]($style)'"
 disabled = false
 
 [directory]
