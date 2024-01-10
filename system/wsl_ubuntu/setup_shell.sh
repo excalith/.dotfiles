@@ -13,6 +13,12 @@
 #==================================
 print_section "Shell Setup"
 
+#==================================
+# Generating en_US locale
+#==================================
+print_title "Generate Locale"
+sudo locale-gen en_US.UTF-8 >/dev/null 2>&1
+print_result $? "en_US.UTF-8" "true"
 
 #==================================
 # Install starship prompt
