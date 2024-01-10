@@ -63,7 +63,6 @@ fisher_install "Done" "franciscolourenco/done"
 fisher_install "Fish SSH Agent" "danhper/fish-ssh-agent"
 
 
-
 #==================================
 # Instal TMUX Plugins
 #==================================
@@ -86,7 +85,7 @@ print_title "Creating SSH Directory"
 
 if [ ! -d ~/.ssh ]; then
     mkdir ~/.ssh
-    print_in_green "Created empy .ssh folder"
+    print_in_green "   Created empy .ssh folder"
 else
-    print_in_yellow "SSH folder already exists"
+    print_in_yellow "   SSH folder already exists"
 fi
