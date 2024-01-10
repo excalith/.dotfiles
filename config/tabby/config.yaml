@@ -1,0 +1,273 @@
+version: 7
+profiles: []
+groups: []
+configSync:
+  parts: {}
+hotkeys:
+  toggle-window: []
+  copy-current-path: []
+  ctrl-c:
+    - Ctrl-C
+  copy:
+    - Ctrl-Shift-C
+  paste:
+    - Ctrl-Shift-V
+    - Ctrl-V
+  select-all:
+    - Ctrl-Shift-A
+  clear: []
+  zoom-in:
+    - Ctrl-=
+    - Ctrl-Shift-=
+  zoom-out:
+    - Ctrl--
+    - Ctrl-Shift--
+  reset-zoom:
+    - Ctrl-0
+  home:
+    - Home
+  end:
+    - End
+  previous-word:
+    - Ctrl-Left
+  next-word:
+    - Ctrl-Right
+  delete-previous-word: []
+  delete-line:
+    - Ctrl-Backspace
+  delete-next-word:
+    - Ctrl-Delete
+  search:
+    - Ctrl-Shift-F
+  pane-focus-all: []
+  focus-all-tabs: []
+  scroll-to-top:
+    - Ctrl-PageUp
+  scroll-up: []
+  scroll-down: []
+  scroll-to-bottom:
+    - Ctrl-PageDown
+  restart-telnet-session: []
+  restart-ssh-session: []
+  launch-winscp: []
+  settings-tab: {}
+  settings:
+    - Ctrl-,
+  serial: []
+  restart-serial-session: []
+  new-tab:
+    - Ctrl-T
+  new-window:
+    - Ctrl-N
+  profile: {}
+  profile-selectors: {}
+  toggle-fullscreen:
+    - F11
+    - Alt-Enter
+  close-tab:
+    - Ctrl-Q
+  reopen-tab:
+    - Ctrl-Shift-T
+  toggle-last-tab: []
+  rename-tab:
+    - Ctrl-Shift-R
+  next-tab:
+    - Ctrl-Tab
+  previous-tab:
+    - Ctrl-Shift-Tab
+  move-tab-left:
+    - Ctrl-Shift-PageUp
+  move-tab-right:
+    - Ctrl-Shift-PageDown
+  rearrange-panes:
+    - Ctrl-Shift
+  duplicate-tab: []
+  restart-tab: []
+  reconnect-tab: []
+  disconnect-tab: []
+  explode-tab:
+    - Ctrl-Shift-.
+  combine-tabs:
+    - Ctrl-Shift-,
+  tab-1:
+    - Alt-1
+  tab-2:
+    - Alt-2
+  tab-3:
+    - Alt-3
+  tab-4:
+    - Alt-4
+  tab-5:
+    - Alt-5
+  tab-6:
+    - Alt-6
+  tab-7:
+    - Alt-7
+  tab-8:
+    - Alt-8
+  tab-9:
+    - Alt-9
+  tab-10:
+    - Alt-0
+  tab-11: []
+  tab-12: []
+  tab-13: []
+  tab-14: []
+  tab-15: []
+  tab-16: []
+  tab-17: []
+  tab-18: []
+  tab-19: []
+  tab-20: []
+  split-right:
+    - Ctrl-L
+  split-bottom:
+    - Ctrl-J
+  split-left:
+    - Ctrl-H
+  split-top:
+    - Ctrl-K
+  pane-nav-right:
+    - Ctrl-Alt-Right
+  pane-nav-down:
+    - Ctrl-Alt-Down
+  pane-nav-up:
+    - Ctrl-Alt-Up
+  pane-nav-left:
+    - Ctrl-Alt-Left
+  pane-nav-previous: []
+  pane-nav-next: []
+  pane-nav-1: []
+  pane-nav-2: []
+  pane-nav-3: []
+  pane-nav-4: []
+  pane-nav-5: []
+  pane-nav-6: []
+  pane-nav-7: []
+  pane-nav-8: []
+  pane-nav-9: []
+  pane-maximize:
+    - Ctrl-Alt-Enter
+  close-pane:
+    - Ctrl-W
+  pane-increase-vertical: []
+  pane-decrease-vertical: []
+  pane-increase-horizontal: []
+  pane-decrease-horizontal: []
+  switch-profile:
+    - Ctrl-Alt-T
+  profile-selector:
+    - Ctrl-Shift-E
+  command-selector:
+    - Ctrl-Shift-P
+terminal:
+  searchOptions: {}
+  colorScheme:
+    name: Excalith
+    foreground: '#e2e2e2'
+    background: '#1e212b'
+    cursor: '#2ed8a2'
+    colors:
+      - '#16161e'
+      - '#ec6183'
+      - '#2ed8a2'
+      - '#e8b195'
+      - '#d1aff8'
+      - '#e069aa'
+      - '#62e0e2'
+      - '#97989d'
+      - '#555555'
+      - '#ec6183'
+      - '#2ed8a2'
+      - '#e8b195'
+      - '#d1aff8'
+      - '#e069aa'
+      - '#2bc3de'
+      - '#e2e2e2'
+    cursorAccent: '121317'
+    selection: '#e8b195'
+    selectionForeground: '#121317'
+  font: FiraCode Nerd Font Mono
+  ligatures: true
+  pasteOnMiddleClick: true
+  customColorSchemes:
+    - name: Excalith
+      foreground: '#e2e2e2'
+      background: '#1e212b'
+      cursor: '#2ed8a2'
+      colors:
+        - '#16161e'
+        - '#ec6183'
+        - '#2ed8a2'
+        - '#e8b195'
+        - '#d1aff8'
+        - '#e069aa'
+        - '#62e0e2'
+        - '#97989d'
+        - '#555555'
+        - '#ec6183'
+        - '#2ed8a2'
+        - '#e8b195'
+        - '#d1aff8'
+        - '#e069aa'
+        - '#2bc3de'
+        - '#e2e2e2'
+      cursorAccent: '121317'
+      selection: '#e8b195'
+      selectionForeground: '#121317'
+  lightColorScheme:
+    name: Excalith
+    foreground: '#e2e2e2'
+    background: '#1e212b'
+    cursor: '#2ed8a2'
+    colors:
+      - '#16161e'
+      - '#ec6183'
+      - '#2ed8a2'
+      - '#e8b195'
+      - '#d1aff8'
+      - '#e069aa'
+      - '#62e0e2'
+      - '#97989d'
+      - '#555555'
+      - '#ec6183'
+      - '#2ed8a2'
+      - '#e8b195'
+      - '#d1aff8'
+      - '#e069aa'
+      - '#2bc3de'
+      - '#e2e2e2'
+    cursorAccent: '121317'
+    selection: '#e8b195'
+    selectionForeground: '#121317'
+  fallbackFont: Lucida Console
+  hideCloseButton: true
+  showTabProfileIcon: true
+  focusFollowsMouse: true
+  wordSeparator: ',│`|:\"'' ()[]{}<>'
+ssh: {}
+clickableLinks: {}
+accessibility: {}
+appearance: {}
+hacks: {}
+providerBlacklist: []
+commandBlacklist: []
+enableAnalytics: false
+enableWelcomeTab: false
+pluginBlacklist: []
+profileDefaults:
+  ssh:
+    disableDynamicTitle: true
+profileBlacklist:
+  - socket:template
+  - serial:template
+  - telnet:template
+  - local:vs-cmd-2022
+  - local:git-bash
+  - local:powershell-core
+  - local:wsl-docker-desktop-data
+  - local:wsl-docker-desktop
+  - local:wsl
+  - local:cmd
+  - local:default
+language: en-US
