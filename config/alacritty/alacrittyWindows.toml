@@ -1,10 +1,64 @@
 live_config_reload = true
 
+[env]
+TERM = "xterm-256color"
+
+[debug]
+log_level = "Off"
+persistent_logging = false
+print_events = false
+render_timer = false
+
+[window]
+decorations = "full"
+dynamic_padding = true
+opacity = 1.0
+startup_mode = "Windowed"
+padding = { x = 8, y = 8 }
+
+[window.dimensions]
+columns = 130
+lines = 45
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
 [bell]
 animation = "EaseOutExpo"
 color = "0xfab795"
 duration = 4
 
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+# ======================
+# Font Configuration
+# ======================
+[font]
+size = 12
+offset = { x = 0, y = 2 }
+
+[font.normal]
+family = "FiraCode Nerd Font Mono"
+style = "Regular"
+
+[font.bold]
+family = "FiraCode Nerd Font Mono"
+style = "Medium"
+
+[font.italic]
+family = "FiraCode Nerd Font Mono"
+style = "Regular Italic"
+
+# ======================
+# Color Scheme
+# ======================
 [colors]
 draw_bold_text_with_bright_colors = false
 
@@ -35,42 +89,19 @@ yellow = "0xe8b195"
 background = "0x1e212b"
 foreground = "0xe0e0e0"
 
-[cursor]
-style = "Block"
-unfocused_hollow = true
+# ======================
+# Mouse Settings
+# ======================
+[mouse]
+hide_when_typing = true
 
-[debug]
-log_level = "Off"
-persistent_logging = false
-print_events = false
-render_timer = false
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
 
-[env]
-TERM = "xterm-256color"
-
-[font]
-size = 11
-
-[font.bold]
-family = "FiraCode Nerd Font Mono"
-style = "Medium"
-
-[font.glyph_offset]
-x = 0
-y = 0
-
-[font.italic]
-family = "FiraCode Nerd Font Mono"
-style = "Light Italic"
-
-[font.normal]
-family = "FiraCode Nerd Font Mono"
-style = "Light"
-
-[font.offset]
-x = 0
-y = 0
-
+# ======================
+# Key Bindings
+# ======================
 [[keyboard.bindings]]
 action = "Quit"
 key = "Q"
@@ -185,29 +216,3 @@ mods = "Control"
 action = "ResetFontSize"
 key = "Key0"
 mods = "Control"
-
-[mouse]
-hide_when_typing = true
-
-[[mouse.bindings]]
-action = "PasteSelection"
-mouse = "Middle"
-
-[scrolling]
-history = 10000
-multiplier = 3
-
-[selection]
-save_to_clipboard = true
-semantic_escape_chars = ",│`|:\"' ()[]{}<>"
-
-[window]
-decorations = "full"
-dynamic_padding = true
-opacity = 1.0
-startup_mode = "Windowed"
-padding = { x = 8, y = 8 }
-
-[window.dimensions]
-columns = 130
-lines = 45
