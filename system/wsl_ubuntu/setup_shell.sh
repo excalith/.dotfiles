@@ -69,8 +69,8 @@ fisher_install "Fish SSH Agent" "danhper/fish-ssh-agent"
 #==================================
 print_title "Changing Default Shell"
 
-sudo chsh -s $(which fish)
-print_result $? "Change fish as default shell" "true"
+sudo chsh -s $(which zsh)
+print_result $? "Change zsh as default shell" "true"
 
 
 #==================================
