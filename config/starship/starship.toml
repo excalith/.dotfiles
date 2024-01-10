@@ -39,7 +39,7 @@ unknown_indicator = '[](red)'
 [sudo]
 symbol = ' '
 style = 'bold green'
-format = "'[$symbol]($style)'"
+format = '[$symbol]($style)'
 disabled = false
 
 [directory]
