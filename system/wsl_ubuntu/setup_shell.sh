@@ -34,7 +34,7 @@ print_result $? "Starship" "true"
 print_title "Installing ZSH"
 apt_install "ZSH" "zsh"
 
-curl -L git.io/antigen > "$HOME/.config/antigen.zsh"
+curl -L git.io/antigen > "$HOME/.config/antigen.zsh" >/dev/null 2>&1
 print_progress "Installing Antigen"
 
 #==================================
@@ -84,5 +84,9 @@ print_result $? "Change zsh as default shell" "true"
 #==================================
 print_title "Creating SSH Directory"
 
-mkdir ~/.ssh
-print_in_green "Created empy .ssh folder"
+if [ ! -d ~/.ssh ]; then
+    mkdir ~/.ssh
+    print_in_green "Created empy .ssh folder"
+else
+    print_in_yellow "SSH folder already exists"
+fi
