@@ -46,6 +46,7 @@ catch {
 Write-Title "Powershell Profile"
 try {
     New-Symlink "$env:USERPROFILE\.dotfiles\config\powershell\Microsoft.PowerShell_profile.ps1" "$PROFILE" *> $null
+    New-Symlink "$env:USERPROFILE\.dotfiles\config\powershell\Microsoft.PowerShell_profile.ps1" "$env:USERPROFILE\Documents\Powershell" 
     Write-Success "Powershell Profile Registered"
 }
 catch {
