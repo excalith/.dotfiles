@@ -7,6 +7,7 @@ New-Symlink "$env:USERPROFILE\.dotfiles\config\git\config" "$env:USERPROFILE\.gi
 New-Symlink "$env:USERPROFILE\.dotfiles\config\git\ignore_global" "$env:USERPROFILE\.config\git\.gitignore.global"
 
 New-Symlink "$env:USERPROFILE\.dotfiles\config\starship\starship.toml" "$env:USERPROFILE\.config\starship.toml"
+New-Symlink "$env:USERPROFILE\.dotfiles\config\alacritty\alacrittyWindows.toml" "$env:USERPROFILE\AppData\Roaming\alacritty\alacritty.toml"
 New-Symlink "$env:USERPROFILE\.dotfiles\config\hyper\.hyper.js" "$env:USERPROFILE\AppData\Roaming\Hyper\.hyper.js"
+New-Symlink "$env:USERPROFILE\.dotfiles\config\tabby\config.yaml" "$env:USERPROFILE\AppData\Roaming\tabby\config.yaml"
 
-New-Symlink "$env:USERPROFILE\.dotfiles\config\alacritty\alacrittyWindows.yml" "$env:USERPROFILE\AppData\Roaming\alacritty\alacritty.yml"
