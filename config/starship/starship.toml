@@ -109,7 +109,7 @@ conflicted = '[ ](bold red)'
 up_to_date = '[ ](bold green)'
 ahead = '[⇡${count}](bold green)'
 behind = '[⇣${count}](bold red)'
-diverged = ' [](bold red)([⇡${ahead_count}](bold green)[⇣${behind_count}](bold red))'
+diverged = '[ ](bold red)([⇡${ahead_count} ](bold green)[⇣${behind_count}](bold red))'
 
 [git_state]
 format = '\([$state($progress_current/$progress_total)]($style)\) '
