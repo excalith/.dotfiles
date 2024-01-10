@@ -94,26 +94,26 @@ format = "[$time]($style)"
 
 [git_branch]
 symbol = " "
-format = "[$symbol$branch]($style) "
+format = "[$symbol$branch]($style)"
 style = "bold bright-purple"
 
 [git_status]
-format = '[\[](bold purple)$all_status$ahead_behind[\]](bold purple)'
-up_to_date = '[✓](green)'
-staged     = '[+](green)'
-modified   = '[!](yellow)'
-renamed    = '[~](yellow)'
-deleted    = '[✖](yellow)'
-stashed    = '[\$](bright-purple)'
-untracked  = '[?](bright-purple)'
-conflicted = '[=](red)'
-ahead = '[⇡${count}](green)'
-behind = '[⇣${count}](red)'
-diverged = ' [](red)([⇡${ahead_count}](green)[⇣${behind_count}](red))'
+format = ' $all_status$ahead_behind$diverged'
+staged     = '[ ](bold green)'
+modified   = '[ ](bold yellow)'
+renamed    = '[ ](bold yellow)'
+deleted    = '[ ](bold red)'
+stashed    = '[󰜦 ](bold bright-purple)'
+untracked  = '[ ](bold bright-purple)'
+conflicted = '[ ](bold red)'
+up_to_date = '[ ](bold green)'
+ahead = '[⇡${count}](bold green)'
+behind = '[⇣${count}](bold red)'
+diverged = ' [](bold red)([⇡${ahead_count}](bold green)[⇣${behind_count}](bold red))'
 
 [git_state]
 format = '\([$state($progress_current/$progress_total)]($style)\) '
-style = "bright-black"
+style = "bright-purple"
 cherry_pick = '[ PICKING](bold red)'
 merge = '[󰦦 MERGING](bold red)'
 rebase = '[󰦦 REBASING](bold red)'
