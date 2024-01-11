@@ -17,6 +17,9 @@ print_section "Creating Symlinks"
 # Symlink
 #==================================
 
+# add hushlogin file
+touch ~/.hushlogin
+
 # fish config
 print_title "Fish configuration"
 symlink ~/.dotfiles/config/fish/config.fish ~/.config/fish/config.fish

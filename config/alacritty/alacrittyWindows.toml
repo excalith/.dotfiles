@@ -3,6 +3,10 @@ live_config_reload = true
 [env]
 TERM = "xterm-256color"
 
+[shell]
+args = ["/K", "cd %USERPROFILE%"]
+program = "cmd.exe"
+
 [debug]
 log_level = "Off"
 persistent_logging = false
@@ -11,9 +15,10 @@ render_timer = false
 
 [window]
 decorations = "full"
-dynamic_padding = true
-opacity = 1.0
 startup_mode = "Windowed"
+opacity = 1.0
+blur = false
+dynamic_padding = true
 padding = { x = 8, y = 8 }
 
 [window.dimensions]
