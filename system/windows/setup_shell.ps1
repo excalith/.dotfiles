@@ -3,6 +3,38 @@
 
 Write-Section "Setting Up Shell"
 
+Write-Title "Update Clink Autorun"
+try {
+    # Get the current AutoRun value
+    $currentAutoRun = Get-ItemProperty -Path 'HKCU:\Software\Microsoft\Command Processor' -Name AutoRun -ErrorAction SilentlyContinue
+
+    # Define the new Clink command with the --quiet option
+    $newClinkCommand = '"C:\Program Files (x86)\clink\clink.bat" inject --autorun --profile ~\clink --quiet'
+
+    # Define a regex pattern to match the Clink command
+    $clinkPattern = '.*clink\.bat.*'
+
+    # If the AutoRun value exists and contains the Clink command, check if the --quiet option exists and add it if it doesn't; otherwise, create it
+    if ($currentAutoRun -and $currentAutoRun -match $clinkPattern) {
+        # If the --quiet option does not exist in the Clink command, add it
+        if ($currentAutoRun -notmatch '--quiet') {
+            $currentAutoRun = $currentAutoRun -replace $clinkPattern, '$0 --quiet'
+            Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Command Processor' -Name AutoRun -Value $currentAutoRun
+            Write-Success "Clink Autorun Updated"
+        }
+        else {
+            Write-Warning "Clink Autorun already updated"
+        }
+    }
+    else {
+        Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Command Processor' -Name AutoRun -Value $newClinkCommand
+        Write-Success "Clink Autorun Created"
+    }
+}
+catch {
+    Write-Error "Clink Autorun update failed"
+}
+
 Write-Title "CMD Profile"
 try {
     # Symlink the alias.cmd file to the user's home directory
