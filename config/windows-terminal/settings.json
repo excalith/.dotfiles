@@ -6,10 +6,10 @@
         {
             "command": 
             {
-                "action": "copy",
-                "singleLine": false
+                "action": "splitPane",
+                "split": "right"
             },
-            "keys": "ctrl+c"
+            "keys": "ctrl+l"
         },
         {
             "command": 
@@ -21,18 +21,14 @@
         {
             "command": 
             {
-                "action": "splitPane",
-                "split": "right"
+                "action": "copy",
+                "singleLine": false
             },
-            "keys": "ctrl+l"
+            "keys": "ctrl+c"
         },
         {
             "command": "paste",
             "keys": "ctrl+v"
-        },
-        {
-            "command": "find",
-            "keys": "ctrl+shift+f"
         },
         {
             "command": 
@@ -42,6 +38,10 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
         },
         {
             "command": "unbound",
@@ -87,7 +87,7 @@
     "confirmCloseAllTabs": false,
     "copyFormatting": "none",
     "copyOnSelect": true,
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "defaultProfile": "{51855cb2-8cce-5362-8f54-464b92b32386}",
     "focusFollowMouse": true,
     "language": "en-US",
     "newTabMenu": 
@@ -107,7 +107,7 @@
             {
                 "face": "FiraCode Nerd Font Mono"
             },
-            "opacity": 45,
+            "opacity": 67,
             "scrollbarState": "hidden",
             "startingDirectory": "%USERPROFILE%",
             "useAcrylic": true,
@@ -116,14 +116,14 @@
         "list": 
         [
             {
-                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -nologo",
                 "elevate": true,
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
             },
             {
-                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "commandline": "%SystemRoot%\\System32\\cmd.exe /k",
                 "elevate": true,
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
@@ -508,5 +508,6 @@
             "yellow": "#808000"
         }
     ],
-    "themes": []
+    "themes": [],
+    "windowingBehavior": "useAnyExisting"
 }
