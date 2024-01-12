@@ -3,9 +3,14 @@
 :: Commands
 
 DOSKEY ls=dir /B $*
-DOSKEY cat=bat
+DOSKEY mkcd="%USERPROFILE%\.dotfiles\config\cmd\mkcd.bat" $*
+DOSKEY touch="%USERPROFILE%\.dotfiles\config\cmd\touch.bat" $*
+DOSKEY clear=cls
+DOSKEY cat=bat $*
+DOSKEY nano=micro $*
 DOSKEY lg=lazygit
 DOSKEY ld=lazydocker
+
 
 :: Common directories
 
