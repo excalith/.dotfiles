@@ -2,9 +2,6 @@
 alias dotfiles="bash ~/.dotfiles/bin/dotfiles/main.sh"
 alias colors="bash ~/.dotfiles/bin/colors/colors.sh"
 
-# Clear terminal
-alias c="clear"
-
 # Command replacements
 alias exa='command exa --group-directories-first -laFh --grid --git --icons'
 alias cat=bat
@@ -36,6 +33,6 @@ alias lvupdate="lvim +LvimUpdate +q"
 
 # Add HDD aliases for quick cd
 if [[ $(grep Microsoft /proc/version) ]]; then
-    alias c="cd /mnt/c"
-    alias d="cd /mnt/d"
+    alias C="cd /mnt/c"
+    alias D="cd /mnt/d"
 fi
