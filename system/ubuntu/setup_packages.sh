@@ -87,10 +87,10 @@ apt_install "git-lfs" "git-lfs"
 apt_install "apt-transport-https" "apt-transport-https"
 apt_install "software-properties-common" "software-properties-common"
 apt_install "libgconf-2-4" "libgconf-2-4"
+apt_install "cargo" "cargo"
 
 apt_install "tmux" "tmux"
 apt_install "less" "less"
-apt_install "exa" "exa"
 apt_install "bat" "bat"
 apt_install "tre-command" "tre-command"
 apt_install "fasd" "fasd"
@@ -132,6 +132,12 @@ snap_install "GitKraken" "gitkraken"
 snap_install "VS Code" "code"
 snap_install "1Password" "1password"
 
+#==================================
+# Install Cargo packages
+#==================================
+print_title "Install Cargo Packages"
+
+cargo_install "exa" "exa"
 
 #==================================
 # Install Flatpak Packages

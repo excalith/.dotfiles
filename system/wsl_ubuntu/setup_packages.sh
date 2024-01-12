@@ -81,6 +81,14 @@ apt_install "ffmpeg" "ffmpeg"
 
 
 #==================================
+# Install Cargo packages
+#==================================
+print_title "Install Cargo Packages"
+
+cargo_install "exa" "exa"
+
+
+#==================================
 # Install From Source
 #==================================
 print_title "Install Packages From Source"
