@@ -7,7 +7,7 @@ export LC_ALL=en_US.UTF-8
 export DOTFILES_PATH="$HOME/.dotfiles"	
 
 # export PATH
-export PATH=$HOME/.local/bin:$HOME/local/sbin:$HOME/bin:$PATH:$HOME/$USER/.cargo/bin
+export PATH=$HOME/.local/bin:$HOME/local/sbin:$HOME/bin:$PATH:~/.cargo/bin
 
 # forgit
 export PATH="$PATH:$FORGIT_INSTALL_DIR/bin"
