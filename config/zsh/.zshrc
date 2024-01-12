@@ -21,6 +21,9 @@ export GPG_TTY=$(tty)
 # Set default terminal
 #export TERM=alacritty
 
+# Micro True Color
+export "MICRO_TRUECOLOR=1"
+
 # Set default editor
 export EDITOR="lvim"
 

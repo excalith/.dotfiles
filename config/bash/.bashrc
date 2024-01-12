@@ -10,6 +10,9 @@ export DOTFILES_PATH="$HOME/.dotfiles"
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/sbin:~/.local/bin:$PATH:~/.cargo/bin"
 
+# Micro True Color
+export "MICRO_TRUECOLOR=1"
+
 # Disable Gatekeeper for homebrew
 export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"
 

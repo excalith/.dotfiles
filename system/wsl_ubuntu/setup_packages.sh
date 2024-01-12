@@ -76,6 +76,7 @@ apt_install "midnight-commander" "mc"
 apt_install "node" "nodejs"
 apt_install "yarn" "yarn"
 apt_install "gcc" "gcc"
+apt_install "micro" "micro"
 apt_install "neovim" "neovim"
 apt_install "ffmpeg" "ffmpeg"
 
@@ -102,4 +103,3 @@ curl -Lo lazygit.tar.gz --silent --output /dev/null "https://github.com/jesseduf
 sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 rm -rf lazygit.tar.gz
 print_success "lazygit"
-

@@ -24,6 +24,9 @@ fish_add_path "/usr/local/opt/"
 # Export Homebrew Path
 set -gx HOMEBREW_CURL_PATH "/usr/bin/curl"
 
+# Micro True Color
+set -gx MICRO_TRUECOLOR 1
+
 # Export GPG TTY
 set -gx GPG_TTY $(tty)
 

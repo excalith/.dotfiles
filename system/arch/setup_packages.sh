@@ -85,6 +85,7 @@ pacman_install "midnight-commander" "mc"
 pacman_install "node" "nodejs"
 pacman_install "yarn" "yarn"
 pacman_install "gcc" "gcc"
+pacman_install "micro" "micro"
 pacman_install "neovim" "neovim"
 pacman_install "ffmpeg" "ffmpeg"
 

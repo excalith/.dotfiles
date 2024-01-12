@@ -31,6 +31,7 @@ echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *
 # Add repositories to apt
 #==================================
 print_title "Adding Repositories"
+
 apt_add_repo "Universe" "universe"
 apt_add_repo "Multiverse" "multiverse"
 apt_add_repo "Fish" "ppa:fish-shell/release-3"
@@ -48,6 +49,7 @@ apt_add_repo "Alacritty" "ppa:aslatter/ppa"
 # Update APT packages
 #==================================
 print_title "Update & Upgrade APT"
+
 apt_update
 apt_upgrade
 
@@ -56,6 +58,7 @@ apt_upgrade
 # Install package managers
 #==================================
 print_title "Install Package Managers"
+
 apt_install "nala" "nala"
 apt_install "flatpak" "flatpak"
 apt_install "flatpak gnome plugin" "gnome-software-plugin-flatpak"
@@ -66,6 +69,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # Install APT packages
 #==================================
 print_title "Install APT Packages"
+
 apt_install "Build Essential" "build-essential"
 apt_install "Gnome Shell Extensions" "gnome-shell-extensions"
 apt_install "Gnome Shell Extension Manager" "gnome-shell-extension-manager"
@@ -112,6 +116,7 @@ apt_install "midnight-commander" "mc"
 apt_install "node" "nodejs"
 apt_install "yarn" "yarn"
 apt_install "gcc" "gcc"
+apt_install "micro" "micro"
 apt_install "neovim" "neovim"
 apt_install "ffmpeg" "ffmpeg"
 
@@ -127,6 +132,7 @@ apt_install "OBS Studio" "obs-studio"
 # Install Snap packages
 #==================================
 print_title "Install Snap Packages"
+
 snap_install "spt" "spt"
 snap_install "GitKraken" "gitkraken"
 snap_install "VS Code" "code"
@@ -143,6 +149,7 @@ cargo_install "exa" "exa"
 # Install Flatpak Packages
 #==================================
 print_title "Install Flatpak Packages"
+
 flatpak_install "Firefox" "org.mozilla.firefox"
 flatpak_install "GitKraken" "com.axosoft.GitKraken"
 flatpak_install "Insomnia" "rest.insomnia.Insomnia"
