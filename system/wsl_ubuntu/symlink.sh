@@ -96,3 +96,7 @@ symlink ~/.dotfiles/config/lvim/config.lua ~/.config/lvim/config.lua
 # bat configuration
 print_title "bat binary"
 symlink /usr/bin/batcat ~/.local/bin/bat
+
+# micro configuration
+print_title "micro configuration"
+symlink ~/.dotfiles/config/micro/excalith.micro ~/.config/micro/colorschemes/excalith.micro
