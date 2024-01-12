@@ -1,6 +1,3 @@
-# Init Starship
-Invoke-Expression (& starship init powershell)
-
 # Commands
 Set-Alias -Name lg -Value 'lazygit'
 Set-Alias -Name ld -Value 'lazydocker'
@@ -14,3 +11,6 @@ function .. { Set-Location .. }
 function ... { Set-Location ../.. }
 function .... { Set-Location ../../.. }
 function ..... { Set-Location ../../../.. }
+
+# Init Starship
+Invoke-Expression (& starship init powershell)
