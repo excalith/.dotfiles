@@ -86,6 +86,11 @@ elif [ "$os_name" == "ubuntu" ]; then
 	symlink ~/.dotfiles/config/alacritty/alacrittyLinux.yml ~/.config/alacritty/alacritty.yml
 fi
 
+# micro configuration
+print_title "micro configuration"
+symlink ~/.dotfiles/config/micro/excalith.micro ~/.config/micro/colorschemes/excalith.micro
+
+
 # kitty config
 # print_title "Kitty configuration"
 # symlink ~/.dotfiles/config/kitty/kitty.conf ~/.config/kitty/kitty.conf
