@@ -1,6 +1,11 @@
 @echo off
 if "%~1"=="" (
-    echo No directory specified
+    echo ERROR: No directory specified
     exit /b
 )
-mkdir "%~1" && cd "%~1"
+if not exist "%~1" (
+    mkdir "%~1"
+) else (
+    echo WARNING: Directory %~1 already exists.
+)
+cd "%~1"
