@@ -74,12 +74,12 @@ fisher_install "Fish SSH Agent" "danhper/fish-ssh-agent"
 #==================================
 print_title "Changing Default Shell"
 
-sudo chsh -s $(which zsh)
+sudo chsh -s /usr/bin/zsh
 print_result $? "Change zsh as default shell" "true"
 
 
 #==================================
-# Change Default Shell
+# Add SSH folder if not exists
 #==================================
 print_title "Creating SSH Directory"
 

@@ -51,6 +51,7 @@ apt_install "pyhton3" "python3"
 apt_install "git" "git"
 apt_install "git-all" "git-all"
 apt_install "git-lfs" "git-lfs"
+apt_install "cargo" "cargo"
 
 apt_install "tmux" "tmux"
 apt_install "less" "less"

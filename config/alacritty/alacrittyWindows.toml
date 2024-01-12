@@ -4,8 +4,8 @@ live_config_reload = true
 TERM = "xterm-256color"
 
 [shell]
-args = ["/K", "cd %USERPROFILE%"]
-program = "cmd.exe"
+program = "ubuntu"
+args = ["run tmux"]
 
 [debug]
 log_level = "Off"
@@ -22,8 +22,8 @@ dynamic_padding = true
 padding = { x = 8, y = 8 }
 
 [window.dimensions]
-columns = 130
-lines = 45
+columns = 144
+lines = 32
 
 [selection]
 save_to_clipboard = true
@@ -110,92 +110,92 @@ mouse = "Middle"
 [[keyboard.bindings]]
 action = "Quit"
 key = "Q"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 action = "Minimize"
 key = "M"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u0001c"
 key = "T"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u0001w"
 key = "S"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u0001q"
 key = "D"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u0001x"
 key = "W"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u00011"
 key = "Key1"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u00012"
 key = "Key2"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u00013"
 key = "Key3"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u00014"
 key = "Key4"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u00015"
 key = "Key5"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u00016"
 key = "Key6"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u00017"
 key = "Key7"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u00018"
 key = "Key8"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u00019"
 key = "Key9"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u0001k"
 key = "J"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u0001j"
 key = "K"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u0015"
 key = "Back"
-mods = "Command"
+mods = "Control"
 
 [[keyboard.bindings]]
 action = "IncreaseFontSize"

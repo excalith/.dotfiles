@@ -245,6 +245,8 @@ terminal:
   showTabProfileIcon: true
   focusFollowsMouse: true
   wordSeparator: ',│`|:\"'' ()[]{}<>'
+  useConPTY: false
+  sixel: false
 ssh: {}
 clickableLinks: {}
 accessibility: {}
