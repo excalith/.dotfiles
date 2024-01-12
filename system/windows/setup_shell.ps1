@@ -60,11 +60,15 @@ try {
 
     # Set up Starship for Clink CMD
     try {
-        $filePath = [System.IO.Path]::Combine($env:LocalAppData, 'clink\starship.lua') > $null
-        $fileContent = "load(io.popen('starship init cmd'):read('*a'))()" > $null
-        New-Item -ItemType Directory -Force -Path (Split-Path $filePath) > $null
-        Set-Content -Path $filePath -Value $fileContent > $null
-        Write-Success "CMD Clink initiation for Starship"
+        $filePath = [System.IO.Path]::Combine($env:LocalAppData, 'clink\starship.lua')
+        if (-not (Test-Path -Path $filePath)) {
+            $fileContent = "load(io.popen('starship init cmd'):read('*a'))()"
+            New-Item -ItemType Directory -Force -Path (Split-Path $filePath) > $null
+            Set-Content -Path $filePath -Value $fileContent > $null
+            Write-Success "CMD Clink initiation for Starship"
+        } else {
+            Write-Warning "Starship already initiated for Clink CMD"
+        }
     }
     catch {
         Write-Error "Starship failed to initialize for Clink CMD"
@@ -77,9 +81,14 @@ catch {
 
 Write-Title "Powershell Profile"
 try {
-    New-Symlink "$env:USERPROFILE\.dotfiles\config\powershell\Microsoft.PowerShell_profile.ps1" "$PROFILE" *> $null
-    New-Symlink "$env:USERPROFILE\.dotfiles\config\powershell\Microsoft.PowerShell_profile.ps1" "$env:USERPROFILE\Documents\Powershell" 
-    Write-Success "Powershell Profile Registered"
+    # Symlink Powershell profile to the old Powershell version location
+    New-Symlink "$env:USERPROFILE\.dotfiles\config\powershell\Microsoft.PowerShell_profile.ps1" "$env:USERPROFILE\Documents\WindowsPowerShell" *> $null
+    Write-Success "Powershell Profile for old versions registered"
+    
+    # Symlink Powershell profile to the new Powershell version location
+    New-Symlink "$env:USERPROFILE\.dotfiles\config\powershell\Microsoft.PowerShell_profile.ps1" "$env:USERPROFILE\Documents\Powershell" *> $null
+    Write-Success "Powershell Profile for new versions registered"
+
 }
 catch {
     Write-Error "Powershell Profile registration failed"
