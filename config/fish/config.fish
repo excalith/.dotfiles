@@ -25,10 +25,11 @@ funcsave arasaka >/dev/null
 alias ping c_prettyping
 alias traceroute c_mtr
 
-# Add HDD aliases for WSL cd into mounted drives
-if string match -q "*Microsoft*" (cat /proc/version)
-    alias C="cd /mnt/c"
-    alias D="cd /mnt/d"
+# Check if the machine is running on Windows WSL
+if string match -q "*Microsoft*" (uname -a)
+    # Add HDD aliases for WSL cd into mounted drives
+    alias C "cd /mnt/c"
+    alias D "cd /mnt/d"
 end
 
 # Source starship
