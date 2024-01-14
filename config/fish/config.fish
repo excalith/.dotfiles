@@ -26,7 +26,7 @@ alias ping c_prettyping
 alias traceroute c_mtr
 
 # Check if the machine is running on Windows WSL
-if string match -q "*Microsoft*" (uname -a)
+if test (grep -qi Microsoft /proc/version)
     # Add HDD aliases for WSL cd into mounted drives
     alias C "cd /mnt/c"
     alias D "cd /mnt/d"
