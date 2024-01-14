@@ -140,3 +140,9 @@ then
     export -f arasaka
     export -f pupdate
 fi
+
+# Add HDD aliases for WSL cd into mounted drives
+if [[ $(grep -i Microsoft /proc/version) ]]; then
+    alias C="cd /mnt/c"
+    alias D="cd /mnt/d"
+fi

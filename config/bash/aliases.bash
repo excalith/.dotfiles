@@ -30,9 +30,3 @@ alias nupdate="nvim -c \"NvChadUpdate\""
 
 # Update LunarVim
 alias lvupdate="lvim +LvimUpdate +q"
-
-# Add HDD aliases for quick cd
-if [[ $(grep -i Microsoft /proc/version) ]]; then
-    alias C="cd /mnt/c"
-    alias D="cd /mnt/d"
-fi
