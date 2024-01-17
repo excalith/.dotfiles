@@ -72,7 +72,7 @@ Install-WingetPackage "WhatsApp" "9NKSQGP7F2NH" "msstore"
 
 # Media
 Write-Title "Media Packages"
-Install-WingetPackage "Spotify" "Spotify.Spotify"
+Install-WingetPackage "Spotify" "9NCBCSZSJRSB" "msstore"
 Install-WingetPackage "Disney+" "9NXQXXLFST89" "msstore"
 Install-WingetPackage "Amazon Prime" "9P6RC76MSMMJ" "msstore"
 Install-WingetPackage "Apple TV (Preview)" "9NM4T8B9JQZ1" "msstore"
