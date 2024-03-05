@@ -84,6 +84,7 @@ Install-WingetPackage "OBS Studio" "OBSProject.OBSStudio"
 # Utilities
 Write-Title "Utilities Packages"
 Install-WingetPackage "PowerToys" "Microsoft.PowerToys"
+Install-WingetPackage "SpeedTest" "Ookla.Speedtest.CLI"
 Install-WingetPackage "Deluge" "DelugeTeam.Deluge"
 Install-WingetPackage "Bitdefender" "Bitdefender.Bitdefender"
 Install-WingetPackage "NeoFetch" "nepnep.neofetch-win"
