@@ -84,7 +84,3 @@ Install-WingetPackage "SpeedTest" "Ookla.Speedtest.CLI"
 Install-WingetPackage "Deluge" "DelugeTeam.Deluge"
 Install-WingetPackage "Bitdefender" "Bitdefender.Bitdefender"
 Install-WingetPackage "NeoFetch" "nepnep.neofetch-win"
-
-# WSL
-Write-Title "WSL Packages"
-Install-WingetPackage "Ubuntu 22.04" "Canonical.Ubuntu.2204"

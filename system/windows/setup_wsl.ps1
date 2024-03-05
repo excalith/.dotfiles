@@ -9,6 +9,8 @@ $confirmation = Read-Question "Do you want to install WSL2? (y/n)"
 if ($confirmation -eq 'y') {
 # Enable WSL Feature
 try {
+    Install-WingetPackage "Ubuntu 22.04" "Canonical.Ubuntu.2204"
+    
     dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart  > $null
     Write-Success "Enabled Microsoft-Windows-Subsystem-Linux"
 }
