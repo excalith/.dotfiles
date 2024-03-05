@@ -1,0 +1,12 @@
+# ===============================================================
+# WARNING
+# This file is not functional yet. Will be implemented later
+# ===============================================================
+repository:
+  name: excalith/.dotfiles
+  origin: git@github.com:excalith/.dotfiles.git
+  raw: https://raw.githubusercontent.com/excalith/.dotfiles/main/
+
+download:
+  tarball: https://github.com/excalith/.dotfiles/tarball/main
+  zip: https://github.com/excalith/.dotfiles/archive/main.zip
