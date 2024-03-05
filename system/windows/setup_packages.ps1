@@ -61,7 +61,7 @@ Install-WingetPackage "Steam" "Valve.Steam"
 
 # Social
 Write-Title "Social Packages"
-Install-WingetPackage "Canary Mail" "XPDC1PRBHG5NJ3" "msstore"
+Install-WingetPackage "Mailbird" "XP9KHKVP3JKR39" "msstore"
 Install-WingetPackage "Discord" "Discord.Discord"
 Install-WingetPackage "TelegramDesktop" "Telegram.TelegramDesktop"
 Install-WingetPackage "WhatsApp" "9NKSQGP7F2NH" "msstore"
