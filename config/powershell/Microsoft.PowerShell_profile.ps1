@@ -59,4 +59,4 @@ function .... { Set-Location ../../.. }
 function ..... { Set-Location ../../../.. }
 
 # Init Starship
-Invoke-Expression (& starship init powershell)
+Invoke-Expression (&starship init powershell)

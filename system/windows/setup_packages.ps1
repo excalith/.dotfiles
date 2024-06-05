@@ -48,11 +48,13 @@ Install-WingetPackage "Insomnia" "Insomnia.Insomnia"
 # Art
 Write-Title "Art Packages"
 Install-WingetPackage "Blender" "BlenderFoundation.Blender"
-Install-WingetPackage "Figma" "Figma.Figma"
+Install-WingetPackage "Affinity Photo 2" "9P8DVF1XW02V" "msstore"
+Install-WingetPackage "Affinity Designer 2" "9N2D0P16C80H" "msstore"
 
 # Productivity
 Write-Title "Productivity Packages"
 Install-WingetPackage "Notion" "Notion.Notion"
+Install-WingetPackage "Dropbox" "Dropbox.Dropbox"
 
 # Game
 Write-Title "Game Packages"
