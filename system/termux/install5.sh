@@ -46,7 +46,7 @@ print_section() {
     done
     
     print_in_color "\n$BANNER_TOP" 3
-    print_in_color "\n│        $TITLE        │\n" 3
+    print_in_color "\n│        $TITLE        │" 3
     print_in_color "\n$BANNER_BOTTOM" 3
 }
 
@@ -70,6 +70,7 @@ print_in_color() {
 # Start
 #==================================
 print_section "Excalith Dotfiles Setup"
+
 
 #==================================
 # Update APT Packages
@@ -101,8 +102,9 @@ print_log prettyping
 curl -O https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping >/dev/null 2>&1
 chmod +x prettyping
 
+
 #==================================
-# Install APT Packages
+# Change Shell
 #==================================
 print_title "Change Shell"
 
@@ -110,3 +112,16 @@ print_log "Changing Shell to Fish"
 chsh -s fish
 
 
+#==================================
+# Update Configs
+#==================================
+print_title "Update Configs"
+
+print_log "Add fish config"
+echo "starship init fish | source" > ~/.config/fish/config.fish
+
+print_log "Add starship config"
+wget -O ~/.config/starship.toml https://raw.githubusercontent.com/excalith/dotfiles/main/config/starship/starship.toml
+
+print_log "Reload fish config"
+fish -c 'source ~/.config/fish/config.fish'
