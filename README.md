@@ -47,7 +47,7 @@ bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/
 This is a minimal installation for Termux app on Android.
 
 ```bash
-bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/system/lite/install.sh)"
+bash -c "$(curl -LsS https://raw.github.com/excalith/.dotfiles/main/system/lite/install.sh)"
 ```
 
 ### Windows (10 and above)
