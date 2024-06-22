@@ -79,14 +79,14 @@ apt upgrade -y &> /dev/null
 #==================================
 print_title "Install Packages"
 
-apt_install fish
-apt_install starship
-apt_install curl
-apt_install wget
-apt_install micro
-apt_install bat
-apt_install eza
-apt_install neofetch
+apt_install "fish"
+apt_install "starship"
+apt_install "curl"
+apt_install "wget"
+apt_install "micro"
+apt_install "bat"
+apt_install "eza"
+apt_install "neofetch"
 
 print_log prettyping
 curl -O https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping >/dev/null 2>&1
