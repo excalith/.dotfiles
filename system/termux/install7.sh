@@ -67,7 +67,7 @@ print_in_color() {
 
 
 #==================================
-# Start
+# Start Setup
 #==================================
 print_section "Excalith Dotfiles Setup"
 
@@ -125,3 +125,9 @@ wget -O ~/.config/starship.toml https://raw.githubusercontent.com/excalith/dotfi
 
 print_log "Reload fish config"
 fish -c 'source ~/.config/fish/config.fish'
+
+
+#==================================
+# End Setup
+#==================================
+print_section "Setup Complete"
