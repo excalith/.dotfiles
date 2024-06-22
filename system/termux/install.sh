@@ -1,44 +1,3 @@
-print_section "Excalith Dotfiles Setup"
-
-#==================================
-# Update APT Packages
-#==================================
-print_title "Update Packages"
-
-print_log "Update APT Packages"
-apt update
-
-print_log "Upgrade APT Packages"
-apt upgrade
-
-
-#==================================
-# Install APT Packages
-#==================================
-print_title "Install Packages"
-
-apk_installed fish
-apk_installed starship
-apk_installed wget
-apk_installed curl
-apk_installed micro
-apk_installed bat
-apk_installed eza
-apk_installed neofetch
-
-
-curl -O https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping >/dev/null 2>&1
-chmod +x prettyping
-
-#==================================
-# Install APT Packages
-#==================================
-print_title "Change Shell"
-
-print_log "Changing Shell to Fish"
-chsh -s $(which fish)
-
-
 #==================================
 # Mini Utils
 #==================================
@@ -105,4 +64,49 @@ print_in_color() {
         "$1" \
         "$(tput sgr0 2> /dev/null)"
 }
+
+
+#==================================
+# Start Setup
+#==================================
+print_section "Excalith Dotfiles Setup"
+
+#==================================
+# Update APT Packages
+#==================================
+print_title "Update Packages"
+
+print_log "Update APT Packages"
+apt update
+
+print_log "Upgrade APT Packages"
+apt upgrade
+
+
+#==================================
+# Install APT Packages
+#==================================
+print_title "Install Packages"
+
+apk_installed fish
+apk_installed starship
+apk_installed wget
+apk_installed curl
+apk_installed micro
+apk_installed bat
+apk_installed eza
+apk_installed neofetch
+
+
+curl -O https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping >/dev/null 2>&1
+chmod +x prettyping
+
+#==================================
+# Install APT Packages
+#==================================
+print_title "Change Shell"
+
+print_log "Changing Shell to Fish"
+chsh -s $(which fish)
+
 
