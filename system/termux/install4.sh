@@ -51,7 +51,7 @@ print_section() {
 }
 
 print_title() {
-    print_in_color "\n • $1" 5
+    print_in_color "\n • $1\n" 5
 }
 
 print_log() {
@@ -77,10 +77,10 @@ print_section "Excalith Dotfiles Setup"
 print_title "Update Packages"
 
 print_log "Update APT Packages"
-apt update 2> /dev/null
+apt update &> /dev/null
 
 print_log "Upgrade APT Packages"
-apt upgrade 2> /dev/null
+apt upgrade &> /dev/null
 
 
 #==================================
@@ -97,7 +97,7 @@ apt_install bat
 apt_install eza
 apt_install neofetch
 
-
+print_log prettyping
 curl -O https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping >/dev/null 2>&1
 chmod +x prettyping
 
