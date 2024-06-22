@@ -10,7 +10,7 @@ apt_install() {
 
     if ! apt_installed "$PACKAGE"; then
 		print_log "$PACKAGE"
-        apt install --quiet --no-progress $EXTRA_ARGUMENTS $PACKAGE
+        apt install --quiet $EXTRA_ARGUMENTS $PACKAGE
 
     else
         print_log "$PACKAGE"
@@ -78,10 +78,10 @@ print_section "Excalith Dotfiles Setup"
 print_title "Update Packages"
 
 print_log "Update APT Packages"
-apt update &> /dev/null
+apt update -y &> /dev/null
 
 print_log "Upgrade APT Packages"
-apt upgrade &> /dev/null
+apt upgrade -y &> /dev/null
 
 
 #==================================
