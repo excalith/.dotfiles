@@ -1,16 +1,16 @@
 #==================================
 # Mini Utils
 #==================================
-apk_installed() {
-    apk info "$1" &> /dev/null
+apt_installed() {
+    apt info "$1" &> /dev/null
 }
 
 apt_install() {
     declare -r PACKAGE="$1"
 
-    if ! apk_installed "$PACKAGE"; then
+    if ! apt_installed "$PACKAGE"; then
 		print_log "$PACKAGE"
-        apk add --quiet --no-progress $EXTRA_ARGUMENTS $PACKAGE
+        apt install --quiet --no-progress $EXTRA_ARGUMENTS $PACKAGE
 
     else
         print_log "$PACKAGE"
@@ -67,7 +67,7 @@ print_in_color() {
 
 
 #==================================
-# Start Setup
+# Start
 #==================================
 print_section "Excalith Dotfiles Setup"
 
@@ -88,14 +88,14 @@ apt upgrade
 #==================================
 print_title "Install Packages"
 
-apk_installed fish
-apk_installed starship
-apk_installed wget
-apk_installed curl
-apk_installed micro
-apk_installed bat
-apk_installed eza
-apk_installed neofetch
+apt_install fish
+apt_install starship
+apt_install wget
+apt_install curl
+apt_install micro
+apt_install bat
+apt_install eza
+apt_install neofetch
 
 
 curl -O https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping >/dev/null 2>&1
