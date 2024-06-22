@@ -1,6 +1,20 @@
 #==================================
 # Mini Utils
 #==================================
+print_in_color() {
+    printf "%b" \
+        "$(tput setaf "$2" 2> /dev/null)" \
+        "$1" \
+        "$(tput sgr0 2> /dev/null)"
+}
+
+print_title() {
+    print_in_color "\n • $1\n" 5
+}
+
+print_log() {
+    print_in_color "   • $1\n" 2
+}
 
 apt_install() {
     print_log "$1"
@@ -38,21 +52,6 @@ print_section() {
     print_in_color "\n$BANNER_TOP" 3
     print_in_color "\n│        $TITLE        │" 3
     print_in_color "\n$BANNER_BOTTOM" 3
-}
-
-print_title() {
-    print_in_color "\n • $1\n" 5
-}
-
-print_log() {
-    print_in_color "   • $1\n" 2
-}
-
-print_in_color() {
-    printf "%b" \
-        "$(tput setaf "$2" 2> /dev/null)" \
-        "$1" \
-        "$(tput sgr0 2> /dev/null)"
 }
 
 
