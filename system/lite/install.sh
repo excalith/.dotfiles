@@ -104,9 +104,10 @@ termux-setup-storage
 print_log "Update termux properties"
 wget -O $HOME/.config/termux/termux.properties/termux.properties https://raw.githubusercontent.com/excalith/.dotfiles/main/config/termux/termux.properties
 
+mkdir -p $HOME/.termux
+
 print_log "Update termux colors"
 wget -O $HOME/.termux/colors.properties https://raw.githubusercontent.com/excalith/.dotfiles/main/config/termux/colors.properties
-
 
 print_log "Update termux font"
 wget -O $HOME/.termux/font.ttf https://raw.githubusercontent.com/excalith/.dotfiles/main/config/termux/font.ttf
