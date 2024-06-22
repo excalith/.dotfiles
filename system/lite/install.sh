@@ -87,11 +87,28 @@ apt_install "micro"
 apt_install "bat"
 apt_install "eza"
 apt_install "neofetch"
+apt_install "termux-api"
 
 print_log prettyping
 curl -O https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping >/dev/null 2>&1
 chmod +x prettyping
 
+#==================================
+# Termux Settings
+#==================================
+print_title "Termux Settings"
+
+print_log "Request Storage Permission"
+termux-setup-storage
+
+print_log "Update termux properties"
+wget -O ~/.config/termux/termux.properties/termux.properties https://raw.githubusercontent.com/excalith/dotfiles/main/config/termux/termux.properties &> /dev/null
+
+print_log "Update termux colors"
+wget -O ~/.termux/colors.properties/colors.properties https://raw.githubusercontent.com/excalith/dotfiles/main/config/termux/colors.properties &> /dev/null
+
+print_log "Update termux font"
+wget -O ~/.termux/font.ttf https://raw.githubusercontent.com/excalith/dotfiles/main/config/termux/font.ttf &> /dev/null
 
 #==================================
 # Change Shell
@@ -123,6 +140,7 @@ fish -c 'source ~/.config/fish/config.fish'
 # End Setup
 #==================================
 print_section "Setup Complete"
+printf "\n\n"
 
 #==================================
 # Start Fish Shell
