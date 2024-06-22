@@ -6,14 +6,11 @@ apt_installed() {
 }
 
 apt_install() {
-    declare -r PACKAGE="$1"
-
-    if ! apt_installed "$PACKAGE"; then
-		print_log "$PACKAGE"
-        apt install --quiet $EXTRA_ARGUMENTS $PACKAGE
-
+    if ! apt_installed "$1"; then
+		print_log "$1"
+        apt install --quiet -y $1 &> /dev/null
     else
-        print_log "$PACKAGE"
+        print_log "$1"
     fi
 }
 
