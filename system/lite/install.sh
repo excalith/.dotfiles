@@ -102,14 +102,14 @@ print_log "Request Storage Permission"
 termux-setup-storage
 
 print_log "Update termux properties"
-wget -O ~/.config/termux/termux.properties/termux.properties https://raw.githubusercontent.com/excalith/.dotfiles/main/config/termux/termux.properties
+wget -O $HOME/.config/termux/termux.properties/termux.properties https://raw.githubusercontent.com/excalith/.dotfiles/main/config/termux/termux.properties
 
 print_log "Update termux colors"
-wget -O ~/.termux/colors.properties https://raw.githubusercontent.com/excalith/.dotfiles/main/config/termux/colors.properties
+wget -O $HOME/.termux/colors.properties https://raw.githubusercontent.com/excalith/.dotfiles/main/config/termux/colors.properties
 
 
 print_log "Update termux font"
-wget -O ~/.termux/font.ttf https://raw.githubusercontent.com/excalith/.dotfiles/main/config/termux/font.ttf
+wget -O $HOME/.termux/font.ttf https://raw.githubusercontent.com/excalith/.dotfiles/main/config/termux/font.ttf
 
 print_log "Reload termux settings"
 termux-reload-settings
@@ -129,15 +129,15 @@ chsh -s fish
 print_title "Update Configs"
 
 print_log "Add fish config"
-mkdir -p ~/.config/fish
-touch ~/.config/fish/config.fish
-echo "starship init fish | source" > ~/.config/fish/config.fish
+mkdir -p $HOME/.config/fish
+touch $HOME/.config/fish/config.fish
+echo "starship init fish | source" > $HOME/.config/fish/config.fish
 
 print_log "Add starship config"
-wget -O ~/.config/starship.toml https://raw.githubusercontent.com/excalith/.dotfiles/main/config/starship/starship.toml &> /dev/null
+wget -O $HOME/.config/starship.toml https://raw.githubusercontent.com/excalith/.dotfiles/main/config/starship/starship.toml &> /dev/null
 
 print_log "Reload fish config"
-fish -c 'source ~/.config/fish/config.fish'
+fish -c 'source $HOME/.config/fish/config.fish'
 
 
 #==================================
