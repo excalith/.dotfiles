@@ -51,11 +51,11 @@ print_section() {
 }
 
 print_title() {
-    print_in_color "\n • $1\n" 5
+    print_in_color "\n • $1" 5
 }
 
 print_log() {
-    print_in_color "\n • $1\n" 2
+    print_in_color "   • $1\n" 2
 }
 
 print_in_color() {
@@ -77,10 +77,10 @@ print_section "Excalith Dotfiles Setup"
 print_title "Update Packages"
 
 print_log "Update APT Packages"
-apt update
+apt update 2> /dev/null
 
 print_log "Upgrade APT Packages"
-apt upgrade
+apt upgrade 2> /dev/null
 
 
 #==================================
@@ -107,6 +107,6 @@ chmod +x prettyping
 print_title "Change Shell"
 
 print_log "Changing Shell to Fish"
-chsh -s $(which fish)
+chsh -s fish
 
 
