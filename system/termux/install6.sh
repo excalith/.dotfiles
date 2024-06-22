@@ -121,7 +121,7 @@ print_log "Add fish config"
 echo "starship init fish | source" > ~/.config/fish/config.fish
 
 print_log "Add starship config"
-wget -O ~/.config/starship.toml https://raw.githubusercontent.com/excalith/dotfiles/main/config/starship/starship.toml
+wget -O ~/.config/starship.toml https://raw.githubusercontent.com/excalith/dotfiles/main/config/starship/starship.toml &> /dev/null
 
 print_log "Reload fish config"
 fish -c 'source ~/.config/fish/config.fish'
