@@ -1,17 +1,10 @@
 #==================================
 # Mini Utils
 #==================================
-apt_installed() {
-    apt info "$1" &> /dev/null
-}
 
 apt_install() {
-    if ! apt_installed "$1"; then
-		print_log "$1"
-        apt install --quiet -y $1 &> /dev/null
-    else
-        print_log "$1"
-    fi
+    print_log "$1"
+    apt install -qq -y $1 &> /dev/null
 }
 
 print_section() {
@@ -89,6 +82,7 @@ print_title "Install Packages"
 apt_install fish
 apt_install starship
 apt_install curl
+apt_install wget
 apt_install micro
 apt_install bat
 apt_install eza
