@@ -108,8 +108,8 @@ chsh -s fish
 print_title "Update Configs"
 
 print_log "Add fish config"
-mkdir -p ~/.config/fish &> /dev/null
-touch ~/.config/fish/config.fish &> /dev/null
+mkdir -p ~/.config/fish
+touch ~/.config/fish/config.fish
 echo "starship init fish | source" > ~/.config/fish/config.fish
 
 print_log "Add starship config"
