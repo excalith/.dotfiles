@@ -88,33 +88,11 @@ apt_install "eza"
 apt_install "fastfetch"
 apt_install "ranger"
 apt_install "termux-api"
-
 apt_install "gping"
 print_log prettyping
 curl -O https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping >/dev/null 2>&1
 chmod +x prettyping
 
-#==================================
-# Termux Settings
-#==================================
-print_title "Termux Settings"
-
-print_log "Request Storage Permission"
-termux-setup-storage
-
-print_log "Update termux properties"
-wget -q -O $HOME/.config/termux/termux.properties/termux.properties https://raw.githubusercontent.com/excalith/.dotfiles/main/config/termux/termux.properties &> /dev/null
-
-mkdir -p $HOME/.termux
-
-print_log "Update termux colors"
-wget -q -O $HOME/.termux/colors.properties https://raw.githubusercontent.com/excalith/.dotfiles/main/config/termux/colors.properties &> /dev/null
-
-print_log "Update termux font"
-wget -q -O $HOME/.termux/font.ttf https://raw.githubusercontent.com/excalith/.dotfiles/main/config/termux/font.ttf &> /dev/null
-
-print_log "Reload termux settings"
-termux-reload-settings
 
 #==================================
 # Change Shell
@@ -139,6 +117,29 @@ wget -O $HOME/.config/starship.toml https://raw.githubusercontent.com/excalith/.
 
 print_log "Reload fish config"
 fish -c 'source $HOME/.config/fish/config.fish'
+
+
+#==================================
+# Termux Settings
+#==================================
+print_title "Termux Settings"
+
+print_log "Request Storage Permission"
+termux-setup-storage
+
+print_log "Update termux properties"
+wget -q -O $HOME/.config/termux/termux.properties/termux.properties https://raw.githubusercontent.com/excalith/.dotfiles/main/config/termux/termux.properties &> /dev/null
+
+mkdir -p $HOME/.termux
+
+print_log "Update termux colors"
+wget -q -O $HOME/.termux/colors.properties https://raw.githubusercontent.com/excalith/.dotfiles/main/config/termux/colors.properties &> /dev/null
+
+print_log "Update termux font"
+wget -q -O $HOME/.termux/font.ttf https://raw.githubusercontent.com/excalith/.dotfiles/main/config/termux/font.ttf &> /dev/null
+
+print_log "Reload termux settings"
+termux-reload-settings
 
 
 #==================================
