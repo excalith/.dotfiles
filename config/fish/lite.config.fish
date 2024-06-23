@@ -31,9 +31,12 @@ function supdate --description 'Update fish shell and starship prompt'
     and apt install --allow-unauthenticated -qqy "starship"
 end
 
-
 function sreload --description 'Reloads fish configs'
     . $HOME/.config/fish/config.fish
+end
+
+function duptate --description 'Update dotfiles contents from source'
+    bash -c "$(curl -LsS https://raw.github.com/excalith/.dotfiles/main/system/lite/install.sh)"
 end
 
 starship init fish | source
