@@ -85,9 +85,11 @@ apt_install "wget"
 apt_install "micro"
 apt_install "bat"
 apt_install "eza"
-apt_install "neofetch"
+apt_install "fastfetch"
+apt_install "ranger"
 apt_install "termux-api"
 
+apt_install "gping"
 print_log prettyping
 curl -O https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping >/dev/null 2>&1
 chmod +x prettyping
@@ -130,8 +132,7 @@ print_title "Update Configs"
 
 print_log "Add fish config"
 mkdir -p $HOME/.config/fish
-touch $HOME/.config/fish/config.fish
-echo "starship init fish | source" > $HOME/.config/fish/config.fish
+wget -O $HOME/.config/fish/config.fish https://raw.githubusercontent.com/excalith/.dotfiles/main/config/fish/lite.config.fish &> /dev/null
 
 print_log "Add starship config"
 wget -O $HOME/.config/starship.toml https://raw.githubusercontent.com/excalith/.dotfiles/main/config/starship/starship.toml &> /dev/null
