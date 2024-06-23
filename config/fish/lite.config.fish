@@ -39,4 +39,5 @@ function duptate --description 'Update dotfiles contents from source'
     bash -c "$(curl -LsS https://raw.github.com/excalith/.dotfiles/main/system/lite/install.sh)"
 end
 
+set -g fish_greeting
 starship init fish | source
