@@ -45,8 +45,33 @@ function sreload {
 
 # Update PowerShell
 function supdate {
-    winget upgrade Microsoft.Powershell
+    $packages = @(
+        "Microsoft.Powershell",
+        "chrisant996.Clink",
+        "Starship.Starship"
+    )
+
+    foreach ($package in $packages) {
+        Write-Output "Checking for upgrades for $package"
+        & winget upgrade --id $package --silent --accept-source-agreements --accept-package-agreements 2>&1 | Out-Null
+        if ($LASTEXITCODE -eq 0) {
+            Write-Output "Upgrade completed for $package`n"
+        } else {
+            Write-Output "No available upgrade found for $package or upgrade failed.`n"
+        }
+    }
 }
+
+function pupdate {
+    Write-Output "Upgrading all winget packages...`n"
+    & winget upgrade --all --accept-source-agreements --accept-package-agreements 
+    if ($LASTEXITCODE -eq 0) {
+        Write-Output "All packages upgraded successfully.`n"
+    } else {
+        Write-Output "Some packages failed to upgrade or no upgrades were available.`n"
+    }
+}
+
 
 # Common directories
 function dotfiles { Set-Location -Path "$env:USERPROFILE\.dotfiles\$args" }
