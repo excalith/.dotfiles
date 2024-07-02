@@ -55,8 +55,6 @@ hotkeys:
     - Ctrl-,
   serial: []
   restart-serial-session: []
-  new-tab:
-    - Ctrl-T
   new-window:
     - Ctrl-N
   profile: {}
@@ -156,10 +154,13 @@ hotkeys:
   pane-decrease-horizontal: []
   switch-profile:
     - Ctrl-Alt-T
-  profile-selector:
-    - Ctrl-Shift-E
   command-selector:
     - Ctrl-Shift-P
+  new-tab:
+    - Ctrl-T
+  toggle-clippy: []
+  profile-selector:
+    - Ctrl-P
 terminal:
   searchOptions: {}
   colorScheme:
@@ -247,16 +248,27 @@ terminal:
   wordSeparator: ',│`|:\"'' ()[]{}<>'
   useConPTY: false
   sixel: false
-ssh: {}
+  profile: local:powershell
+ssh:
+  warnOnClose: true
 clickableLinks: {}
 accessibility: {}
-appearance: {}
+appearance:
+  css: |2
+        ::-webkit-scrollbar,
+        ::-webkit-scrollbar-button,
+        ::-webkit-scrollbar-thumb,
+        ::-webkit-scrollbar-track,
+        ::-webkit-scrollbar-track-piece {
+          width: 0 !important;
+        }
 hacks: {}
 providerBlacklist: []
 commandBlacklist: []
 enableAnalytics: false
 enableWelcomeTab: false
-pluginBlacklist: []
+pluginBlacklist:
+  - clippy
 profileDefaults:
   ssh:
     disableDynamicTitle: true
@@ -273,3 +285,4 @@ profileBlacklist:
   - local:cmd
   - local:default
 language: en-US
+clippyPlugin: {}
