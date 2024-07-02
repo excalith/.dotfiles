@@ -82,11 +82,13 @@ catch {
 Write-Title "Powershell Profile"
 try {
     # Symlink Powershell profile to the old Powershell version location
-    New-Symlink "$env:USERPROFILE\.dotfiles\config\powershell\Microsoft.PowerShell_profile.ps1" "$env:USERPROFILE\Documents\WindowsPowerShell" *> $null
+    New-Item -ItemType "directory" -Path "\Documents\WindowsPowershell" -ErrorAction SilentlyContinue
+    New-Symlink "$env:USERPROFILE\.dotfiles\config\powershell\Microsoft.PowerShell_profile.ps1" "$env:USERPROFILE\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
     Write-Success "Powershell Profile for old versions registered"
     
     # Symlink Powershell profile to the new Powershell version location
-    New-Symlink "$env:USERPROFILE\.dotfiles\config\powershell\Microsoft.PowerShell_profile.ps1" "$env:USERPROFILE\Documents\Powershell" *> $null
+    New-Item -ItemType "directory" -Path "\Documents\Powershell" -ErrorAction SilentlyContinue
+    New-Symlink "$env:USERPROFILE\.dotfiles\config\powershell\Microsoft.PowerShell_profile.ps1" "$env:USERPROFILE\Documents\Powershell\Microsoft.PowerShell_profile.ps1"
     Write-Success "Powershell Profile for new versions registered"
 
 }
