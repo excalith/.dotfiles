@@ -56,6 +56,8 @@ Install-WingetPackage "Affinity Designer 2" "9N2D0P16C80H" "msstore"
 Write-Title "Productivity Packages"
 Install-WingetPackage "Notion" "Notion.Notion"
 Install-WingetPackage "Dropbox" "Dropbox.Dropbox"
+Install-WingetPackage "Flameshot" "Flameshot.Flameshot"
+Install-WingetPackage "muCommander" "muCommander.muCommander"
 
 # Game
 Write-Title "Game Packages"
