@@ -35,6 +35,7 @@ Install-WingetPackage "yq" "MikeFarah.yq"
 Install-WingetPackage "ripgrep" "BurntSushi.ripgrep.MSVC"
 Install-WingetPackage "lazygit" "JesseDuffield.lazygit"
 Install-WingetPackage "lazydocker" "JesseDuffield.Lazydocker"
+Install-WingetPackage "Python 3.12" "Python.Python.3.12"
 Install-WingetPackage "NodeJS" "OpenJS.NodeJS"
 Install-WingetPackage "PowerShell" "Microsoft.Powershell"
 
