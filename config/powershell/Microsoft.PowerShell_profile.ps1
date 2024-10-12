@@ -2,6 +2,8 @@
 Set-Alias -Name lg -Value 'lazygit'
 Set-Alias -Name ld -Value 'lazydocker'
 Set-Alias -Name nano -Value 'micro'
+Set-Alias -Name eza -Value 'eza --group-directories-first -laho --no-user --icons --git --git-repos --time-style relative'
+Set-Alias -Name exa -Value 'eza --group-directories-first -laho --no-user --icons --git --git-repos --time-style relative'
 
 # Make a new directory and cd into it
 function mkcd {
