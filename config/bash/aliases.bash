@@ -3,7 +3,7 @@ alias dotfiles="bash ~/.dotfiles/bin/dotfiles/main.sh"
 alias colors="bash ~/.dotfiles/bin/colors/colors.sh"
 
 # Command replacements
-alias exa='command exa --group-directories-first -laFh --grid --git --icons'
+alias exa='command eza --group-directories-first -laho --no-user --icons --git --git-repos --time-style relative'
 alias cat=bat
 alias man=batman
 alias lg=lazygit
