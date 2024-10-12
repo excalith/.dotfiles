@@ -19,6 +19,14 @@ print_section "Installing Packages"
 #==================================
 print_title "Adding Keys"
 
+apt_install "gpg" "gpg"
+sudo mkdir -p /etc/apt/keyrings
+
+# Eza
+wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg &> /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list &> /dev/null
+sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+
 # Mono
 sudo mkdir -p /etc/apt/keyrings
 execute "sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" "Mono (Add Key)"
@@ -79,7 +87,6 @@ apt_install "heif-gdk-pixbuf" "heif-gdk-pixbuf"
 apt_install "heif-thumbnailer" "heif-thumbnailer"
 
 apt_install "gnupg" "gnupg"
-apt_install "gpg" "gpg"
 apt_install "ca-certificates" "ca-certificates"
 apt_install "dirmngr" "dirmngr"
 apt_install "curl" "curl"
@@ -95,6 +102,7 @@ apt_install "cargo" "cargo"
 
 apt_install "tmux" "tmux"
 apt_install "less" "less"
+apt_install "eza" "eza"
 apt_install "bat" "bat"
 apt_install "tre-command" "tre-command"
 apt_install "fasd" "fasd"
@@ -138,12 +146,12 @@ snap_install "GitKraken" "gitkraken"
 snap_install "VS Code" "code"
 snap_install "1Password" "1password"
 
-#==================================
-# Install Cargo packages
-#==================================
-print_title "Install Cargo Packages"
+# #==================================
+# # Install Cargo packages
+# #==================================
+# print_title "Install Cargo Packages"
 
-cargo_install "exa" "exa"
+# cargo_install "exa" "exa"
 
 #==================================
 # Install Flatpak Packages

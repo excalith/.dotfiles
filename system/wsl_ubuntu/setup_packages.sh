@@ -19,6 +19,15 @@ print_section "Installing Packages"
 #==================================
 print_title "Adding Keys"
 
+apt_install "gpg" "gpg"
+sudo mkdir -p /etc/apt/keyrings
+
+# Eza
+wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg &> /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list &> /dev/null
+sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+
+
 # Charm
 curl -fsSL --silent https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg &> /dev/null
 echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list &> /dev/null
@@ -45,6 +54,7 @@ apt_upgrade
 #==================================
 print_title "Install APT Packages"
 
+
 apt_install "curl" "curl"
 apt_install "wget" "wget"
 apt_install "pyhton3" "python3"
@@ -55,7 +65,7 @@ apt_install "cargo" "cargo"
 
 apt_install "tmux" "tmux"
 apt_install "less" "less"
-apt_install "exa" "exa"
+apt_install "eza" "eza"
 apt_install "bat" "bat"
 apt_install "tre-command" "tre-command"
 apt_install "fasd" "fasd"

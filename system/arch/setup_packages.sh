@@ -65,7 +65,7 @@ pacman_install "jq" "jq"
 
 pacman_install "tmux" "tmux"
 pacman_install "less" "less"
-pacman_install "exa" "exa"
+pacman_install "eza" "eza"
 pacman_install "bat" "bat"
 pacman_install "fasd" "fasd"
 pacman_install "fzf" "fzf"

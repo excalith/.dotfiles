@@ -85,6 +85,24 @@ To install packages for WSL Ubuntu, run the following command on WSL terminal.
 bash -c "$(wget --no-cache -qO - https://raw.github.com/excalith/.dotfiles/main/scripts/setup.sh)"
 ```
 
+## Post-Installation
+
+Optionally, if you want to set upstream with this repository, you can run the following command.
+
+```bash
+# Initialize git repository
+git init
+
+# Add this repository as remote
+git remote add origin git@github.com:excalith/.dotfiles.git
+
+# Fetch the main branch
+git fetch origin main
+
+# Reset the dotfiles folder and replace with main branch
+git reset --hard origin/main
+```
+
 ## Using Dotfiles
 
 After installing the dotfiles, you can pretty much start using these configurations right away.
