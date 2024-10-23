@@ -3,6 +3,7 @@ alias dotfiles="bash ~/.dotfiles/bin/dotfiles/main.sh"
 alias colors="bash ~/.dotfiles/bin/colors/colors.sh"
 
 # Command replacements
+alias fzf='fzf --preview "bat --style numbers,changes --color=always {} | head -500"'
 alias exa='command eza --group-directories-first -laho --no-user --icons --git --git-repos --time-style relative'
 alias eza='command eza --group-directories-first -laho --no-user --icons --git --git-repos --time-style relative'
 alias cat=bat

@@ -46,6 +46,7 @@ antigen bundle wfxr/forgit
 antigen bundle unixorn/fzf-zsh-plugin@main
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle leophys/zsh-plugin-fzf-finder
 antigen apply
 
 # ZSH Highlight Configuration
@@ -54,7 +55,8 @@ ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 # Setup FZF
-[ -f ~/.fzf/.fzf.zsh ] && source ~/.fzf/.fzf.zsh
+# [ -f ~/.fzf/.fzf.zsh ] && source ~/.fzf/.fzf.zsh
+
 # export FZF_TMUX=1
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export FZF_CTRL_T_OPTS='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"'

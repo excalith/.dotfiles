@@ -67,6 +67,7 @@ apt_install "tmux" "tmux"
 apt_install "less" "less"
 apt_install "eza" "eza"
 apt_install "bat" "bat"
+apt_install "tree" "tree"
 apt_install "tre-command" "tre-command"
 apt_install "fasd" "fasd"
 apt_install "fd-find" "fd-find"
@@ -94,9 +95,9 @@ apt_install "ffmpeg" "ffmpeg"
 #==================================
 # Install Cargo packages
 #==================================
-print_title "Install Cargo Packages"
+# print_title "Install Cargo Packages"
 
-cargo_install "exa" "exa"
+# cargo_install "exa" "exa"
 
 
 #==================================

@@ -8,10 +8,10 @@ module.exports = {
     // or `'canary'` for less polished but more frequent updates
     updateChannel: "stable",
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 15,
     // font family with optional fallbacks
     fontFamily:
-      'FiraCode Nerd Font, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+      'Jetbrains Mono, FiraCode Nerd Font, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
     // default font weight: 'normal' or 'bold'
     fontWeight: "normal",
     // font weight for bold characters: 'normal' or 'bold'
@@ -93,10 +93,10 @@ module.exports = {
     //
     // Cygwin
     // - Example: `C:\\cygwin64\\bin\\bash.exe`
-    shell: "",
+    shell: "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
-    shellArgs: ["--login"],
+    shellArgs: [],
     // for environment variables
     env: {},
     // Supported Options:
