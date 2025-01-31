@@ -1,0 +1,27 @@
+---
+background: "#16161c"
+accent: "#6c6f93"
+foreground: "#ffffff"
+details: darker
+terminal_colors:
+  normal:
+    black: "#16161e"
+    red: "#ec6183"
+    green: "#2ed8a2"
+    yellow: "#e8b195"
+    blue: "#2bc3de"
+    magenta: "#e069aa"
+    cyan: "#62e0e2"
+    white: "#e2e2e2"
+    gray: "#97989d"
+  bright:
+    black: "#16161e"
+    red: "#ec6183"
+    green: "#2ed8a2"
+    yellow: "#e8b195"
+    blue: "#2bc3de"
+    magenta: "#e069aa"
+    cyan: "#62e0e2"
+    white: "#e2e2e2"
+    gray: "#97989d"
+name: Horizon
