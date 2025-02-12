@@ -60,6 +60,7 @@ Install-WingetPackage "Notion" "Notion.Notion"
 Install-WingetPackage "Dropbox" "Dropbox.Dropbox"
 Install-WingetPackage "Flameshot" "Flameshot.Flameshot"
 Install-WingetPackage "muCommander" "muCommander.muCommander"
+Install-WingetPackage "WizTree" "AntibodySoftware.WizTree"
 
 # Game
 Write-Title "Game Packages"
