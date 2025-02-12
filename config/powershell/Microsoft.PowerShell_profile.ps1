@@ -3,6 +3,11 @@ Set-Alias -Name lg -Value 'lazygit'
 Set-Alias -Name ld -Value 'lazydocker'
 Set-Alias -Name nano -Value 'micro'
 
+# Set terminal window title as current directory name
+function Invoke-Starship-PreCommand {
+    $host.ui.RawUI.WindowTitle = (Get-Item $pwd).Name
+}
+  
 function eza {
     eza.exe --group-directories-first -laho --no-user --icons --git --git-repos --time-style relative
 }
@@ -86,6 +91,12 @@ function .. { Set-Location .. }
 function ... { Set-Location ../.. }
 function .... { Set-Location ../../.. }
 function ..... { Set-Location ../../../.. }
+
+# Import Chocolatey Profile to enable tab-completions to function for `choco`.
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}
 
 # Init Starship
 Invoke-Expression (&starship init powershell)

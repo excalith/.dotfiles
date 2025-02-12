@@ -57,5 +57,12 @@ source "$HOME/.config/bash/functions.bash"
 # forgit
 export PATH="$PATH:$FORGIT_INSTALL_DIR/bin"
 
+# Set window title to current directory name
+function set_win_title(){
+    echo -ne "\033]0; $(basename "$PWD") \007"
+}
+
+starship_precmd_user_func="set_win_title"
+
 # Source starship
 eval "$(starship init bash)"
