@@ -42,9 +42,6 @@ print_title "Adding Repositories"
 
 apt_add_repo "Universe" "universe"
 apt_add_repo "Multiverse" "multiverse"
-apt_add_repo "Fish" "ppa:fish-shell/release-3"
-apt_add_repo "OBS Studio" "ppa:obsproject/obs-studio"
-apt_add_repo "Alacritty" "ppa:aslatter/ppa"
 
 
 #==================================
@@ -67,7 +64,6 @@ apt_upgrade
 #==================================
 print_title "Install Package Managers"
 
-apt_install "nala" "nala"
 apt_install "flatpak" "flatpak"
 apt_install "flatpak gnome plugin" "gnome-software-plugin-flatpak"
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo >/dev/null 2>&1
@@ -98,9 +94,8 @@ apt_install "git-lfs" "git-lfs"
 apt_install "apt-transport-https" "apt-transport-https"
 apt_install "software-properties-common" "software-properties-common"
 apt_install "libgconf-2-4" "libgconf-2-4"
-apt_install "cargo" "cargo"
 
-apt_install "tmux" "tmux"
+# apt_install "tmux" "tmux"
 apt_install "less" "less"
 apt_install "eza" "eza"
 apt_install "bat" "bat"
@@ -126,15 +121,11 @@ apt_install "node" "nodejs"
 apt_install "yarn" "yarn"
 apt_install "gcc" "gcc"
 apt_install "micro" "micro"
-apt_install "neovim" "neovim"
 apt_install "ffmpeg" "ffmpeg"
 
-apt_install "nudoku" "nudoku"
-
-apt_install "Alacritty" "alacritty"
 apt_install "Caffeine" "caffeine"
 apt_install "Notion" "notion"
-apt_install "OBS Studio" "obs-studio"
+
 
 
 #==================================
@@ -145,14 +136,7 @@ print_title "Install Snap Packages"
 snap_install "spt" "spt"
 snap_install "GitKraken" "gitkraken"
 snap_install "VS Code" "code"
-snap_install "1Password" "1password"
 
-# #==================================
-# # Install Cargo packages
-# #==================================
-# print_title "Install Cargo Packages"
-
-# cargo_install "exa" "exa"
 
 #==================================
 # Install Flatpak Packages
@@ -160,48 +144,17 @@ snap_install "1Password" "1password"
 print_title "Install Flatpak Packages"
 
 flatpak_install "Firefox" "org.mozilla.firefox"
-flatpak_install "GitKraken" "com.axosoft.GitKraken"
-flatpak_install "Insomnia" "rest.insomnia.Insomnia"
-flatpak_install "Beekeeper Studio" "io.beekeeperstudio.Studio"
+flatpak_install "Proton VPN" "com.protonvpn.www"
+flatpak_install "Postman" "com.getpostman.Postman"
 flatpak_install "Image Optimizer" "com.github.gijsgoudzwaard.image-optimizer"
-flatpak_install "Mailspring" "com.getmailspring.Mailspring"
 flatpak_install "Telegram" "org.telegram.desktop"
 flatpak_install "Discord" "com.discordapp.Discord"
-flatpak_install "Zoom" "us.zoom.Zoom"
 flatpak_install "Dropbox" "com.dropbox.Client"
 flatpak_install "Transmission" "com.transmissionbt.Transmission"
 flatpak_install "Spotify" "com.spotify.Client"
 flatpak_install "VLC" "org.videolan.VLC"
 flatpak_install "Steam" "com.valvesoftware.Steam"
 
-
-#==================================
-# Install From Source
-#==================================
-print_title "Install Packages From Source"
-
-# Tmux Plugin Manager (TPM)
-execute "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm" "TMUX Plugin Manager (TPM)"
-
-# # Kitty
-# curl -L --silent https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-# ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
-# cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
-# sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
-# sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
-
-# LazyGit
-LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v*([^"]+)".*/\1/')
-curl -Lo lazygit.tar.gz --silent --output /dev/null "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
-rm -rf lazygit.tar.gz
-print_success "lazygit"
-
-# NvChad
-# rm -rf ~/.config/nvim
-# rm -rf ~/.local/share/nvim
-# rm -rf ~/.cache/nvim
-# execute "git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1" "NvChad"
 
 # Reversal Icons
 wget -qO ~/reversal.tar.gz https://github.com/yeyushengfan258/Reversal-icon-theme/archive/master.tar.gz
