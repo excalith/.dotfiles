@@ -99,18 +99,21 @@ format = "[$symbol$branch]($style)"
 style = "bold bright-purple"
 
 [git_status]
-format = ' $all_status$ahead_behind$diverged'
+# format = ' $all_status$ahead_behind$diverged'
+format = '''
+ $stashed$untracked$modified$renamed$deleted$conflicted$staged$ahead_behind$diverged
+'''
 staged     = '[ ](bold green)'
-modified   = '[ ](bold yellow)'
+modified   = '[ ](bold yellow)'
 renamed    = '[ ](bold yellow)'
 deleted    = '[ ](bold red)'
-stashed    = '[󰜦 ](bold bright-purple)'
-untracked  = '[ ](bold bright-purple)'
+stashed    = '[󰜦 ](bold bright-blue)'
+untracked  = '[ ](bold #98989f)'
 conflicted = '[ ](bold red)'
 up_to_date = '[ ](bold green)'
 ahead = '[⇡${count}](bold green)'
 behind = '[⇣${count}](bold red)'
-diverged = '[ ](bold red)([⇡${ahead_count} ](bold green)[⇣${behind_count}](bold red))'
+diverged = '[ ](bold purple)([⇡${ahead_count} ](bold green)[⇣${behind_count}](bold red))'
 
 [git_state]
 format = '\([$state($progress_current/$progress_total)]($style)\) '

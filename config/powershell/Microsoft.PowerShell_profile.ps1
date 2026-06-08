@@ -27,6 +27,23 @@ function mkcd {
     Set-Location $dir
 }
 
+# Function to replicate open . like linux
+function open {
+    if ($args.Count -eq 0) {
+        Start-Process explorer.exe -ArgumentList "."
+        return
+    }
+
+    foreach ($item in $args) {
+        if (Test-Path $item) {
+            $resolvedPath = Resolve-Path $item
+            Start-Process $resolvedPath
+        } else {
+            Write-Warning "Path not found: $item"
+        }
+    }
+}
+
 # Create a new file
 function touch {
     if ($args.Count -eq 0) {
@@ -85,6 +102,18 @@ function nvmuse {
     nvm use $(Get-Content .nvmrc)
 }
 
+function rgf {
+    param(
+        [Parameter(Mandatory=$true, ValueFromRemainingArguments=$true)]
+        [string[]]$Patterns
+    )
+
+    $searchPattern = $Patterns -join '|'
+
+    rg --no-ignore -l $searchPattern |
+        fzf --preview "bat --color=always --style=numbers {} | rg --colors 'match:bg:yellow' --colors 'match:fg:black' --passthru '$searchPattern'"
+}
+
 # Common directories
 function dotfiles { Set-Location -Path "$env:USERPROFILE\.dotfiles\$args" }
 function dropbox { Set-Location -Path "$env:USERPROFILE\Dropbox\$args" }
@@ -103,3 +132,6 @@ if (Test-Path($ChocolateyProfile)) {
 
 # Init Starship
 Invoke-Expression (&starship init powershell)
+
+# Init Zoxide
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
