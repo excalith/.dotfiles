@@ -1,4 +1,4 @@
-version: 7
+version: 8
 profiles: []
 groups: []
 configSync:
@@ -161,6 +161,12 @@ hotkeys:
   toggle-clippy: []
   profile-selector:
     - Ctrl-P
+  scroll-page-up:
+    - Alt-PageUp
+  scroll-page-down:
+    - Alt-PageDown
+  open-sftp: []
+  group-selectors: {}
 terminal:
   searchOptions: {}
   colorScheme:
@@ -188,7 +194,7 @@ terminal:
     cursorAccent: '121317'
     selection: '#e8b195'
     selectionForeground: '#121317'
-  font: FiraCode Nerd Font Mono
+  font: JetBrainsMono Nerd Font Mono
   ligatures: true
   pasteOnMiddleClick: true
   customColorSchemes:
@@ -248,6 +254,7 @@ terminal:
   useConPTY: false
   sixel: false
   profile: local:powershell
+  bell: visual
 ssh:
   warnOnClose: true
 clickableLinks: {}
