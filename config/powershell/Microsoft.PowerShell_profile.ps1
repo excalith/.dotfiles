@@ -8,42 +8,138 @@ Set-Alias -Name ff -Value fzfFind -Force
 #endregion Aliases
 
 #region SHELL COMMANDS
-# Reload Powershell profile
+# Reload PowerShell profile
 function sreload {
     if (Test-Path $PROFILE) {
         . $PROFILE
         Write-Host "SUCCESS: PowerShell profile reloaded." -ForegroundColor Green
     } else {
-        Write-Warning "PowerShell profile not found."
+        Write-Warning "PowerShell profile not found at: $PROFILE"
     }
 }
 
-# Update PowerShell
-function supdate {
+# Returns true if the user is admin, false otherwise
+function isadmin {
+    $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+
+    $esc = [char]27
+    $reset = "$esc[0m"
+    $white = "$esc[37m"
+    $green = "$esc[32m"
+    $red = "$esc[31m"
+    $adminText = "$white Admin:$reset"
+
+    if ($isAdmin) {
+        Write-Host "$adminText $green$isAdmin$reset"
+    } else {
+        Write-Host "$adminText $red$isAdmin$reset"
+    }
+}
+
+# Update core PowerShell packages
+function supdateAdmin {
+    $oldNoColor = $env:NO_COLOR
+    $env:NO_COLOR = "1"
+
     $packages = @(
-        "Microsoft.Powershell",
+        "Microsoft.PowerShell",
         "chrisant996.Clink",
         "Starship.Starship"
     )
 
-    foreach ($package in $packages) {
-        Write-Output "Checking for upgrades for $package"
-        & winget upgrade --id $package --silent --accept-source-agreements --accept-package-agreements 2>&1 | Out-Null
-        if ($LASTEXITCODE -eq 0) {
-            Write-Output "Upgrade completed for $package`n"
-        } else {
-            Write-Output "No available upgrade found for $package or upgrade failed.`n"
+    $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+    if (-not $isAdmin) {
+        Write-Host "supdate requires sudo access." -ForegroundColor Red
+        $env:NO_COLOR = $oldNoColor
+        return
+    }
+
+    try {
+        Write-Host "Fetching installed packages..." -ForegroundColor Cyan
+
+        $raw = & winget list --accept-source-agreements 2>$null | Out-String
+        $clean = $raw -replace '\x1B\[[0-9;]*[a-zA-Z]', ''
+        $lines = $clean -split "`r?`n"
+
+        foreach ($package in $packages) {
+            Write-Host "Checking $package..." -ForegroundColor Cyan
+
+            $targetLine = $lines | Where-Object {
+                $_ -match [regex]::Escape($package)
+            } | Select-Object -First 1
+
+            if ($targetLine) {
+                $cols = $targetLine.Trim() -split '\s{2,}'
+
+                # 5 Columns: Name, Id, Installed, Available, Source
+                if ($cols.Count -ge 5 -and $cols[3] -notmatch '^winget') {
+                    $installed = $cols[2]
+                    $latest    = $cols[3]
+
+                    Write-Host "  Status: Update Available" -ForegroundColor Yellow
+                    Write-Host "  Installed: $installed  -->  Latest: $latest" -ForegroundColor Yellow
+                    Write-Host "  Upgrading..." -ForegroundColor Cyan
+
+                    $logOut = "$env:TEMP\winget_$($package)_out.log"
+                    $logErr = "$env:TEMP\winget_$($package)_err.log"
+
+                    if ($package -eq "Microsoft.PowerShell") {
+                        # winget upgrade --id fails to match this package for some reason,
+                        # but install -e (exact) works, and re-running install on an
+                        # already-installed package upgrades it to latest if one's available.
+                        $wingetArgs = "install -e --id $package --silent --accept-source-agreements --accept-package-agreements"
+                    }
+                    else {
+                        $wingetArgs = "upgrade --id $package --silent --force --disable-interactivity --accept-source-agreements --accept-package-agreements"
+                    }
+
+                    if ($package -eq "Microsoft.PowerShell" -and -not $isAdmin) {
+                        $proc = Start-Process -FilePath "winget" -ArgumentList $wingetArgs -Verb RunAs -Wait -PassThru
+                    }
+                    else {
+                        $proc = Start-Process -FilePath "winget" `
+                            -ArgumentList $wingetArgs `
+                            -NoNewWindow -Wait -PassThru `
+                            -RedirectStandardOutput $logOut `
+                            -RedirectStandardError $logErr
+                    }
+
+                    if ($proc.ExitCode -eq 0) {
+                        Write-Host "  Successfully upgraded to $latest!`n" -ForegroundColor Green
+                    } else {
+                        Write-Host "  Upgrade failed (Exit code: $($proc.ExitCode)). See $logOut / $logErr`n" -ForegroundColor Red
+                    }
+                }
+                # 4 Columns: Up to Date
+                else {
+                    $installed = $cols[2]
+
+                    Write-Host "  Status: Up to Date" -ForegroundColor Green
+                    Write-Host "  Installed: $installed | Latest: $installed`n" -ForegroundColor DarkGray
+                }
+            } else {
+                Write-Host "  Status: Not Found" -ForegroundColor Red
+                Write-Host "  Package not installed or registered in winget.`n" -ForegroundColor DarkGray
+            }
         }
     }
+    finally {
+        $env:NO_COLOR = $oldNoColor
+    }
+}
+function supdate {
+    sudo -N pwsh -NoExit -Command "supdateAdmin"
 }
 
+# Upgrade all winget packages
 function pupdate {
-    Write-Output "Upgrading all winget packages...`n"
+    Write-Host "Upgrading all winget packages...`n" -ForegroundColor Cyan
     & winget upgrade --all --accept-source-agreements --accept-package-agreements
-    if ($LASTEXITCODE -eq 0) {
-        Write-Output "All packages upgraded successfully.`n"
-    } else {
-        Write-Output "Some packages failed to upgrade or no upgrades were available.`n"
+
+    switch ($LASTEXITCODE) {
+        0           { Write-Host "All packages upgraded successfully.`n" -ForegroundColor Green }
+        -1978236908 { Write-Host "All packages are already up to date.`n" -ForegroundColor Yellow }
+        default     { Write-Host "Some packages failed to upgrade (Exit code: $LASTEXITCODE).`n" -ForegroundColor Red }
     }
 }
 
